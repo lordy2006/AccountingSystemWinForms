@@ -3,7 +3,7 @@ using Krypton.Toolkit;
 
 namespace AccountingSystemWinForms
 {
-    public partial class Form1 : Form
+    public partial class Form1 : KryptonForm
     {
         public Form1()
         {
@@ -26,6 +26,11 @@ namespace AccountingSystemWinForms
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnName_Click(object sender, EventArgs e)
         {
 
         }
