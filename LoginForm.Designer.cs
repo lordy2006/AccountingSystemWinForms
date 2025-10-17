@@ -29,30 +29,22 @@
         private void InitializeComponent()
         {
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            loginControl1 = new LoginControl();
             label1 = new Label();
+            loginControl1 = new LoginControl();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel1).BeginInit();
             kryptonPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            kryptonPanel1.Controls.Add(label1);
             kryptonPanel1.Controls.Add(loginControl1);
+            kryptonPanel1.Controls.Add(label1);
             kryptonPanel1.Location = new Point(661, 12);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(420, 447);
+            kryptonPanel1.Size = new Size(420, 420);
             kryptonPanel1.StateCommon.Color1 = Color.White;
             kryptonPanel1.TabIndex = 3;
             kryptonPanel1.Paint += kryptonPanel1_Paint;
-            // 
-            // loginControl1
-            // 
-            loginControl1.BackColor = Color.White;
-            loginControl1.Location = new Point(23, 18);
-            loginControl1.Name = "loginControl1";
-            loginControl1.Size = new Size(368, 463);
-            loginControl1.TabIndex = 1;
             // 
             // label1
             // 
@@ -63,12 +55,21 @@
             label1.TabIndex = 2;
             label1.Text = "Adto Pag design sa login control";
             // 
+            // loginControl1
+            // 
+            loginControl1.BackColor = Color.White;
+            loginControl1.Location = new Point(24, 22);
+            loginControl1.Name = "loginControl1";
+            loginControl1.Size = new Size(368, 463);
+            loginControl1.TabIndex = 3;
+            loginControl1.Load += loginControl1_Load;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DodgerBlue;
-            ClientSize = new Size(1120, 446);
+            ClientSize = new Size(1128, 470);
             Controls.Add(kryptonPanel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
@@ -83,7 +84,7 @@
 
         #endregion
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private LoginControl loginControl1;
         private Label label1;
+        private LoginControl loginControl1;
     }
 }

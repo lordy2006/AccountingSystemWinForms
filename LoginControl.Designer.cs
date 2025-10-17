@@ -29,51 +29,72 @@
         private void InitializeComponent()
         {
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            pnlUser = new Krypton.Toolkit.KryptonPanel();
-            txbUser = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)pnlUser).BeginInit();
-            pnlUser.SuspendLayout();
+            kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            label1 = new Label();
+            kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
             SuspendLayout();
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(72, 112);
+            kryptonLabel1.Location = new Point(52, 81);
             kryptonLabel1.Name = "kryptonLabel1";
             kryptonLabel1.Size = new Size(41, 20);
             kryptonLabel1.TabIndex = 0;
             kryptonLabel1.Values.Text = "Login";
+            kryptonLabel1.Click += kryptonLabel1_Click;
             // 
-            // pnlUser
+            // kryptonTextBox1
             // 
-            pnlUser.Controls.Add(txbUser);
-            pnlUser.Location = new Point(72, 138);
-            pnlUser.Name = "pnlUser";
-            pnlUser.Size = new Size(174, 41);
-            pnlUser.StateCommon.Color1 = Color.FromArgb(231, 231, 231);
-            pnlUser.TabIndex = 6;
+            kryptonTextBox1.Location = new Point(52, 118);
+            kryptonTextBox1.Name = "kryptonTextBox1";
+            kryptonTextBox1.Size = new Size(100, 23);
+            kryptonTextBox1.TabIndex = 7;
+            kryptonTextBox1.Text = "kryptonTextBox1";
             // 
-            // txbUser
+            // label1
             // 
-            txbUser.BackColor = Color.FromArgb(231, 231, 231);
-            txbUser.BorderStyle = BorderStyle.None;
-            txbUser.Location = new Point(8, 13);
-            txbUser.Name = "txbUser";
-            txbUser.PlaceholderText = "asdasd";
-            txbUser.Size = new Size(150, 16);
-            txbUser.TabIndex = 5;
+            label1.AutoSize = true;
+            label1.Font = new Font("Impact", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(7, 67, 130);
+            label1.Location = new Point(52, 162);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 42);
+            label1.TabIndex = 8;
+            label1.Text = "Log In";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
+            // 
+            // kryptonTextBox2
+            // 
+            kryptonTextBox2.Location = new Point(52, 240);
+            kryptonTextBox2.Name = "kryptonTextBox2";
+            kryptonTextBox2.Size = new Size(194, 20);
+            kryptonTextBox2.StateCommon.Content.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            kryptonTextBox2.TabIndex = 9;
+            kryptonTextBox2.Text = "Username";
+            // 
+            // kryptonTextBox3
+            // 
+            kryptonTextBox3.Location = new Point(52, 278);
+            kryptonTextBox3.Name = "kryptonTextBox3";
+            kryptonTextBox3.Size = new Size(194, 20);
+            kryptonTextBox3.StateCommon.Content.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            kryptonTextBox3.TabIndex = 10;
+            kryptonTextBox3.Text = "Password";
             // 
             // LoginControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(pnlUser);
+            Controls.Add(kryptonTextBox3);
+            Controls.Add(kryptonTextBox2);
+            Controls.Add(label1);
+            Controls.Add(kryptonTextBox1);
             Controls.Add(kryptonLabel1);
             Name = "LoginControl";
-            Size = new Size(368, 463);
-            ((System.ComponentModel.ISupportInitialize)pnlUser).EndInit();
-            pnlUser.ResumeLayout(false);
-            pnlUser.PerformLayout();
+            Size = new Size(334, 463);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,7 +102,9 @@
         #endregion
 
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonPanel pnlUser;
-        private TextBox txbUser;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Label label1;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
     }
 }

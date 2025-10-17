@@ -44,5 +44,10 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void loginControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
