@@ -20,7 +20,7 @@ namespace AccountingSystemWinForms
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginForm.loginForm.Show();
+            WelcomeForm.welcomeForm.Show();
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)

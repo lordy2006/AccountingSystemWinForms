@@ -28,83 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
-            kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             label1 = new Label();
             kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
             kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            pictureBox1 = new PictureBox();
+            btnLogin = new Krypton.Toolkit.KryptonButton();
+            pictureBox2 = new PictureBox();
+            btnSignUp = new Krypton.Toolkit.KryptonButton();
+            panel1 = new Panel();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // kryptonLabel1
-            // 
-            kryptonLabel1.Location = new Point(52, 81);
-            kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(41, 20);
-            kryptonLabel1.TabIndex = 0;
-            kryptonLabel1.Values.Text = "Login";
-            kryptonLabel1.Click += kryptonLabel1_Click;
-            // 
-            // kryptonTextBox1
-            // 
-            kryptonTextBox1.Location = new Point(52, 118);
-            kryptonTextBox1.Name = "kryptonTextBox1";
-            kryptonTextBox1.Size = new Size(100, 23);
-            kryptonTextBox1.TabIndex = 7;
-            kryptonTextBox1.Text = "kryptonTextBox1";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Impact", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(7, 67, 130);
-            label1.Location = new Point(52, 162);
+            label1.Location = new Point(35, 8);
             label1.Name = "label1";
-            label1.Size = new Size(100, 42);
+            label1.Size = new Size(168, 65);
             label1.TabIndex = 8;
-            label1.Text = "Log In";
+            label1.Text = "Log in";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 
             // kryptonTextBox2
             // 
-            kryptonTextBox2.Location = new Point(52, 240);
+            kryptonTextBox2.CueHint.Color1 = Color.FromArgb(150, 150, 150);
+            kryptonTextBox2.CueHint.CueHintText = "Username";
+            kryptonTextBox2.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            kryptonTextBox2.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Inherit;
+            kryptonTextBox2.Location = new Point(37, 123);
             kryptonTextBox2.Name = "kryptonTextBox2";
-            kryptonTextBox2.Size = new Size(194, 20);
-            kryptonTextBox2.StateCommon.Content.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            kryptonTextBox2.Size = new Size(355, 52);
+            kryptonTextBox2.StateCommon.Back.Color1 = Color.WhiteSmoke;
+            kryptonTextBox2.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kryptonTextBox2.StateCommon.Border.Rounding = 20F;
+            kryptonTextBox2.StateCommon.Content.Color1 = Color.Black;
+            kryptonTextBox2.StateCommon.Content.Font = new Font("Segoe UI", 12F);
+            kryptonTextBox2.StateCommon.Content.Padding = new Padding(50, 8, 10, 8);
+            kryptonTextBox2.StateNormal.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonTextBox2.TabIndex = 9;
-            kryptonTextBox2.Text = "Username";
             // 
             // kryptonTextBox3
             // 
-            kryptonTextBox3.Location = new Point(52, 278);
+            kryptonTextBox3.CueHint.Color1 = Color.FromArgb(150, 150, 150);
+            kryptonTextBox3.CueHint.CueHintText = "Password";
+            kryptonTextBox3.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            kryptonTextBox3.Location = new Point(37, 193);
             kryptonTextBox3.Name = "kryptonTextBox3";
-            kryptonTextBox3.Size = new Size(194, 20);
-            kryptonTextBox3.StateCommon.Content.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            kryptonTextBox3.PasswordChar = '*';
+            kryptonTextBox3.Size = new Size(355, 52);
+            kryptonTextBox3.StateCommon.Back.Color1 = Color.WhiteSmoke;
+            kryptonTextBox3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kryptonTextBox3.StateCommon.Border.Rounding = 20F;
+            kryptonTextBox3.StateCommon.Content.Color1 = Color.Black;
+            kryptonTextBox3.StateCommon.Content.Font = new Font("Segoe UI", 12F);
+            kryptonTextBox3.StateCommon.Content.Padding = new Padding(50, 8, 10, 8);
+            kryptonTextBox3.StateCommon.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             kryptonTextBox3.TabIndex = 10;
-            kryptonTextBox3.Text = "Password";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.WhiteSmoke;
+            pictureBox1.BackgroundImage = Properties.Resources.user_freepik;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(53, 135);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(30, 30);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.Location = new Point(35, 291);
+            btnLogin.Name = "btnLogin";
+            btnLogin.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnLogin.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnLogin.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnLogin.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnLogin.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnLogin.Size = new Size(357, 51);
+            btnLogin.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnLogin.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnLogin.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnLogin.StateCommon.Border.Rounding = 20F;
+            btnLogin.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnLogin.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnLogin.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnLogin.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnLogin.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnLogin.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnLogin.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnLogin.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnLogin.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnLogin.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnLogin.TabIndex = 12;
+            btnLogin.Values.DropDownArrowColor = Color.Empty;
+            btnLogin.Values.Text = "Login";
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.WhiteSmoke;
+            pictureBox2.BackgroundImage = Properties.Resources.password_freepik;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(52, 203);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 30);
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
+            // btnSignUp
+            // 
+            btnSignUp.Cursor = Cursors.Hand;
+            btnSignUp.Location = new Point(37, 384);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.OverrideDefault.Back.Color1 = SystemColors.ActiveBorder;
+            btnSignUp.OverrideDefault.Back.Color2 = SystemColors.ActiveBorder;
+            btnSignUp.OverrideFocus.Back.Color1 = Color.FromArgb(190, 190, 190);
+            btnSignUp.OverrideFocus.Back.Color2 = Color.FromArgb(190, 190, 190);
+            btnSignUp.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnSignUp.Size = new Size(355, 51);
+            btnSignUp.StateCommon.Back.Color1 = SystemColors.ActiveBorder;
+            btnSignUp.StateCommon.Back.Color2 = SystemColors.ActiveBorder;
+            btnSignUp.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnSignUp.StateCommon.Border.Rounding = 20F;
+            btnSignUp.StateCommon.Content.ShortText.Color1 = Color.Black;
+            btnSignUp.StateCommon.Content.ShortText.Color2 = SystemColors.ScrollBar;
+            btnSignUp.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignUp.StateNormal.Back.Color1 = SystemColors.ActiveBorder;
+            btnSignUp.StateNormal.Back.Color2 = SystemColors.ActiveBorder;
+            btnSignUp.StatePressed.Back.Color1 = Color.FromArgb(190, 190, 190);
+            btnSignUp.StatePressed.Back.Color2 = Color.FromArgb(190, 190, 190);
+            btnSignUp.StateTracking.Back.Color1 = Color.FromArgb(190, 190, 190);
+            btnSignUp.StateTracking.Back.Color2 = Color.FromArgb(190, 190, 190);
+            btnSignUp.TabIndex = 14;
+            btnSignUp.Values.DropDownArrowColor = Color.Empty;
+            btnSignUp.Values.Text = "Sign-up";
+            btnSignUp.Click += btnSignUp_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveBorder;
+            panel1.Location = new Point(37, 361);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(355, 1);
+            panel1.TabIndex = 15;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = Color.FromArgb(140, 140, 140);
+            label2.Location = new Point(194, 351);
+            label2.Name = "label2";
+            label2.Padding = new Padding(10, 0, 10, 0);
+            label2.Size = new Size(45, 19);
+            label2.TabIndex = 17;
+            label2.Text = "Or";
             // 
             // LoginControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(label2);
+            Controls.Add(panel1);
+            Controls.Add(btnSignUp);
+            Controls.Add(pictureBox2);
+            Controls.Add(btnLogin);
+            Controls.Add(pictureBox1);
             Controls.Add(kryptonTextBox3);
             Controls.Add(kryptonTextBox2);
             Controls.Add(label1);
-            Controls.Add(kryptonTextBox1);
-            Controls.Add(kryptonLabel1);
             Name = "LoginControl";
-            Size = new Size(334, 463);
+            Size = new Size(425, 457);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private Label label1;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private PictureBox pictureBox1;
+        public Krypton.Toolkit.KryptonButton btnLogin;
+        private PictureBox pictureBox2;
+        private Krypton.Toolkit.KryptonButton btnSignUp;
+        private Panel panel1;
+        private Label label2;
     }
 }

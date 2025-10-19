@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Krypton.Toolkit; 
 namespace AccountingSystemWinForms
 {
-    public partial class SignUpControl : UserControl
+    public partial class NoteForm : KryptonForm
     {
-        public SignUpControl()
+        public NoteForm()
         {
             InitializeComponent();
         }
 
-        private void btnBackToLogin_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            WelcomeForm.welcomeForm.loginControl.Show();
-            WelcomeForm.welcomeForm.signUpControl.Hide();
+
         }
     }
 }

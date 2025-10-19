@@ -28,5 +28,17 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            NoteForm noteForm = new NoteForm();
+            noteForm.Show();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            WelcomeForm.welcomeForm.signUpControl.Show();
+            WelcomeForm.welcomeForm.loginControl.Hide();
+        }
     }
 }

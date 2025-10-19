@@ -3,18 +3,25 @@ using Krypton.Toolkit;
 
 namespace AccountingSystemWinForms
 {
-    public partial class LoginForm : KryptonForm
+    public partial class WelcomeForm : KryptonForm
     {
-        public static LoginForm loginForm;
-        public LoginForm()
+        public static WelcomeForm welcomeForm;
+        public WelcomeForm()
         {
-            InitializeComponent();
-            loginForm = this;
-        }
 
+            InitializeComponent();
+            signUpControl.Hide();
+            welcomeForm = this;
+        }   
+       
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            closeButton.Click += CloseButton_Click;
+        
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
