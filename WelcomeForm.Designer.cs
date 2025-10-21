@@ -36,9 +36,9 @@
             // loginControl
             // 
             loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(723, 4);
+            loginControl.Location = new Point(743, 4);
             loginControl.Name = "loginControl";
-            loginControl.Size = new Size(563, 617);
+            loginControl.Size = new Size(560, 680);
             loginControl.TabIndex = 3;
             loginControl.Load += loginControl1_Load;
             // 
@@ -51,9 +51,9 @@
             // signUpControl
             // 
             signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(12, 4);
+            signUpControl.Location = new Point(32, 4);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(563, 617);
+            signUpControl.Size = new Size(563, 688);
             signUpControl.TabIndex = 5;
             // 
             // WelcomeForm
@@ -62,7 +62,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
             ButtonSpecs.Add(closeButton);
-            ClientSize = new Size(1322, 620);
+            ClientSize = new Size(1330, 708);
             CloseBox = false;
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
@@ -86,7 +86,6 @@
             StateCommon.Header.Border.Rounding = 10F;
             StateCommon.Header.ButtonEdgeInset = 20;
             StateCommon.Header.Content.Padding = new Padding(20, 0, 0, 0);
-            Text = "Accounting System";
             TransparencyKey = Color.Silver;
             Load += Form1_Load;
             ResumeLayout(false);

@@ -30,7 +30,18 @@
         {
             tabHolder = new TabControl();
             tabNewTransactions = new TabPage();
-            label1 = new Label();
+            btnAddTransaction = new Krypton.Toolkit.KryptonButton();
+            btnClearForm = new Krypton.Toolkit.KryptonButton();
+            textBox5 = new TextBox();
+            textBox3 = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
+            textBox1 = new TextBox();
+            textBox4 = new TextBox();
+            label10 = new Label();
+            textBox2 = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
             tabTransactions = new TabPage();
             label2 = new Label();
             tabAccounts = new TabPage();
@@ -45,7 +56,6 @@
             pnlCover = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
-            panel3 = new Panel();
             btnNewTransactions = new Krypton.Toolkit.KryptonButton();
             btnTransaction = new Krypton.Toolkit.KryptonButton();
             btnAccounts = new Krypton.Toolkit.KryptonButton();
@@ -55,6 +65,8 @@
             btnLogOut = new Label();
             panel4 = new Panel();
             btnClose = new Krypton.Toolkit.ButtonSpecAny();
+            label7 = new Label();
+            panel3 = new Panel();
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
@@ -76,33 +88,205 @@
             tabHolder.Controls.Add(tabGeneralLedger);
             tabHolder.Controls.Add(tabBalanceSheet);
             tabHolder.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabHolder.Location = new Point(207, 55);
+            tabHolder.Location = new Point(207, 24);
             tabHolder.Name = "tabHolder";
             tabHolder.Padding = new Point(0, 0);
             tabHolder.SelectedIndex = 0;
-            tabHolder.Size = new Size(1064, 564);
+            tabHolder.Size = new Size(1118, 664);
             tabHolder.TabIndex = 0;
             // 
             // tabNewTransactions
             // 
             tabNewTransactions.BackColor = Color.White;
-            tabNewTransactions.Controls.Add(label1);
+            tabNewTransactions.Controls.Add(btnAddTransaction);
+            tabNewTransactions.Controls.Add(btnClearForm);
+            tabNewTransactions.Controls.Add(textBox5);
+            tabNewTransactions.Controls.Add(textBox3);
+            tabNewTransactions.Controls.Add(label12);
+            tabNewTransactions.Controls.Add(label11);
+            tabNewTransactions.Controls.Add(textBox1);
+            tabNewTransactions.Controls.Add(textBox4);
+            tabNewTransactions.Controls.Add(label10);
+            tabNewTransactions.Controls.Add(textBox2);
+            tabNewTransactions.Controls.Add(label9);
+            tabNewTransactions.Controls.Add(label8);
             tabNewTransactions.Location = new Point(4, 27);
             tabNewTransactions.Name = "tabNewTransactions";
             tabNewTransactions.Padding = new Padding(3);
-            tabNewTransactions.Size = new Size(1056, 533);
+            tabNewTransactions.Size = new Size(1110, 633);
             tabNewTransactions.TabIndex = 0;
             tabNewTransactions.Text = "tabPage1";
             // 
-            // label1
+            // btnAddTransaction
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(132, 39);
-            label1.Name = "label1";
-            label1.Size = new Size(223, 37);
-            label1.TabIndex = 0;
-            label1.Text = "New Transactions";
+            btnAddTransaction.Cursor = Cursors.Hand;
+            btnAddTransaction.Location = new Point(581, 457);
+            btnAddTransaction.Name = "btnAddTransaction";
+            btnAddTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnAddTransaction.Size = new Size(216, 51);
+            btnAddTransaction.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnAddTransaction.StateCommon.Border.Rounding = 50F;
+            btnAddTransaction.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddTransaction.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddTransaction.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnAddTransaction.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnAddTransaction.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnAddTransaction.TabIndex = 14;
+            btnAddTransaction.Values.DropDownArrowColor = Color.Empty;
+            btnAddTransaction.Values.Text = "ADD TRANSACTION";
+            btnAddTransaction.Click += btnAddTransaction_Click;
+            // 
+            // btnClearForm
+            // 
+            btnClearForm.Cursor = Cursors.Hand;
+            btnClearForm.Location = new Point(340, 457);
+            btnClearForm.Name = "btnClearForm";
+            btnClearForm.OverrideDefault.Back.Color1 = Color.White;
+            btnClearForm.OverrideDefault.Back.Color2 = Color.White;
+            btnClearForm.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnClearForm.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnClearForm.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnClearForm.Size = new Size(216, 51);
+            btnClearForm.StateCommon.Back.Color1 = Color.White;
+            btnClearForm.StateCommon.Back.Color2 = Color.White;
+            btnClearForm.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnClearForm.StateCommon.Border.Rounding = 50F;
+            btnClearForm.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnClearForm.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnClearForm.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnClearForm.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnClearForm.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnClearForm.StateNormal.Back.Color1 = Color.White;
+            btnClearForm.StateNormal.Back.Color2 = Color.White;
+            btnClearForm.StateNormal.Border.Color1 = Color.Black;
+            btnClearForm.StateNormal.Border.Color2 = Color.Black;
+            btnClearForm.StateNormal.Border.Width = 1;
+            btnClearForm.StateNormal.Content.ShortText.Color1 = Color.Black;
+            btnClearForm.StateNormal.Content.ShortText.Color2 = Color.Black;
+            btnClearForm.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnClearForm.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnClearForm.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnClearForm.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnClearForm.TabIndex = 13;
+            btnClearForm.Values.DropDownArrowColor = Color.Empty;
+            btnClearForm.Values.Text = "CLEAR FORM";
+            // 
+            // textBox5
+            // 
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
+            textBox5.Font = new Font("Segoe UI", 12F);
+            textBox5.Location = new Point(593, 365);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(436, 29);
+            textBox5.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Font = new Font("Segoe UI", 12F);
+            textBox3.Location = new Point(593, 271);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(436, 29);
+            textBox3.TabIndex = 11;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(589, 330);
+            label12.Name = "label12";
+            label12.Size = new Size(73, 21);
+            label12.TabIndex = 10;
+            label12.Text = "Amount:";
+            label12.Click += label12_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(589, 228);
+            label11.Name = "label11";
+            label11.Size = new Size(124, 21);
+            label11.TabIndex = 9;
+            label11.Text = "Credit Account:";
+            label11.Click += label11_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI", 12F);
+            textBox1.Location = new Point(593, 160);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(436, 29);
+            textBox1.TabIndex = 8;
+            // 
+            // textBox4
+            // 
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Font = new Font("Segoe UI", 12F);
+            textBox4.Location = new Point(85, 160);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(436, 29);
+            textBox4.TabIndex = 7;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(589, 125);
+            label10.Name = "label10";
+            label10.Size = new Size(119, 21);
+            label10.TabIndex = 5;
+            label10.Text = "Debit Account:";
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI", 12F);
+            textBox2.Location = new Point(84, 271);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(437, 123);
+            textBox2.TabIndex = 4;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(81, 228);
+            label9.Name = "label9";
+            label9.Size = new Size(98, 21);
+            label9.TabIndex = 3;
+            label9.Text = "Description:";
+            label9.Click += label9_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(81, 125);
+            label8.Name = "label8";
+            label8.Size = new Size(162, 21);
+            label8.TabIndex = 1;
+            label8.Text = "Date (DD-MM-YYYY):";
             // 
             // tabTransactions
             // 
@@ -111,7 +295,7 @@
             tabTransactions.Location = new Point(4, 27);
             tabTransactions.Name = "tabTransactions";
             tabTransactions.Padding = new Padding(3);
-            tabTransactions.Size = new Size(1056, 533);
+            tabTransactions.Size = new Size(1110, 633);
             tabTransactions.TabIndex = 1;
             tabTransactions.Text = "tabPage2";
             // 
@@ -132,7 +316,7 @@
             tabAccounts.Location = new Point(4, 27);
             tabAccounts.Name = "tabAccounts";
             tabAccounts.Padding = new Padding(3);
-            tabAccounts.Size = new Size(1056, 533);
+            tabAccounts.Size = new Size(1110, 633);
             tabAccounts.TabIndex = 2;
             tabAccounts.Text = "tabPage3";
             // 
@@ -153,7 +337,7 @@
             tabGeneralJournal.Location = new Point(4, 27);
             tabGeneralJournal.Name = "tabGeneralJournal";
             tabGeneralJournal.Padding = new Padding(3);
-            tabGeneralJournal.Size = new Size(1056, 533);
+            tabGeneralJournal.Size = new Size(1110, 633);
             tabGeneralJournal.TabIndex = 3;
             tabGeneralJournal.Text = "white";
             // 
@@ -174,7 +358,7 @@
             tabGeneralLedger.Location = new Point(4, 27);
             tabGeneralLedger.Name = "tabGeneralLedger";
             tabGeneralLedger.Padding = new Padding(3);
-            tabGeneralLedger.Size = new Size(1056, 533);
+            tabGeneralLedger.Size = new Size(1110, 633);
             tabGeneralLedger.TabIndex = 4;
             tabGeneralLedger.Text = "tabPage5";
             // 
@@ -195,7 +379,7 @@
             tabBalanceSheet.Location = new Point(4, 27);
             tabBalanceSheet.Name = "tabBalanceSheet";
             tabBalanceSheet.Padding = new Padding(3);
-            tabBalanceSheet.Size = new Size(1056, 533);
+            tabBalanceSheet.Size = new Size(1110, 633);
             tabBalanceSheet.TabIndex = 5;
             tabBalanceSheet.Text = "tabPage6";
             // 
@@ -212,7 +396,7 @@
             // pnlContent1
             // 
             pnlContent1.Location = new Point(197, 12);
-            pnlContent1.Size = new Size(1096, 632);
+            pnlContent1.Size = new Size(1140, 688);
             pnlContent1.StateCommon.Back.Color1 = Color.White;
             pnlContent1.StateCommon.Border.Rounding = 25F;
             pnlContent1.TabIndex = 6;
@@ -220,39 +404,31 @@
             // pnlCover
             // 
             pnlCover.BackColor = Color.White;
-            pnlCover.Location = new Point(205, 55);
+            pnlCover.Location = new Point(205, 24);
             pnlCover.Name = "pnlCover";
-            pnlCover.Size = new Size(1071, 35);
+            pnlCover.Size = new Size(1120, 35);
             pnlCover.TabIndex = 7;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(205, 82);
+            panel1.Location = new Point(201, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(16, 537);
+            panel1.Size = new Size(11, 626);
             panel1.TabIndex = 8;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(205, 609);
+            panel2.Location = new Point(205, 678);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1068, 10);
+            panel2.Size = new Size(1120, 14);
             panel2.TabIndex = 9;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Location = new Point(1260, 82);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(16, 537);
-            panel3.TabIndex = 10;
             // 
             // btnNewTransactions
             // 
             btnNewTransactions.Cursor = Cursors.Hand;
-            btnNewTransactions.Location = new Point(12, 121);
+            btnNewTransactions.Location = new Point(12, 197);
             btnNewTransactions.Name = "btnNewTransactions";
             btnNewTransactions.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnNewTransactions.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -295,7 +471,7 @@
             // btnTransaction
             // 
             btnTransaction.Cursor = Cursors.Hand;
-            btnTransaction.Location = new Point(12, 164);
+            btnTransaction.Location = new Point(12, 240);
             btnTransaction.Name = "btnTransaction";
             btnTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -338,7 +514,7 @@
             // btnAccounts
             // 
             btnAccounts.Cursor = Cursors.Hand;
-            btnAccounts.Location = new Point(12, 207);
+            btnAccounts.Location = new Point(12, 283);
             btnAccounts.Name = "btnAccounts";
             btnAccounts.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnAccounts.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -381,7 +557,7 @@
             // btnGeneralJournal
             // 
             btnGeneralJournal.Cursor = Cursors.Hand;
-            btnGeneralJournal.Location = new Point(12, 250);
+            btnGeneralJournal.Location = new Point(12, 326);
             btnGeneralJournal.Name = "btnGeneralJournal";
             btnGeneralJournal.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralJournal.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -424,7 +600,7 @@
             // btnGeneralLedger
             // 
             btnGeneralLedger.Cursor = Cursors.Hand;
-            btnGeneralLedger.Location = new Point(12, 293);
+            btnGeneralLedger.Location = new Point(12, 369);
             btnGeneralLedger.Name = "btnGeneralLedger";
             btnGeneralLedger.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralLedger.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -467,7 +643,7 @@
             // btnBalanceSheet
             // 
             btnBalanceSheet.Cursor = Cursors.Hand;
-            btnBalanceSheet.Location = new Point(12, 336);
+            btnBalanceSheet.Location = new Point(12, 412);
             btnBalanceSheet.Name = "btnBalanceSheet";
             btnBalanceSheet.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnBalanceSheet.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -533,14 +709,36 @@
             btnClose.Image = Properties.Resources.exit_google;
             btnClose.UniqueName = "8b7d3961c601403396bb69f1b4e8eb67";
             // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(12, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(178, 110);
+            label7.TabIndex = 1;
+            label7.Text = "Accounting System";
+            label7.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Location = new Point(1320, 55);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(11, 626);
+            panel3.TabIndex = 9;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
             ButtonSpecs.Add(btnClose);
-            ClientSize = new Size(1365, 664);
+            ClientSize = new Size(1357, 688);
             CloseBox = false;
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(label7);
             Controls.Add(panel4);
             Controls.Add(btnLogOut);
             Controls.Add(btnBalanceSheet);
@@ -549,8 +747,6 @@
             Controls.Add(btnAccounts);
             Controls.Add(btnTransaction);
             Controls.Add(btnNewTransactions);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pnlCover);
             Controls.Add(tabHolder);
@@ -604,14 +800,12 @@
         private Panel pnlCover;
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
         public Krypton.Toolkit.KryptonButton btnNewTransactions;
         public Krypton.Toolkit.KryptonButton btnTransaction;
         public Krypton.Toolkit.KryptonButton btnAccounts;
         public Krypton.Toolkit.KryptonButton btnGeneralJournal;
         public Krypton.Toolkit.KryptonButton btnGeneralLedger;
         public Krypton.Toolkit.KryptonButton btnBalanceSheet;
-        private Label label1;
         private Label btnLogOut;
         private Panel panel4;
         private Label label2;
@@ -620,5 +814,19 @@
         private Label label5;
         private Label label6;
         private Krypton.Toolkit.ButtonSpecAny btnClose;
+        private Label label8;
+        private Label label7;
+        private TextBox textBox2;
+        private Label label9;
+        private Label label11;
+        private TextBox textBox1;
+        private TextBox textBox4;
+        private Label label10;
+        private TextBox textBox5;
+        private TextBox textBox3;
+        private Label label12;
+        public Krypton.Toolkit.KryptonButton btnAddTransaction;
+        public Krypton.Toolkit.KryptonButton btnClearForm;
+        private Panel panel3;
     }
 }

@@ -108,19 +108,20 @@
             label12.Name = "label12";
             label12.Size = new Size(274, 83);
             label12.TabIndex = 56;
-            label12.Text = "Easily record and manage financial transactions with intuitive input fields for dates, descriptions, and amounts.";
+            label12.Text = "Easily record and Generate comprehensive balance sheets showing your financial position at any point in time.";
+            label12.Click += label12_Click;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.White;
-            label13.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label13.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label13.ForeColor = Color.FromArgb(7, 67, 130);
             label13.Location = new Point(889, 449);
             label13.Name = "label13";
-            label13.Size = new Size(283, 45);
+            label13.Size = new Size(195, 37);
             label13.TabIndex = 55;
-            label13.Text = "New Transactions";
+            label13.Text = "Balance Sheet";
             label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox6
@@ -148,20 +149,21 @@
             label10.Name = "label10";
             label10.Size = new Size(274, 83);
             label10.TabIndex = 52;
-            label10.Text = "Easily record and manage financial transactions with intuitive input fields for dates, descriptions, and amounts.";
+            label10.Text = "Track multiple accounts including assets, liabilities, equity, income, and expenses.";
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.White;
-            label11.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(7, 67, 130);
             label11.Location = new Point(889, 184);
             label11.Name = "label11";
-            label11.Size = new Size(283, 45);
+            label11.Size = new Size(300, 37);
             label11.TabIndex = 51;
-            label11.Text = "New Transactions";
+            label11.Text = "Account Management";
             label11.TextAlign = ContentAlignment.MiddleLeft;
+            label11.Click += label11_Click;
             // 
             // pictureBox5
             // 
@@ -188,19 +190,19 @@
             label8.Name = "label8";
             label8.Size = new Size(274, 83);
             label8.TabIndex = 48;
-            label8.Text = "Easily record and manage financial transactions with intuitive input fields for dates, descriptions, and amounts.";
+            label8.Text = "Access detailed ledger reports showing account balances and transaction summaries.";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.White;
-            label9.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(7, 67, 130);
             label9.Location = new Point(505, 449);
             label9.Name = "label9";
-            label9.Size = new Size(283, 45);
+            label9.Size = new Size(212, 37);
             label9.TabIndex = 47;
-            label9.Text = "New Transactions";
+            label9.Text = "General Ledger";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox4
@@ -228,19 +230,19 @@
             label6.Name = "label6";
             label6.Size = new Size(274, 83);
             label6.TabIndex = 44;
-            label6.Text = "Easily record and manage financial transactions with intuitive input fields for dates, descriptions, and amounts.";
+            label6.Text = "View and search through all your past transactions with detailed filtering and sorting options.";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.White;
-            label7.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(7, 67, 130);
             label7.Location = new Point(505, 184);
             label7.Name = "label7";
-            label7.Size = new Size(283, 45);
+            label7.Size = new Size(177, 37);
             label7.TabIndex = 43;
-            label7.Text = "New Transactions";
+            label7.Text = "Transactions";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox3
@@ -268,19 +270,19 @@
             label4.Name = "label4";
             label4.Size = new Size(274, 83);
             label4.TabIndex = 40;
-            label4.Text = "Easily record and manage financial transactions with intuitive input fields for dates, descriptions, and amounts.";
+            label4.Text = "Maintain a complete record of all journal entries with proper debit and credit accounting.";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.White;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(7, 67, 130);
             label5.Location = new Point(116, 449);
             label5.Name = "label5";
-            label5.Size = new Size(283, 45);
+            label5.Size = new Size(218, 37);
             label5.TabIndex = 39;
-            label5.Text = "New Transactions";
+            label5.Text = "General Journal";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
@@ -314,11 +316,11 @@
             // 
             lblNewTransactions.AutoSize = true;
             lblNewTransactions.BackColor = Color.White;
-            lblNewTransactions.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblNewTransactions.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblNewTransactions.ForeColor = Color.FromArgb(7, 67, 130);
             lblNewTransactions.Location = new Point(116, 184);
             lblNewTransactions.Name = "lblNewTransactions";
-            lblNewTransactions.Size = new Size(283, 45);
+            lblNewTransactions.Size = new Size(242, 37);
             lblNewTransactions.TabIndex = 35;
             lblNewTransactions.Text = "New Transactions";
             lblNewTransactions.TextAlign = ContentAlignment.MiddleLeft;
@@ -342,7 +344,7 @@
             // btnProcceed
             // 
             btnProcceed.Cursor = Cursors.Hand;
-            btnProcceed.Location = new Point(486, 646);
+            btnProcceed.Location = new Point(1055, 650);
             btnProcceed.Name = "btnProcceed";
             btnProcceed.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -353,16 +355,16 @@
             btnProcceed.OverrideFocus.Border.Color1 = Color.White;
             btnProcceed.OverrideFocus.Border.Color2 = Color.White;
             btnProcceed.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            btnProcceed.Size = new Size(357, 51);
+            btnProcceed.Size = new Size(167, 30);
             btnProcceed.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateCommon.Border.Color1 = Color.White;
             btnProcceed.StateCommon.Border.Color2 = Color.White;
             btnProcceed.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            btnProcceed.StateCommon.Border.Rounding = 20F;
+            btnProcceed.StateCommon.Border.Rounding = 10F;
             btnProcceed.StateCommon.Content.ShortText.Color1 = Color.White;
             btnProcceed.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnProcceed.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProcceed.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnProcceed.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
@@ -379,7 +381,7 @@
             btnProcceed.StateTracking.Border.Color2 = Color.White;
             btnProcceed.TabIndex = 57;
             btnProcceed.Values.DropDownArrowColor = Color.Empty;
-            btnProcceed.Values.Text = "Proceed";
+            btnProcceed.Values.Text = "Proceed →";
             btnProcceed.Click += btnProcceed_Click;
             // 
             // NoteControl

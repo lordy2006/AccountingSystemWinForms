@@ -203,7 +203,7 @@
             kryptonGroup1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
             kryptonGroup1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.FormMain;
             kryptonGroup1.Location = new Point(3, 3);
-            kryptonGroup1.Size = new Size(551, 609);
+            kryptonGroup1.Size = new Size(551, 665);
             kryptonGroup1.StateCommon.Back.Color1 = Color.White;
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
             kryptonGroup1.TabIndex = 18;
@@ -220,7 +220,7 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(btnLogin);
-            panel2.Location = new Point(85, 88);
+            panel2.Location = new Point(85, 119);
             panel2.Name = "panel2";
             panel2.Size = new Size(390, 443);
             panel2.TabIndex = 19;
@@ -233,7 +233,7 @@
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "LoginControl";
-            Size = new Size(560, 618);
+            Size = new Size(560, 680);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();

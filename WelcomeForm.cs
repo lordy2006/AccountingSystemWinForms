@@ -30,6 +30,7 @@ namespace AccountingSystemWinForms
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(1344, 753); // set size again ( kay nay bug usahay )
             closeButton.Click += CloseButton_Click;
            
         }

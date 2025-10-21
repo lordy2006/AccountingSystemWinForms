@@ -55,7 +55,7 @@ namespace AccountingSystemWinForms
             {
                 Application.Exit();
             }
-        } 
+        }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -118,5 +118,45 @@ namespace AccountingSystemWinForms
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddTransaction_Click(object sender, EventArgs e)
+        {
+            DialogAddTransactions addTransactions = new DialogAddTransactions();
+            addTransactions.ShowDialog();
+        }
     }
 }

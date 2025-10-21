@@ -220,7 +220,7 @@
             panel2.Controls.Add(btnBackToLogin);
             panel2.Controls.Add(kryptonTextBox3);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(46, 9);
+            panel2.Location = new Point(46, 41);
             panel2.Name = "panel2";
             panel2.Size = new Size(469, 599);
             panel2.TabIndex = 26;
@@ -230,7 +230,7 @@
             kryptonGroup1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
             kryptonGroup1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.FormMain;
             kryptonGroup1.Location = new Point(3, 3);
-            kryptonGroup1.Size = new Size(551, 609);
+            kryptonGroup1.Size = new Size(554, 665);
             kryptonGroup1.StateCommon.Back.Color1 = Color.White;
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
             kryptonGroup1.TabIndex = 27;
@@ -243,7 +243,7 @@
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "SignUpControl";
-            Size = new Size(560, 616);
+            Size = new Size(560, 680);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();
