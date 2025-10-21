@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             tabHolder = new TabControl();
             tabNewTransactions = new TabPage();
             btnAddTransaction = new Krypton.Toolkit.KryptonButton();
@@ -44,18 +47,38 @@
             label9 = new Label();
             label8 = new Label();
             tabTransactions = new TabPage();
-            tableTransactions = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            textBox8 = new TextBox();
+            kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            label6 = new Label();
+            dataGridView3 = new DataGridView();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             tabAccounts = new TabPage();
+            dataGridView1 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabGeneralJournal = new TabPage();
-            label6 = new Label();
+            dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             tabGeneralLedger = new TabPage();
-            label4 = new Label();
+            textBox6 = new TextBox();
+            kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            label1 = new Label();
+            dataGridView4 = new DataGridView();
+            dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
             tabBalanceSheet = new TabPage();
             label5 = new Label();
             pnlContent1 = new Krypton.Toolkit.KryptonGroup();
@@ -76,10 +99,13 @@
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tableTransactions).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabAccounts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabGeneralJournal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabGeneralLedger.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             tabBalanceSheet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).BeginInit();
@@ -225,11 +251,12 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(589, 228);
+            label11.Location = new Point(588, 233);
             label11.Name = "label11";
             label11.Size = new Size(124, 21);
             label11.TabIndex = 9;
             label11.Text = "Credit Account:";
+            label11.Click += label11_Click;
             // 
             // textBox1
             // 
@@ -275,7 +302,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(81, 228);
+            label9.Location = new Point(81, 233);
             label9.Name = "label9";
             label9.Size = new Size(98, 21);
             label9.TabIndex = 3;
@@ -295,7 +322,10 @@
             // tabTransactions
             // 
             tabTransactions.BackColor = Color.White;
-            tabTransactions.Controls.Add(tableTransactions);
+            tabTransactions.Controls.Add(textBox8);
+            tabTransactions.Controls.Add(kryptonButton3);
+            tabTransactions.Controls.Add(label6);
+            tabTransactions.Controls.Add(dataGridView3);
             tabTransactions.Location = new Point(4, 27);
             tabTransactions.Name = "tabTransactions";
             tabTransactions.Padding = new Padding(3);
@@ -303,65 +333,116 @@
             tabTransactions.TabIndex = 1;
             tabTransactions.Text = "tabPage2";
             // 
-            // tableTransactions
+            // textBox8
             // 
-            tableTransactions.AllowUserToAddRows = false;
-            tableTransactions.AllowUserToDeleteRows = false;
-            tableTransactions.AllowUserToOrderColumns = true;
-            tableTransactions.AllowUserToResizeColumns = false;
-            tableTransactions.AllowUserToResizeRows = false;
-            tableTransactions.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            tableTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            tableTransactions.ColumnHeadersHeight = 35;
-            tableTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            tableTransactions.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            tableTransactions.Location = new Point(6, 145);
-            tableTransactions.Name = "tableTransactions";
-            tableTransactions.RowHeadersVisible = false;
-            tableTransactions.Size = new Size(1094, 453);
-            tableTransactions.TabIndex = 0;
-            tableTransactions.CellContentClick += tableTransactions_CellContentClick;
+            textBox8.BorderStyle = BorderStyle.FixedSingle;
+            textBox8.Font = new Font("Segoe UI", 12F);
+            textBox8.Location = new Point(35, 37);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(366, 38);
+            textBox8.TabIndex = 24;
             // 
-            // Column1
+            // kryptonButton3
             // 
-            Column1.HeaderText = "Date";
-            Column1.Name = "Column1";
-            Column1.Width = 150;
+            kryptonButton3.Cursor = Cursors.Hand;
+            kryptonButton3.Location = new Point(413, 37);
+            kryptonButton3.Name = "kryptonButton3";
+            kryptonButton3.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kryptonButton3.Size = new Size(78, 38);
+            kryptonButton3.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kryptonButton3.StateCommon.Content.ShortText.Color1 = Color.White;
+            kryptonButton3.StateCommon.Content.ShortText.Color2 = Color.White;
+            kryptonButton3.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            kryptonButton3.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton3.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton3.TabIndex = 23;
+            kryptonButton3.Values.DropDownArrowColor = Color.Empty;
+            kryptonButton3.Values.Text = "FIND";
             // 
-            // Column2
+            // label6
             // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Description";
-            Column2.Name = "Column2";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(29, 4);
+            label6.Name = "label6";
+            label6.Size = new Size(213, 30);
+            label6.TabIndex = 22;
+            label6.Text = "Search Transaction:";
             // 
-            // Column3
+            // dataGridView3
             // 
-            Column3.HeaderText = "Debit Account";
-            Column3.Name = "Column3";
-            Column3.Width = 200;
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.AllowUserToOrderColumns = true;
+            dataGridView3.AllowUserToResizeColumns = false;
+            dataGridView3.AllowUserToResizeRows = false;
+            dataGridView3.BackgroundColor = Color.White;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView3.ColumnHeadersHeight = 35;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
+            dataGridView3.Location = new Point(35, 123);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersVisible = false;
+            dataGridView3.Size = new Size(1046, 480);
+            dataGridView3.TabIndex = 21;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
             // 
-            // Column4
+            // dataGridViewTextBoxColumn9
             // 
-            Column4.HeaderText = "Credit Account";
-            Column4.Name = "Column4";
-            Column4.Width = 200;
+            dataGridViewTextBoxColumn9.HeaderText = "Date";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.Width = 150;
             // 
-            // Column5
+            // dataGridViewTextBoxColumn10
             // 
-            Column5.HeaderText = "Amount";
-            Column5.Name = "Column5";
-            Column5.Width = 150;
+            dataGridViewTextBoxColumn10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn10.HeaderText = "Description";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Debit Account";
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Credit Account";
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            dataGridViewTextBoxColumn13.HeaderText = "Amount";
+            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            dataGridViewTextBoxColumn13.Width = 150;
             // 
             // tabAccounts
             // 
             tabAccounts.BackColor = Color.White;
+            tabAccounts.Controls.Add(dataGridView1);
             tabAccounts.Controls.Add(label3);
             tabAccounts.Location = new Point(4, 27);
             tabAccounts.Name = "tabAccounts";
@@ -370,11 +451,55 @@
             tabAccounts.TabIndex = 2;
             tabAccounts.Text = "tabPage3";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dataGridView1.Location = new Point(32, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(1046, 603);
+            dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.HeaderText = "Account";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.HeaderText = "Type";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn3.HeaderText = "Balance";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20F);
-            label3.Location = new Point(417, 248);
+            label3.Location = new Point(529, 339);
             label3.Name = "label3";
             label3.Size = new Size(124, 37);
             label3.TabIndex = 1;
@@ -383,7 +508,7 @@
             // tabGeneralJournal
             // 
             tabGeneralJournal.BackColor = Color.White;
-            tabGeneralJournal.Controls.Add(label6);
+            tabGeneralJournal.Controls.Add(dataGridView2);
             tabGeneralJournal.Location = new Point(4, 27);
             tabGeneralJournal.Name = "tabGeneralJournal";
             tabGeneralJournal.Padding = new Padding(3);
@@ -391,20 +516,68 @@
             tabGeneralJournal.TabIndex = 3;
             tabGeneralJournal.Text = "white";
             // 
-            // label6
+            // dataGridView2
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 20F);
-            label6.Location = new Point(417, 248);
-            label6.Name = "label6";
-            label6.Size = new Size(202, 37);
-            label6.TabIndex = 1;
-            label6.Text = "General Journal";
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToOrderColumns = true;
+            dataGridView2.AllowUserToResizeColumns = false;
+            dataGridView2.AllowUserToResizeRows = false;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView2.ColumnHeadersHeight = 35;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column1, Column2 });
+            dataGridView2.Location = new Point(32, 3);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.Size = new Size(1046, 603);
+            dataGridView2.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.HeaderText = "Type";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.HeaderText = "Description";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn6.HeaderText = "Account";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.HeaderText = "Debit";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Credit";
+            Column2.Name = "Column2";
             // 
             // tabGeneralLedger
             // 
             tabGeneralLedger.BackColor = Color.White;
-            tabGeneralLedger.Controls.Add(label4);
+            tabGeneralLedger.Controls.Add(textBox6);
+            tabGeneralLedger.Controls.Add(kryptonButton2);
+            tabGeneralLedger.Controls.Add(label1);
+            tabGeneralLedger.Controls.Add(dataGridView4);
             tabGeneralLedger.Location = new Point(4, 27);
             tabGeneralLedger.Name = "tabGeneralLedger";
             tabGeneralLedger.Padding = new Padding(3);
@@ -412,15 +585,110 @@
             tabGeneralLedger.TabIndex = 4;
             tabGeneralLedger.Text = "tabPage5";
             // 
-            // label4
+            // textBox6
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 20F);
-            label4.Location = new Point(417, 248);
-            label4.Name = "label4";
-            label4.Size = new Size(198, 37);
-            label4.TabIndex = 1;
-            label4.Text = "General Ledger";
+            textBox6.BorderStyle = BorderStyle.FixedSingle;
+            textBox6.Font = new Font("Segoe UI", 12F);
+            textBox6.Location = new Point(35, 37);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(366, 38);
+            textBox6.TabIndex = 30;
+            // 
+            // kryptonButton2
+            // 
+            kryptonButton2.Cursor = Cursors.Hand;
+            kryptonButton2.Location = new Point(413, 37);
+            kryptonButton2.Name = "kryptonButton2";
+            kryptonButton2.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kryptonButton2.Size = new Size(78, 38);
+            kryptonButton2.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kryptonButton2.StateCommon.Content.ShortText.Color1 = Color.White;
+            kryptonButton2.StateCommon.Content.ShortText.Color2 = Color.White;
+            kryptonButton2.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            kryptonButton2.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            kryptonButton2.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            kryptonButton2.TabIndex = 29;
+            kryptonButton2.Values.DropDownArrowColor = Color.Empty;
+            kryptonButton2.Values.Text = "FIND";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(29, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 30);
+            label1.TabIndex = 28;
+            label1.Text = "Filter:";
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.AllowUserToAddRows = false;
+            dataGridView4.AllowUserToDeleteRows = false;
+            dataGridView4.AllowUserToOrderColumns = true;
+            dataGridView4.AllowUserToResizeColumns = false;
+            dataGridView4.AllowUserToResizeRows = false;
+            dataGridView4.BackgroundColor = Color.White;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView4.ColumnHeadersHeight = 35;
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18 });
+            dataGridView4.Location = new Point(35, 123);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersVisible = false;
+            dataGridView4.Size = new Size(1046, 480);
+            dataGridView4.TabIndex = 27;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            dataGridViewTextBoxColumn14.HeaderText = "Date";
+            dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            dataGridViewTextBoxColumn14.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            dataGridViewTextBoxColumn15.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn15.HeaderText = "Description";
+            dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            dataGridViewTextBoxColumn16.HeaderText = "Debit Account";
+            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            dataGridViewTextBoxColumn16.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            dataGridViewTextBoxColumn17.HeaderText = "Credit Account";
+            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            dataGridViewTextBoxColumn17.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            dataGridViewTextBoxColumn18.HeaderText = "Amount";
+            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            dataGridViewTextBoxColumn18.Width = 150;
             // 
             // tabBalanceSheet
             // 
@@ -758,7 +1026,7 @@
             // 
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(12, 12);
+            label7.Location = new Point(12, 30);
             label7.Name = "label7";
             label7.Size = new Size(178, 110);
             label7.TabIndex = 1;
@@ -789,7 +1057,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            ClientSize = new Size(1354, 757);
+            ClientSize = new Size(1311, 708);
             CloseBox = false;
             Controls.Add(btnClose);
             Controls.Add(panel3);
@@ -829,13 +1097,16 @@
             tabNewTransactions.ResumeLayout(false);
             tabNewTransactions.PerformLayout();
             tabTransactions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tableTransactions).EndInit();
+            tabTransactions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tabAccounts.ResumeLayout(false);
             tabAccounts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabGeneralJournal.ResumeLayout(false);
-            tabGeneralJournal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabGeneralLedger.ResumeLayout(false);
             tabGeneralLedger.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             tabBalanceSheet.ResumeLayout(false);
             tabBalanceSheet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).EndInit();
@@ -849,7 +1120,6 @@
 
         private TabControl tabHolder;
         private TabPage tabNewTransactions;
-        private TabPage tabTransactions;
         private TabPage tabAccounts;
         private TabPage tabGeneralJournal;
         private TabPage tabGeneralLedger;
@@ -867,9 +1137,7 @@
         private Label btnLogOut;
         private Panel panel4;
         private Label label3;
-        private Label label4;
         private Label label5;
-        private Label label6;
         private Label label8;
         private Label label7;
         private TextBox textBox2;
@@ -885,11 +1153,34 @@
         public Krypton.Toolkit.KryptonButton btnClearForm;
         private Panel panel3;
         private PictureBox btnClose;
-        private DataGridView tableTransactions;
+        private DataGridView dataGridView1;
+        private TabPage tabTransactions;
+        private TextBox textBox8;
+        public Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Label label6;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private TextBox textBox6;
+        public Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Label label1;
+        private DataGridView dataGridView4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
     }
 }

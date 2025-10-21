@@ -36,13 +36,14 @@
             label5 = new Label();
             btnClearForm = new Krypton.Toolkit.KryptonButton();
             btnAddTransaction = new Krypton.Toolkit.KryptonButton();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(22, 34);
+            label1.Location = new Point(46, 105);
             label1.Name = "label1";
             label1.Size = new Size(48, 21);
             label1.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             lblOutputDate.AutoSize = true;
             lblOutputDate.Font = new Font("Segoe UI", 12F);
-            lblOutputDate.Location = new Point(76, 34);
+            lblOutputDate.Location = new Point(100, 105);
             lblOutputDate.Name = "lblOutputDate";
             lblOutputDate.Size = new Size(76, 21);
             lblOutputDate.TabIndex = 1;
@@ -63,7 +64,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 66);
+            label2.Location = new Point(46, 137);
             label2.Name = "label2";
             label2.Size = new Size(98, 21);
             label2.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(22, 156);
+            label3.Location = new Point(46, 227);
             label3.Name = "label3";
             label3.Size = new Size(119, 21);
             label3.TabIndex = 3;
@@ -83,7 +84,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(22, 188);
+            label4.Location = new Point(46, 259);
             label4.Name = "label4";
             label4.Size = new Size(124, 21);
             label4.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(22, 219);
+            label5.Location = new Point(46, 290);
             label5.Name = "label5";
             label5.Size = new Size(73, 21);
             label5.TabIndex = 5;
@@ -104,7 +105,7 @@
             // btnClearForm
             // 
             btnClearForm.Cursor = Cursors.Hand;
-            btnClearForm.Location = new Point(109, 282);
+            btnClearForm.Location = new Point(133, 341);
             btnClearForm.Name = "btnClearForm";
             btnClearForm.OverrideDefault.Back.Color1 = Color.White;
             btnClearForm.OverrideDefault.Back.Color2 = Color.White;
@@ -140,7 +141,7 @@
             // btnAddTransaction
             // 
             btnAddTransaction.Cursor = Cursors.Hand;
-            btnAddTransaction.Location = new Point(274, 282);
+            btnAddTransaction.Location = new Point(298, 341);
             btnAddTransaction.Name = "btnAddTransaction";
             btnAddTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnAddTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -167,11 +168,26 @@
             btnAddTransaction.Values.DropDownArrowColor = Color.Empty;
             btnAddTransaction.Values.Text = "CONFIRM";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 23F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(7, 67, 130);
+            label6.ImageAlign = ContentAlignment.MiddleRight;
+            label6.Location = new Point(60, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(486, 84);
+            label6.TabIndex = 16;
+            label6.Text = "Do these details align with your\r\nrecords?";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            label6.Click += label6_Click;
+            // 
             // DialogAddTransactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 352);
+            ClientSize = new Size(607, 415);
+            Controls.Add(label6);
             Controls.Add(btnAddTransaction);
             Controls.Add(btnClearForm);
             Controls.Add(label5);
@@ -198,5 +214,6 @@
         private Label label5;
         public Krypton.Toolkit.KryptonButton btnClearForm;
         public Krypton.Toolkit.KryptonButton btnAddTransaction;
+        private Label label6;
     }
 }

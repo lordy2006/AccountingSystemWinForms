@@ -80,7 +80,7 @@
             label3.BackColor = Color.FromArgb(7, 67, 130);
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(481, 70);
+            label3.Location = new Point(481, 77);
             label3.Name = "label3";
             label3.Size = new Size(357, 36);
             label3.TabIndex = 14;
@@ -92,7 +92,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(448, 23);
+            label2.Location = new Point(448, 30);
             label2.Name = "label2";
             label2.Size = new Size(422, 47);
             label2.TabIndex = 13;
@@ -104,7 +104,7 @@
             label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(898, 510);
+            label12.Location = new Point(898, 517);
             label12.Name = "label12";
             label12.Size = new Size(274, 83);
             label12.TabIndex = 56;
@@ -117,7 +117,7 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label13.ForeColor = Color.FromArgb(7, 67, 130);
-            label13.Location = new Point(889, 449);
+            label13.Location = new Point(889, 456);
             label13.Name = "label13";
             label13.Size = new Size(195, 37);
             label13.TabIndex = 55;
@@ -126,7 +126,7 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(898, 396);
+            pictureBox6.Location = new Point(898, 403);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(43, 43);
             pictureBox6.TabIndex = 54;
@@ -134,7 +134,7 @@
             // 
             // kryptonGroup5
             // 
-            kryptonGroup5.Location = new Point(870, 374);
+            kryptonGroup5.Location = new Point(870, 381);
             kryptonGroup5.Size = new Size(352, 233);
             kryptonGroup5.StateCommon.Back.Color1 = Color.White;
             kryptonGroup5.StateCommon.Border.Rounding = 25F;
@@ -145,7 +145,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(898, 245);
+            label10.Location = new Point(898, 252);
             label10.Name = "label10";
             label10.Size = new Size(274, 83);
             label10.TabIndex = 52;
@@ -157,7 +157,7 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(7, 67, 130);
-            label11.Location = new Point(889, 184);
+            label11.Location = new Point(889, 191);
             label11.Name = "label11";
             label11.Size = new Size(300, 37);
             label11.TabIndex = 51;
@@ -167,7 +167,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(898, 131);
+            pictureBox5.Location = new Point(898, 138);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(43, 43);
             pictureBox5.TabIndex = 50;
@@ -175,7 +175,7 @@
             // 
             // kryptonGroup4
             // 
-            kryptonGroup4.Location = new Point(870, 109);
+            kryptonGroup4.Location = new Point(870, 116);
             kryptonGroup4.Size = new Size(352, 233);
             kryptonGroup4.StateCommon.Back.Color1 = Color.White;
             kryptonGroup4.StateCommon.Border.Rounding = 25F;
@@ -186,7 +186,7 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(514, 510);
+            label8.Location = new Point(514, 517);
             label8.Name = "label8";
             label8.Size = new Size(274, 83);
             label8.TabIndex = 48;
@@ -198,7 +198,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(7, 67, 130);
-            label9.Location = new Point(505, 449);
+            label9.Location = new Point(505, 456);
             label9.Name = "label9";
             label9.Size = new Size(212, 37);
             label9.TabIndex = 47;
@@ -207,7 +207,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(514, 396);
+            pictureBox4.Location = new Point(514, 403);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(43, 43);
             pictureBox4.TabIndex = 46;
@@ -215,7 +215,7 @@
             // 
             // kryptonGroup3
             // 
-            kryptonGroup3.Location = new Point(486, 374);
+            kryptonGroup3.Location = new Point(486, 381);
             kryptonGroup3.Size = new Size(352, 233);
             kryptonGroup3.StateCommon.Back.Color1 = Color.White;
             kryptonGroup3.StateCommon.Border.Rounding = 25F;
@@ -226,7 +226,7 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(514, 245);
+            label6.Location = new Point(514, 252);
             label6.Name = "label6";
             label6.Size = new Size(274, 83);
             label6.TabIndex = 44;
@@ -238,7 +238,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(7, 67, 130);
-            label7.Location = new Point(505, 184);
+            label7.Location = new Point(505, 191);
             label7.Name = "label7";
             label7.Size = new Size(177, 37);
             label7.TabIndex = 43;
@@ -247,7 +247,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(514, 131);
+            pictureBox3.Location = new Point(514, 138);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(43, 43);
             pictureBox3.TabIndex = 42;
@@ -255,7 +255,7 @@
             // 
             // kryptonGroup2
             // 
-            kryptonGroup2.Location = new Point(486, 109);
+            kryptonGroup2.Location = new Point(486, 116);
             kryptonGroup2.Size = new Size(352, 233);
             kryptonGroup2.StateCommon.Back.Color1 = Color.White;
             kryptonGroup2.StateCommon.Border.Rounding = 25F;
@@ -266,7 +266,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(125, 510);
+            label4.Location = new Point(125, 517);
             label4.Name = "label4";
             label4.Size = new Size(274, 83);
             label4.TabIndex = 40;
@@ -278,7 +278,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(7, 67, 130);
-            label5.Location = new Point(116, 449);
+            label5.Location = new Point(116, 456);
             label5.Name = "label5";
             label5.Size = new Size(218, 37);
             label5.TabIndex = 39;
@@ -287,7 +287,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(125, 396);
+            pictureBox2.Location = new Point(125, 403);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(43, 43);
             pictureBox2.TabIndex = 38;
@@ -295,7 +295,7 @@
             // 
             // kryptonGroup1
             // 
-            kryptonGroup1.Location = new Point(97, 374);
+            kryptonGroup1.Location = new Point(97, 381);
             kryptonGroup1.Size = new Size(352, 233);
             kryptonGroup1.StateCommon.Back.Color1 = Color.White;
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
@@ -306,7 +306,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(125, 245);
+            label1.Location = new Point(125, 252);
             label1.Name = "label1";
             label1.Size = new Size(274, 83);
             label1.TabIndex = 36;
@@ -318,7 +318,7 @@
             lblNewTransactions.BackColor = Color.White;
             lblNewTransactions.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblNewTransactions.ForeColor = Color.FromArgb(7, 67, 130);
-            lblNewTransactions.Location = new Point(116, 184);
+            lblNewTransactions.Location = new Point(116, 191);
             lblNewTransactions.Name = "lblNewTransactions";
             lblNewTransactions.Size = new Size(242, 37);
             lblNewTransactions.TabIndex = 35;
@@ -327,7 +327,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(125, 131);
+            pictureBox1.Location = new Point(125, 138);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(43, 43);
             pictureBox1.TabIndex = 34;
@@ -335,7 +335,7 @@
             // 
             // pnlContent1
             // 
-            pnlContent1.Location = new Point(97, 109);
+            pnlContent1.Location = new Point(97, 116);
             pnlContent1.Size = new Size(352, 233);
             pnlContent1.StateCommon.Back.Color1 = Color.White;
             pnlContent1.StateCommon.Border.Rounding = 25F;
@@ -344,7 +344,7 @@
             // btnProcceed
             // 
             btnProcceed.Cursor = Cursors.Hand;
-            btnProcceed.Location = new Point(1055, 650);
+            btnProcceed.Location = new Point(1055, 657);
             btnProcceed.Name = "btnProcceed";
             btnProcceed.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
