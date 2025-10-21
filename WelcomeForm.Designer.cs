@@ -29,29 +29,18 @@
         private void InitializeComponent()
         {
             loginControl = new LoginControl();
-            pnlLogin = new Krypton.Toolkit.KryptonGroup();
             closeButton = new Krypton.Toolkit.ButtonSpecAny();
             signUpControl = new SignUpControl();
-            ((System.ComponentModel.ISupportInitialize)pnlLogin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pnlLogin.Panel).BeginInit();
             SuspendLayout();
             // 
             // loginControl
             // 
-            loginControl.BackColor = Color.White;
-            loginControl.Location = new Point(786, 94);
+            loginControl.BackColor = Color.FromArgb(7, 67, 130);
+            loginControl.Location = new Point(723, 4);
             loginControl.Name = "loginControl";
-            loginControl.Size = new Size(419, 458);
+            loginControl.Size = new Size(563, 617);
             loginControl.TabIndex = 3;
             loginControl.Load += loginControl1_Load;
-            // 
-            // pnlLogin
-            // 
-            pnlLogin.Location = new Point(721, 12);
-            pnlLogin.Size = new Size(551, 609);
-            pnlLogin.StateCommon.Back.Color1 = Color.White;
-            pnlLogin.StateCommon.Border.Rounding = 25F;
-            pnlLogin.TabIndex = 4;
             // 
             // closeButton
             // 
@@ -61,10 +50,10 @@
             // 
             // signUpControl
             // 
-            signUpControl.BackColor = Color.White;
-            signUpControl.Location = new Point(776, 21);
+            signUpControl.BackColor = Color.FromArgb(7, 67, 130);
+            signUpControl.Location = new Point(12, 4);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(428, 578);
+            signUpControl.Size = new Size(563, 617);
             signUpControl.TabIndex = 5;
             // 
             // WelcomeForm
@@ -73,11 +62,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
             ButtonSpecs.Add(closeButton);
-            ClientSize = new Size(1302, 650);
+            ClientSize = new Size(1322, 620);
             CloseBox = false;
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
-            Controls.Add(pnlLogin);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
@@ -101,14 +89,11 @@
             Text = "Accounting System";
             TransparencyKey = Color.Silver;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pnlLogin.Panel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pnlLogin).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         public LoginControl loginControl;
-        private Krypton.Toolkit.KryptonGroup pnlLogin;
         private Krypton.Toolkit.ButtonSpecAny closeButton;
         public SignUpControl signUpControl;
     }

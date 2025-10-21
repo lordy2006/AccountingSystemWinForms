@@ -37,6 +37,11 @@
             kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
             kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
+            panel2 = new Panel();
+            kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)kryptonGroup1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -44,19 +49,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(7, 67, 130);
-            label1.Location = new Point(37, 15);
+            label1.Location = new Point(33, 12);
             label1.Name = "label1";
             label1.Size = new Size(206, 65);
             label1.TabIndex = 9;
             label1.Text = "Sign Up";
             label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
             label2.ForeColor = Color.FromArgb(140, 140, 140);
-            label2.Location = new Point(194, 479);
+            label2.Location = new Point(194, 485);
             label2.Name = "label2";
             label2.Padding = new Padding(10, 0, 10, 0);
             label2.Size = new Size(45, 19);
@@ -66,7 +72,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveBorder;
-            panel1.Location = new Point(37, 489);
+            panel1.Location = new Point(37, 495);
             panel1.Name = "panel1";
             panel1.Size = new Size(355, 1);
             panel1.TabIndex = 20;
@@ -74,7 +80,7 @@
             // btnBackToLogin
             // 
             btnBackToLogin.Cursor = Cursors.Hand;
-            btnBackToLogin.Location = new Point(39, 519);
+            btnBackToLogin.Location = new Point(37, 516);
             btnBackToLogin.Name = "btnBackToLogin";
             btnBackToLogin.OverrideDefault.Back.Color1 = SystemColors.ActiveBorder;
             btnBackToLogin.OverrideDefault.Back.Color2 = SystemColors.ActiveBorder;
@@ -103,7 +109,7 @@
             // btnCreateAccount
             // 
             btnCreateAccount.Cursor = Cursors.Hand;
-            btnCreateAccount.Location = new Point(35, 419);
+            btnCreateAccount.Location = new Point(33, 416);
             btnCreateAccount.Name = "btnCreateAccount";
             btnCreateAccount.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnCreateAccount.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -136,7 +142,7 @@
             kryptonTextBox2.CueHint.CueHintText = "Username";
             kryptonTextBox2.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonTextBox2.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Inherit;
-            kryptonTextBox2.Location = new Point(39, 105);
+            kryptonTextBox2.Location = new Point(35, 102);
             kryptonTextBox2.Name = "kryptonTextBox2";
             kryptonTextBox2.Size = new Size(355, 52);
             kryptonTextBox2.StateCommon.Back.Color1 = Color.WhiteSmoke;
@@ -154,7 +160,7 @@
             kryptonTextBox1.CueHint.CueHintText = "Username";
             kryptonTextBox1.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonTextBox1.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Inherit;
-            kryptonTextBox1.Location = new Point(39, 182);
+            kryptonTextBox1.Location = new Point(35, 179);
             kryptonTextBox1.Name = "kryptonTextBox1";
             kryptonTextBox1.Size = new Size(355, 52);
             kryptonTextBox1.StateCommon.Back.Color1 = Color.WhiteSmoke;
@@ -171,7 +177,7 @@
             kryptonTextBox3.CueHint.Color1 = Color.FromArgb(150, 150, 150);
             kryptonTextBox3.CueHint.CueHintText = "Password";
             kryptonTextBox3.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            kryptonTextBox3.Location = new Point(39, 262);
+            kryptonTextBox3.Location = new Point(35, 259);
             kryptonTextBox3.Name = "kryptonTextBox3";
             kryptonTextBox3.PasswordChar = '*';
             kryptonTextBox3.Size = new Size(353, 52);
@@ -189,7 +195,7 @@
             kryptonTextBox4.CueHint.Color1 = Color.FromArgb(150, 150, 150);
             kryptonTextBox4.CueHint.CueHintText = "Password";
             kryptonTextBox4.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            kryptonTextBox4.Location = new Point(37, 335);
+            kryptonTextBox4.Location = new Point(33, 332);
             kryptonTextBox4.Name = "kryptonTextBox4";
             kryptonTextBox4.PasswordChar = '*';
             kryptonTextBox4.Size = new Size(353, 52);
@@ -202,24 +208,47 @@
             kryptonTextBox4.StateCommon.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             kryptonTextBox4.TabIndex = 25;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(kryptonTextBox2);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(kryptonTextBox1);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(btnCreateAccount);
+            panel2.Controls.Add(kryptonTextBox4);
+            panel2.Controls.Add(btnBackToLogin);
+            panel2.Controls.Add(kryptonTextBox3);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(46, 9);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(469, 599);
+            panel2.TabIndex = 26;
+            // 
+            // kryptonGroup1
+            // 
+            kryptonGroup1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
+            kryptonGroup1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.FormMain;
+            kryptonGroup1.Location = new Point(3, 3);
+            kryptonGroup1.Size = new Size(551, 609);
+            kryptonGroup1.StateCommon.Back.Color1 = Color.White;
+            kryptonGroup1.StateCommon.Border.Rounding = 25F;
+            kryptonGroup1.TabIndex = 27;
+            // 
             // SignUpControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            Controls.Add(kryptonTextBox4);
-            Controls.Add(kryptonTextBox3);
-            Controls.Add(kryptonTextBox1);
-            Controls.Add(kryptonTextBox2);
-            Controls.Add(label2);
-            Controls.Add(panel1);
-            Controls.Add(btnBackToLogin);
-            Controls.Add(btnCreateAccount);
-            Controls.Add(label1);
+            BackColor = Color.FromArgb(7, 67, 130);
+            Controls.Add(panel2);
+            Controls.Add(kryptonGroup1);
             Name = "SignUpControl";
-            Size = new Size(428, 634);
+            Size = new Size(560, 616);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)kryptonGroup1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -233,5 +262,7 @@
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private Panel panel2;
+        private Krypton.Toolkit.KryptonGroup kryptonGroup1;
     }
 }

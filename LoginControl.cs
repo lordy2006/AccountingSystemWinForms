@@ -18,7 +18,16 @@ namespace AccountingSystemWinForms
             InitializeComponent();
 
         }
-
+        //enable window buffering  (para ma smooth ang pag render)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
         private void kryptonLabel1_Click(object sender, EventArgs e)
         {
 
@@ -31,8 +40,10 @@ namespace AccountingSystemWinForms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            NoteForm noteForm = new NoteForm();
-            noteForm.Show();
+            Main mainForm = new Main();
+            mainForm.Show();
+
+            WelcomeForm.welcomeForm.Hide();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
