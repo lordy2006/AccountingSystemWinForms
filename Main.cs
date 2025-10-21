@@ -16,6 +16,7 @@ namespace AccountingSystemWinForms
         public Main()
         {
             InitializeComponent();
+            UiDesign.ApplyShadow(this);
         }
         //enable window buffering (para ma smooth ang pag render)
         protected override CreateParams CreateParams
@@ -30,7 +31,7 @@ namespace AccountingSystemWinForms
 
         private void Main_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(1363, 757); // set size again ( kay nay bug usahay )
+            this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
 
             //display ang note
             NoteControl notes = new NoteControl();
@@ -39,30 +40,28 @@ namespace AccountingSystemWinForms
             this.Controls.Add(notes);
             notes.BringToFront();
 
-            btnClose.Click += BtnClose_Click;
         }
-
-        private void BtnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-              "Are you sure you want to exit the application?",
-              "Exit Confirmation",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question
-          );
+             "Are you sure you want to exit the application?",
+             "Exit Confirmation",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question
+         );
 
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
 
-        }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
+            this.Close();
+            WelcomeForm.welcomeForm.Show();
+
         }
 
         private void BtnNewTransactions_Click(object sender, EventArgs e)
@@ -71,6 +70,11 @@ namespace AccountingSystemWinForms
             btnNewTransactions.OverrideDefault.Back.Color2 = Color.FromArgb(34, 82, 133);
 
             tabHolder.SelectedTab = tabNewTransactions;
+        }
+        private void btnAddTransaction_Click(object sender, EventArgs e)
+        {
+            DialogAddTransactions addTransactions = new DialogAddTransactions();
+            UiDesign.ShowDialogDimBackground(this, addTransactions, 15);
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
@@ -94,7 +98,6 @@ namespace AccountingSystemWinForms
             tabHolder.SelectedTab = tabGeneralJournal;
 
         }
-
         private void btnGeneralLedger_Click(object sender, EventArgs e)
         {
             btnGeneralLedger.OverrideDefault.Back.Color1 = Color.FromArgb(34, 82, 133);
@@ -111,52 +114,9 @@ namespace AccountingSystemWinForms
 
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            WelcomeForm.welcomeForm.Show();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void tableTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void kryptonLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddTransaction_Click(object sender, EventArgs e)
-        {
-            DialogAddTransactions addTransactions = new DialogAddTransactions();
-            addTransactions.ShowDialog();
         }
     }
 }

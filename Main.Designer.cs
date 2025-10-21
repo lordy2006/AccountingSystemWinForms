@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tabHolder = new TabControl();
             tabNewTransactions = new TabPage();
             btnAddTransaction = new Krypton.Toolkit.KryptonButton();
@@ -43,7 +44,12 @@
             label9 = new Label();
             label8 = new Label();
             tabTransactions = new TabPage();
-            label2 = new Label();
+            tableTransactions = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             tabAccounts = new TabPage();
             label3 = new Label();
             tabGeneralJournal = new TabPage();
@@ -64,18 +70,20 @@
             btnBalanceSheet = new Krypton.Toolkit.KryptonButton();
             btnLogOut = new Label();
             panel4 = new Panel();
-            btnClose = new Krypton.Toolkit.ButtonSpecAny();
             label7 = new Label();
             panel3 = new Panel();
+            btnClose = new PictureBox();
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tableTransactions).BeginInit();
             tabAccounts.SuspendLayout();
             tabGeneralJournal.SuspendLayout();
             tabGeneralLedger.SuspendLayout();
             tabBalanceSheet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // tabHolder
@@ -88,7 +96,7 @@
             tabHolder.Controls.Add(tabGeneralLedger);
             tabHolder.Controls.Add(tabBalanceSheet);
             tabHolder.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabHolder.Location = new Point(207, 24);
+            tabHolder.Location = new Point(207, 59);
             tabHolder.Name = "tabHolder";
             tabHolder.Padding = new Point(0, 0);
             tabHolder.SelectedIndex = 0;
@@ -200,7 +208,6 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(436, 29);
             textBox3.TabIndex = 11;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label12
             // 
@@ -212,7 +219,6 @@
             label12.Size = new Size(73, 21);
             label12.TabIndex = 10;
             label12.Text = "Amount:";
-            label12.Click += label12_Click;
             // 
             // label11
             // 
@@ -224,7 +230,6 @@
             label11.Size = new Size(124, 21);
             label11.TabIndex = 9;
             label11.Text = "Credit Account:";
-            label11.Click += label11_Click;
             // 
             // textBox1
             // 
@@ -275,7 +280,6 @@
             label9.Size = new Size(98, 21);
             label9.TabIndex = 3;
             label9.Text = "Description:";
-            label9.Click += label9_Click;
             // 
             // label8
             // 
@@ -291,7 +295,7 @@
             // tabTransactions
             // 
             tabTransactions.BackColor = Color.White;
-            tabTransactions.Controls.Add(label2);
+            tabTransactions.Controls.Add(tableTransactions);
             tabTransactions.Location = new Point(4, 27);
             tabTransactions.Name = "tabTransactions";
             tabTransactions.Padding = new Padding(3);
@@ -299,15 +303,61 @@
             tabTransactions.TabIndex = 1;
             tabTransactions.Text = "tabPage2";
             // 
-            // label2
+            // tableTransactions
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(417, 248);
-            label2.Name = "label2";
-            label2.Size = new Size(162, 37);
-            label2.TabIndex = 1;
-            label2.Text = "Transactions";
+            tableTransactions.AllowUserToAddRows = false;
+            tableTransactions.AllowUserToDeleteRows = false;
+            tableTransactions.AllowUserToOrderColumns = true;
+            tableTransactions.AllowUserToResizeColumns = false;
+            tableTransactions.AllowUserToResizeRows = false;
+            tableTransactions.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tableTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            tableTransactions.ColumnHeadersHeight = 35;
+            tableTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            tableTransactions.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            tableTransactions.Location = new Point(6, 145);
+            tableTransactions.Name = "tableTransactions";
+            tableTransactions.RowHeadersVisible = false;
+            tableTransactions.Size = new Size(1094, 453);
+            tableTransactions.TabIndex = 0;
+            tableTransactions.CellContentClick += tableTransactions_CellContentClick;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Date";
+            Column1.Name = "Column1";
+            Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Description";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Debit Account";
+            Column3.Name = "Column3";
+            Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Credit Account";
+            Column4.Name = "Column4";
+            Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Amount";
+            Column5.Name = "Column5";
+            Column5.Width = 150;
             // 
             // tabAccounts
             // 
@@ -395,8 +445,8 @@
             // 
             // pnlContent1
             // 
-            pnlContent1.Location = new Point(197, 12);
-            pnlContent1.Size = new Size(1140, 688);
+            pnlContent1.Location = new Point(196, 42);
+            pnlContent1.Size = new Size(1141, 691);
             pnlContent1.StateCommon.Back.Color1 = Color.White;
             pnlContent1.StateCommon.Border.Rounding = 25F;
             pnlContent1.TabIndex = 6;
@@ -404,7 +454,7 @@
             // pnlCover
             // 
             pnlCover.BackColor = Color.White;
-            pnlCover.Location = new Point(205, 24);
+            pnlCover.Location = new Point(205, 54);
             pnlCover.Name = "pnlCover";
             pnlCover.Size = new Size(1120, 35);
             pnlCover.TabIndex = 7;
@@ -412,15 +462,15 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(201, 55);
+            panel1.Location = new Point(204, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(11, 626);
+            panel1.Size = new Size(11, 661);
             panel1.TabIndex = 8;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(205, 678);
+            panel2.Location = new Point(205, 710);
             panel2.Name = "panel2";
             panel2.Size = new Size(1120, 14);
             panel2.TabIndex = 9;
@@ -428,7 +478,7 @@
             // btnNewTransactions
             // 
             btnNewTransactions.Cursor = Cursors.Hand;
-            btnNewTransactions.Location = new Point(12, 197);
+            btnNewTransactions.Location = new Point(12, 168);
             btnNewTransactions.Name = "btnNewTransactions";
             btnNewTransactions.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnNewTransactions.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -471,7 +521,7 @@
             // btnTransaction
             // 
             btnTransaction.Cursor = Cursors.Hand;
-            btnTransaction.Location = new Point(12, 240);
+            btnTransaction.Location = new Point(12, 211);
             btnTransaction.Name = "btnTransaction";
             btnTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -514,7 +564,7 @@
             // btnAccounts
             // 
             btnAccounts.Cursor = Cursors.Hand;
-            btnAccounts.Location = new Point(12, 283);
+            btnAccounts.Location = new Point(12, 254);
             btnAccounts.Name = "btnAccounts";
             btnAccounts.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnAccounts.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -557,7 +607,7 @@
             // btnGeneralJournal
             // 
             btnGeneralJournal.Cursor = Cursors.Hand;
-            btnGeneralJournal.Location = new Point(12, 326);
+            btnGeneralJournal.Location = new Point(12, 297);
             btnGeneralJournal.Name = "btnGeneralJournal";
             btnGeneralJournal.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralJournal.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -600,7 +650,7 @@
             // btnGeneralLedger
             // 
             btnGeneralLedger.Cursor = Cursors.Hand;
-            btnGeneralLedger.Location = new Point(12, 369);
+            btnGeneralLedger.Location = new Point(12, 340);
             btnGeneralLedger.Name = "btnGeneralLedger";
             btnGeneralLedger.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralLedger.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -643,7 +693,7 @@
             // btnBalanceSheet
             // 
             btnBalanceSheet.Cursor = Cursors.Hand;
-            btnBalanceSheet.Location = new Point(12, 412);
+            btnBalanceSheet.Location = new Point(12, 383);
             btnBalanceSheet.Name = "btnBalanceSheet";
             btnBalanceSheet.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnBalanceSheet.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -689,7 +739,7 @@
             btnLogOut.Cursor = Cursors.Hand;
             btnLogOut.Font = new Font("Segoe UI", 10F);
             btnLogOut.ForeColor = Color.White;
-            btnLogOut.Location = new Point(62, 604);
+            btnLogOut.Location = new Point(62, 575);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(57, 19);
             btnLogOut.TabIndex = 40;
@@ -699,15 +749,10 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(150, 150, 150);
-            panel4.Location = new Point(21, 586);
+            panel4.Location = new Point(21, 557);
             panel4.Name = "panel4";
             panel4.Size = new Size(148, 1);
             panel4.TabIndex = 41;
-            // 
-            // btnClose
-            // 
-            btnClose.Image = Properties.Resources.exit_google;
-            btnClose.UniqueName = "8b7d3961c601403396bb69f1b4e8eb67";
             // 
             // label7
             // 
@@ -723,19 +768,30 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Location = new Point(1320, 55);
+            panel3.Location = new Point(1317, 55);
             panel3.Name = "panel3";
-            panel3.Size = new Size(11, 626);
+            panel3.Size = new Size(11, 658);
             panel3.TabIndex = 9;
+            // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.exit_google;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Location = new Point(1313, 7);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 25);
+            btnClose.TabIndex = 42;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click_1;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            ButtonSpecs.Add(btnClose);
-            ClientSize = new Size(1357, 688);
+            ClientSize = new Size(1354, 757);
             CloseBox = false;
+            Controls.Add(btnClose);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(label7);
@@ -752,27 +808,28 @@
             Controls.Add(tabHolder);
             Controls.Add(pnlContent1);
             ForeColor = Color.FromArgb(7, 67, 130);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
             StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Color2 = Color.FromArgb(7, 67, 130);
+            StateCommon.Border.Color1 = Color.White;
+            StateCommon.Border.Color2 = Color.White;
             StateCommon.Border.Rounding = 20F;
+            StateCommon.Border.Width = 0;
             StateCommon.Header.Back.Color1 = Color.FromArgb(7, 67, 130);
             StateCommon.Header.Back.Color2 = Color.FromArgb(7, 67, 130);
             StateCommon.Header.Border.Color1 = Color.FromArgb(7, 67, 130);
             StateCommon.Header.Border.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.ButtonEdgeInset = 20;
-            FormClosed += Main_FormClosed;
+            StateCommon.Header.ButtonEdgeInset = 0;
             Load += Main_Load;
             tabHolder.ResumeLayout(false);
             tabNewTransactions.ResumeLayout(false);
             tabNewTransactions.PerformLayout();
             tabTransactions.ResumeLayout(false);
-            tabTransactions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tableTransactions).EndInit();
             tabAccounts.ResumeLayout(false);
             tabAccounts.PerformLayout();
             tabGeneralJournal.ResumeLayout(false);
@@ -783,6 +840,7 @@
             tabBalanceSheet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -808,12 +866,10 @@
         public Krypton.Toolkit.KryptonButton btnBalanceSheet;
         private Label btnLogOut;
         private Panel panel4;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Krypton.Toolkit.ButtonSpecAny btnClose;
         private Label label8;
         private Label label7;
         private TextBox textBox2;
@@ -828,5 +884,12 @@
         public Krypton.Toolkit.KryptonButton btnAddTransaction;
         public Krypton.Toolkit.KryptonButton btnClearForm;
         private Panel panel3;
+        private PictureBox btnClose;
+        private DataGridView tableTransactions;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

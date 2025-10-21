@@ -211,15 +211,15 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(kryptonTextBox3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(panel1);
-            panel2.Controls.Add(kryptonTextBox2);
             panel2.Controls.Add(btnSignUp);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(btnLogin);
+            panel2.Controls.Add(kryptonTextBox2);
+            panel2.Controls.Add(kryptonTextBox3);
             panel2.Location = new Point(85, 119);
             panel2.Name = "panel2";
             panel2.Size = new Size(390, 443);

@@ -135,6 +135,7 @@
             btnClearForm.TabIndex = 14;
             btnClearForm.Values.DropDownArrowColor = Color.Empty;
             btnClearForm.Values.Text = "CANCEL";
+            btnClearForm.Click += btnClearForm_Click_1;
             // 
             // btnAddTransaction
             // 
@@ -179,6 +180,7 @@
             Controls.Add(label2);
             Controls.Add(lblOutputDate);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DialogAddTransactions";
             StartPosition = FormStartPosition.CenterParent;
             Text = "DialogAddTransactions";
