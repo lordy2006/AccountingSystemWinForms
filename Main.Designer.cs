@@ -163,6 +163,8 @@
             // 
             // comboBox2
             // 
+            comboBox2.BackColor = Color.White;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.Font = new Font("Segoe UI", 12F);
             comboBox2.FormattingEnabled = true;
             comboBox2.IntegralHeight = false;
@@ -175,7 +177,10 @@
             // 
             // comboBox1
             // 
+            comboBox1.BackColor = Color.White;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Font = new Font("Segoe UI", 12F);
+            comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.IntegralHeight = false;
             comboBox1.Items.AddRange(new object[] { "Cash [ASSET]", "Accounts Receivable [ASSET]", "Inventory [ASSET]", "Prepaid Expenses [ASSET]", "Equipment [ASSET]", "Accounts Payable [LIABILITY]", "Notes Payable [LIABILITY]", "Owner's Capital [EQUITY]", "Sales Revenue [INCOME]", "Service Revenue [INCOME]", "Cost of Goods Sold [EXPENSE]", "Rent Expense [EXPENSE]", "Salaries Expense [EXPENSE]", "Utilities Expense [EXPENSE]" });
@@ -1151,8 +1156,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            ClientSize = new Size(1308, 709);
-            CloseBox = false;
+            ClientSize = new Size(1352, 746);
             Controls.Add(btnClose);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -1175,17 +1179,6 @@
             MinimizeBox = false;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
-            StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Color1 = Color.White;
-            StateCommon.Border.Color2 = Color.White;
-            StateCommon.Border.Rounding = 20F;
-            StateCommon.Border.Width = 0;
-            StateCommon.Header.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Border.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Border.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.ButtonEdgeInset = 0;
             Load += Main_Load;
             tabHolder.ResumeLayout(false);
             tabNewTransactions.ResumeLayout(false);

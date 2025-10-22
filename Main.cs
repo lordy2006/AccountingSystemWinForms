@@ -11,11 +11,13 @@ using Krypton.Toolkit;
 
 namespace AccountingSystemWinForms
 {
-    public partial class Main : KryptonForm
+    public partial class Main : Form
     {
         public Main()
         {
             InitializeComponent();
+            this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
+
             UiDesign.ApplyShadow(this);
         }
         //enable window buffering (para ma smooth ang pag render)

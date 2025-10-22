@@ -28,89 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeForm));
             loginControl = new LoginControl();
-            closeButton = new Krypton.Toolkit.ButtonSpecAny();
             signUpControl = new SignUpControl();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            btnClose = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // loginControl
             // 
             loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(759, 4);
+            loginControl.Location = new Point(758, 49);
             loginControl.Name = "loginControl";
             loginControl.Size = new Size(560, 680);
             loginControl.TabIndex = 3;
             loginControl.Load += loginControl1_Load;
             // 
-            // closeButton
-            // 
-            closeButton.Image = Properties.Resources.exit_google;
-            closeButton.Type = Krypton.Toolkit.PaletteButtonSpecStyle.Close;
-            closeButton.UniqueName = "b2ecc761f8e04e839387be0f7f1dbcdc";
-            // 
             // signUpControl
             // 
             signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(18, 4);
+            signUpControl.Location = new Point(17, 49);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(563, 688);
+            signUpControl.Size = new Size(570, 688);
             signUpControl.TabIndex = 5;
             // 
-            // pictureBox1
+            // btnClose
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(-18, -46);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1360, 738);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            btnClose.BackgroundImage = Properties.Resources.exit_google;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Location = new Point(1306, 12);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 25);
+            btnClose.TabIndex = 43;
+            btnClose.TabStop = false;
+            btnClose.Click += CloseButton_Click;
             // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            ButtonSpecs.Add(closeButton);
-            ClientSize = new Size(1362, 680);
-            CloseBox = false;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1352, 746);
+            Controls.Add(btnClose);
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
-            Controls.Add(pictureBox1);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "WelcomeForm";
             StartPosition = FormStartPosition.CenterScreen;
-            StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            StateCommon.Border.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.True;
-            StateCommon.Border.Rounding = 20F;
-            StateCommon.Header.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            StateCommon.Header.Border.Rounding = 10F;
-            StateCommon.Header.ButtonEdgeInset = 20;
-            StateCommon.Header.Content.Padding = new Padding(20, 0, 0, 0);
             TransparencyKey = Color.Silver;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         public LoginControl loginControl;
-        private Krypton.Toolkit.ButtonSpecAny closeButton;
         public SignUpControl signUpControl;
-        private PictureBox pictureBox1;
+        private PictureBox btnClose;
     }
 }

@@ -233,7 +233,7 @@
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "LoginControl";
-            Size = new Size(561, 667);
+            Size = new Size(554, 667);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();
