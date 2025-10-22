@@ -845,7 +845,7 @@
             // btnNewTransactions
             // 
             btnNewTransactions.Cursor = Cursors.Hand;
-            btnNewTransactions.Location = new Point(12, 168);
+            btnNewTransactions.Location = new Point(12, 247);
             btnNewTransactions.Name = "btnNewTransactions";
             btnNewTransactions.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnNewTransactions.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -888,7 +888,7 @@
             // btnTransaction
             // 
             btnTransaction.Cursor = Cursors.Hand;
-            btnTransaction.Location = new Point(12, 211);
+            btnTransaction.Location = new Point(12, 290);
             btnTransaction.Name = "btnTransaction";
             btnTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -931,7 +931,7 @@
             // btnAccounts
             // 
             btnAccounts.Cursor = Cursors.Hand;
-            btnAccounts.Location = new Point(12, 254);
+            btnAccounts.Location = new Point(12, 333);
             btnAccounts.Name = "btnAccounts";
             btnAccounts.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnAccounts.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -974,7 +974,7 @@
             // btnGeneralJournal
             // 
             btnGeneralJournal.Cursor = Cursors.Hand;
-            btnGeneralJournal.Location = new Point(12, 297);
+            btnGeneralJournal.Location = new Point(12, 376);
             btnGeneralJournal.Name = "btnGeneralJournal";
             btnGeneralJournal.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralJournal.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -1017,7 +1017,7 @@
             // btnGeneralLedger
             // 
             btnGeneralLedger.Cursor = Cursors.Hand;
-            btnGeneralLedger.Location = new Point(12, 340);
+            btnGeneralLedger.Location = new Point(12, 419);
             btnGeneralLedger.Name = "btnGeneralLedger";
             btnGeneralLedger.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnGeneralLedger.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -1060,7 +1060,7 @@
             // btnBalanceSheet
             // 
             btnBalanceSheet.Cursor = Cursors.Hand;
-            btnBalanceSheet.Location = new Point(12, 383);
+            btnBalanceSheet.Location = new Point(12, 462);
             btnBalanceSheet.Name = "btnBalanceSheet";
             btnBalanceSheet.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnBalanceSheet.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -1106,7 +1106,7 @@
             btnLogOut.Cursor = Cursors.Hand;
             btnLogOut.Font = new Font("Segoe UI", 10F);
             btnLogOut.ForeColor = Color.White;
-            btnLogOut.Location = new Point(62, 575);
+            btnLogOut.Location = new Point(62, 707);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(57, 19);
             btnLogOut.TabIndex = 40;
@@ -1116,7 +1116,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(150, 150, 150);
-            panel4.Location = new Point(21, 557);
+            panel4.Location = new Point(21, 689);
             panel4.Name = "panel4";
             panel4.Size = new Size(148, 1);
             panel4.TabIndex = 41;

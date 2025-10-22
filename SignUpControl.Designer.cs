@@ -149,7 +149,7 @@
             // kryptonTextBox2
             // 
             kryptonTextBox2.CueHint.Color1 = Color.FromArgb(150, 150, 150);
-            kryptonTextBox2.CueHint.CueHintText = "Username";
+            kryptonTextBox2.CueHint.CueHintText = "Email Address";
             kryptonTextBox2.CueHint.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonTextBox2.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Inherit;
             kryptonTextBox2.Location = new Point(63, 210);
@@ -181,6 +181,7 @@
             kryptonTextBox1.StateCommon.Content.Padding = new Padding(10, 1, 10, 1);
             kryptonTextBox1.StateNormal.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonTextBox1.TabIndex = 23;
+            kryptonTextBox1.TextChanged += kryptonTextBox1_TextChanged;
             // 
             // kryptonTextBox3
             // 
@@ -325,7 +326,7 @@
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "SignUpControl";
-            Size = new Size(559, 665);
+            Size = new Size(559, 673);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

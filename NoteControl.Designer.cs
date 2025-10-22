@@ -82,7 +82,7 @@
             label3.BackColor = Color.FromArgb(7, 67, 130);
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(498, 92);
+            label3.Location = new Point(498, 71);
             label3.Name = "label3";
             label3.Size = new Size(357, 36);
             label3.TabIndex = 14;
@@ -94,7 +94,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(465, 45);
+            label2.Location = new Point(465, 24);
             label2.Name = "label2";
             label2.Size = new Size(422, 47);
             label2.TabIndex = 13;
@@ -361,7 +361,7 @@
             // btnProcceed
             // 
             btnProcceed.Cursor = Cursors.Hand;
-            btnProcceed.Location = new Point(1072, 672);
+            btnProcceed.Location = new Point(593, 674);
             btnProcceed.Name = "btnProcceed";
             btnProcceed.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -405,9 +405,9 @@
             // 
             pictureBox7.BackgroundImage = Properties.Resources.home_page_screen;
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(0, 0);
+            pictureBox7.Location = new Point(-101, -9);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(1352, 746);
+            pictureBox7.Size = new Size(1493, 801);
             pictureBox7.TabIndex = 58;
             pictureBox7.TabStop = false;
             // 

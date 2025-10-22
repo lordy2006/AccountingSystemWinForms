@@ -31,6 +31,8 @@
             loginControl = new LoginControl();
             signUpControl = new SignUpControl();
             btnClose = new PictureBox();
+            checkBox1 = new CheckBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
@@ -63,6 +65,31 @@
             btnClose.TabStop = false;
             btnClose.Click += CloseButton_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.White;
+            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.DimGray;
+            checkBox1.Location = new Point(871, 409);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 21);
+            checkBox1.TabIndex = 45;
+            checkBox1.Text = "Remember me";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(1093, 409);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 17);
+            label1.TabIndex = 46;
+            label1.Text = "Forgot password?";
+            // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -71,6 +98,8 @@
             BackgroundImage = Properties.Resources.log_in_screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1352, 746);
+            Controls.Add(label1);
+            Controls.Add(checkBox1);
             Controls.Add(btnClose);
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
@@ -86,11 +115,14 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         public LoginControl loginControl;
         public SignUpControl signUpControl;
         private PictureBox btnClose;
+        private CheckBox checkBox1;
+        private Label label1;
     }
 }

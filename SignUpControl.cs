@@ -46,5 +46,10 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
