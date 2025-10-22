@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            lblOutputDate = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -49,16 +48,6 @@
             label1.TabIndex = 0;
             label1.Text = "Date:";
             label1.Click += label1_Click;
-            // 
-            // lblOutputDate
-            // 
-            lblOutputDate.AutoSize = true;
-            lblOutputDate.Font = new Font("Segoe UI", 12F);
-            lblOutputDate.Location = new Point(100, 105);
-            lblOutputDate.Name = "lblOutputDate";
-            lblOutputDate.Size = new Size(76, 21);
-            lblOutputDate.TabIndex = 1;
-            lblOutputDate.Text = "12-12-12";
             // 
             // label2
             // 
@@ -194,7 +183,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(lblOutputDate);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DialogAddTransactions";
@@ -207,7 +195,6 @@
         #endregion
 
         private Label label1;
-        private Label lblOutputDate;
         private Label label2;
         private Label label3;
         private Label label4;

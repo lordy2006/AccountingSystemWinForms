@@ -229,7 +229,7 @@
             // 
             kryptonGroup1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
             kryptonGroup1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.FormMain;
-            kryptonGroup1.Location = new Point(3, 3);
+            kryptonGroup1.Location = new Point(14, 3);
             kryptonGroup1.Size = new Size(554, 665);
             kryptonGroup1.StateCommon.Back.Color1 = Color.White;
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
@@ -243,7 +243,7 @@
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "SignUpControl";
-            Size = new Size(560, 680);
+            Size = new Size(568, 665);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();

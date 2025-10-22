@@ -26,16 +26,16 @@ namespace AccountingSystemWinForms
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Size = new Size(1344, 753); // set size again ( kay nay bug usahay )
             closeButton.Click += CloseButton_Click;
-           
+
         }
 
-       
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,11 @@ namespace AccountingSystemWinForms
         private void loginControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
