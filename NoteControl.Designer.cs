@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoteControl));
             label3 = new Label();
             label2 = new Label();
             label12 = new Label();
@@ -56,6 +55,7 @@
             pictureBox1 = new PictureBox();
             pnlContent1 = new Krypton.Toolkit.KryptonGroup();
             btnProcceed = new Krypton.Toolkit.KryptonButton();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup5.Panel).BeginInit();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // label3
@@ -127,7 +128,7 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImage = Properties.Resources.BALANCE_SHEET;
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox6.Location = new Point(915, 424);
             pictureBox6.Name = "pictureBox6";
@@ -171,7 +172,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImage = Properties.Resources.ACCOUNT_MANAGEMENT;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.Location = new Point(915, 159);
             pictureBox5.Name = "pictureBox5";
@@ -213,7 +214,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImage = Properties.Resources.LEDGER;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.Location = new Point(531, 424);
             pictureBox4.Name = "pictureBox4";
@@ -255,7 +256,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImage = Properties.Resources.TRANSACTION;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.Location = new Point(531, 159);
             pictureBox3.Name = "pictureBox3";
@@ -297,7 +298,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImage = Properties.Resources.JOURNAL1;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.Location = new Point(142, 424);
             pictureBox2.Name = "pictureBox2";
@@ -340,7 +341,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(7, 67, 130);
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImage = Properties.Resources.NEW_TRANSACT;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(144, 162);
             pictureBox1.Name = "pictureBox1";
@@ -400,6 +401,16 @@
             btnProcceed.Values.Text = "Proceed →";
             btnProcceed.Click += btnProcceed_Click;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackgroundImage = Properties.Resources.home_page_screen;
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(0, 0);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(1352, 746);
+            pictureBox7.TabIndex = 58;
+            pictureBox7.TabStop = false;
+            // 
             // NoteControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -432,6 +443,7 @@
             Controls.Add(pnlContent1);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(pictureBox7);
             Name = "NoteControl";
             Size = new Size(1352, 746);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -452,6 +464,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -485,5 +498,6 @@
         private PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonGroup pnlContent1;
         public Krypton.Toolkit.KryptonButton btnProcceed;
+        private PictureBox pictureBox7;
     }
 }

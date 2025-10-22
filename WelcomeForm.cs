@@ -67,7 +67,12 @@ namespace AccountingSystemWinForms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void signUpControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

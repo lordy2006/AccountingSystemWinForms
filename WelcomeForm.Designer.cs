@@ -37,19 +37,20 @@
             // loginControl
             // 
             loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(758, 49);
+            loginControl.Location = new Point(747, 42);
             loginControl.Name = "loginControl";
-            loginControl.Size = new Size(560, 680);
+            loginControl.Size = new Size(552, 668);
             loginControl.TabIndex = 3;
             loginControl.Load += loginControl1_Load;
             // 
             // signUpControl
             // 
             signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(17, 49);
+            signUpControl.Location = new Point(47, 42);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(570, 688);
+            signUpControl.Size = new Size(554, 668);
             signUpControl.TabIndex = 5;
+            signUpControl.Load += signUpControl_Load;
             // 
             // btnClose
             // 
@@ -67,11 +68,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
+            BackgroundImage = Properties.Resources.log_in_screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1352, 746);
             Controls.Add(btnClose);
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
+            DoubleBuffered = true;
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
