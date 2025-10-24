@@ -294,6 +294,7 @@
             txbPassword.Size = new Size(294, 22);
             txbPassword.TabIndex = 39;
             txbPassword.UseSystemPasswordChar = true;
+            txbPassword.TextChanged += txbPassword_TextChanged;
             // 
             // LoginControl
             // 

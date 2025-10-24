@@ -17,13 +17,17 @@ namespace AccountingSystemWinForms
         {
             InitializeComponent();
 
+            txbPassword.UseSystemPasswordChar = true;
+
         }
 
         public void PreFillFields(SignUpData data)
         {
-            kryptonTextBox2.Text = data.Username;
-            kryptonTextBox3.Text = data.Password;
+            // If you keep prefill at all, use the actual controls:
+            txbUsername.Text = data.Username;
+            txbPassword.Text = data.Password;   // consider removing for security
         }
+
 
 
         //enable window buffering  (para ma smooth ang pag render)
@@ -48,41 +52,58 @@ namespace AccountingSystemWinForms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string inputEmail = txbUsername.Text.Trim();      // Replace with your actual email textbox name
-            string inputPassword = txbPassword.Text;          // Replace with your actual password textbox name
+            var identifier = txbUsername.Text.Trim();   // username OR email
+            var password = txbPassword.Text;
 
-            // Get last sign-up info from WelcomeForm
-            var registered = WelcomeForm.welcomeForm.LastSignedUpUser;
-
-            // Check if user has registered
-            if (registered == null)
+            if (string.IsNullOrWhiteSpace(identifier) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("No account registered yet. Please sign up first.");
-                txbUsername.Clear();
-                txbPassword.Clear();
+                MessageBox.Show("Please enter both username/email and password.", "Missing info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validate credentials
-            if (inputEmail == registered.Username && inputPassword == registered.Password)
+            try
             {
-                // Credentials correct, proceed
-                Main mainForm = new Main();
-                mainForm.setUsername(registered.FullName);
-                mainForm.Show();
+                var repo = new UserRepository();
+
+                // check username OR email + password
+                if (!repo.ValidateCredentials(identifier, password))
+                {
+                    MessageBox.Show("Invalid username/email or password.", "Login failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txbPassword.Clear();
+                    txbPassword.Focus();
+                    return;
+                }
+
+                // get the name to display on Main
+                var fullName = repo.GetFullNameByIdentifier(identifier) ?? identifier;
+
+                var main = new Main();
+                // use whatever you already have to set the label in Main:
+                // e.g., main.setUsername(fullName); or main.SetCurrentUser(fullName);
+                main.setUsername(fullName);
+
+                main.Show();
                 WelcomeForm.welcomeForm.Hide();
             }
-            else
+            catch (Exception ex)
             {
-                // Credentials do not match
-                MessageBox.Show("Invalid email or password.");
+                MessageBox.Show($"Login failed.\n\n{ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             WelcomeForm.welcomeForm.signUpControl.Show();
             WelcomeForm.welcomeForm.loginControl.Hide();
+        }
+
+        private void txbPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
