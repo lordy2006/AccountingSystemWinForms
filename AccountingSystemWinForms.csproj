@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Krypton.Toolkit" Version="95.25.8.235" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.10" />
   </ItemGroup>
 
   <ItemGroup>

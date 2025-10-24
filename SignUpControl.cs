@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using Microsoft.Data.Sqlite;
+using System.Net.Mail;
 
 namespace AccountingSystemWinForms
 {
@@ -16,6 +19,9 @@ namespace AccountingSystemWinForms
         public SignUpControl()
         {
             InitializeComponent();
+
+            txbPassword.UseSystemPasswordChar = true;        // preferred
+            txbConfirmPassword.UseSystemPasswordChar = true;
         }
         //enable window buffering
         protected override CreateParams CreateParams
@@ -45,40 +51,91 @@ namespace AccountingSystemWinForms
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string fullName = txbFullName.Text.Trim();
-            string username = txbUsername.Text.Trim();
-            string email = txbEmailAddress.Text.Trim();
-            string password = txbPassword.Text;
-            string confirmPassword = txbConfirmPassword.Text;
+            var name = txbFullName.Text.Trim();
+            var username = txbUsername.Text.Trim();        // <-- NEW
+            var email = txbEmailAddress.Text.Trim();
+            var password = txbPassword.Text;
+            var confirm = txbConfirmPassword.Text;
 
-            // Simple validation (expand as needed)
-            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) ||
-                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            // Basic validation
+            if (string.IsNullOrWhiteSpace(name) ||
+                string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirm))
             {
-                MessageBox.Show("Please fill all fields.");
-                return;
-            }
-            if (password != confirmPassword)
-            {
-                MessageBox.Show("Passwords do not match.");
-                txbPassword.Clear();
-                txbConfirmPassword.Clear();
+                MessageBox.Show("Please complete all fields.", "Missing info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Create the data object
-            SignUpData data = new SignUpData(fullName, username, email, password);
+            // Username rules: 3-20 chars, letters, numbers, dot, underscore, hyphen
+            if (!Regex.IsMatch(username, @"^[a-zA-Z0-9._-]{3,20}$"))
+            {
+                MessageBox.Show("Username must be 3–20 chars (letters, numbers, ., _, -).", "Invalid username",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            // Raise the event
-            AccountCreated?.Invoke(data);
-            MessageBox.Show("Account created successfully! Please log in.");
-            txbFullName.Clear();
-            txbUsername.Clear();
-            txbEmailAddress.Clear();
-            txbPassword.Clear();
-            txbConfirmPassword.Clear();
+            try { var _ = new MailAddress(email); }
+            catch
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (password.Length < 8)
+            {
+                MessageBox.Show("Password must be at least 8 characters.", "Weak password",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (password != confirm)
+            {
+                MessageBox.Show("Passwords do not match.", "Mismatch",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var repo = new UserRepository();
+
+            try
+            {
+                if (repo.UsernameExists(username))
+                {
+                    MessageBox.Show("That username is taken. Try another.", "Duplicate username",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (repo.EmailExists(email))
+                {
+                    MessageBox.Show("That email is already registered.", "Duplicate email",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                repo.CreateUser(name, username, email, password);
+
+                MessageBox.Show("Account created! You can now log in.", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Navigate back to login
+                WelcomeForm.welcomeForm.loginControl.Show();
+                WelcomeForm.welcomeForm.signUpControl.Hide();
+            }
+            catch (SqliteException ex) when (ex.SqliteErrorCode == 19) // constraint violation
+            {
+                MessageBox.Show("That username or email is already registered.", "Duplicate",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Could not create account.\n\n{ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
@@ -104,6 +161,11 @@ namespace AccountingSystemWinForms
         private void txbFullName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }

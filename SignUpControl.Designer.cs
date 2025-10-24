@@ -247,6 +247,7 @@
             pictureBox2.Size = new Size(26, 26);
             pictureBox2.TabIndex = 30;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // kryptonGroup3
             // 
