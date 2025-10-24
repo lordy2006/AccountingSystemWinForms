@@ -45,10 +45,10 @@ namespace AccountingSystemWinForms
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string fullName = kryptonTextBox1.Text.Trim();
-            string email = kryptonTextBox2.Text.Trim();
-            string password = kryptonTextBox3.Text;
-            string confirmPassword = kryptonTextBox4.Text;
+            string fullName = txbFullName.Text.Trim();
+            string email = txbEmailAddress.Text.Trim();
+            string password = txbPassword.Text;
+            string confirmPassword = txbConfirmPassword.Text;
 
             // Simple validation (expand as needed)
             if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(email) ||
@@ -60,8 +60,8 @@ namespace AccountingSystemWinForms
             if (password != confirmPassword)
             {
                 MessageBox.Show("Passwords do not match.");
-                kryptonTextBox3.Clear();
-                kryptonTextBox4.Clear();
+                txbPassword.Clear();
+                txbConfirmPassword.Clear();
                 return;
             }
 
@@ -71,10 +71,10 @@ namespace AccountingSystemWinForms
             // Raise the event
             AccountCreated?.Invoke(data);
             MessageBox.Show("Account created successfully! Please log in.");
-            kryptonTextBox1.Clear();
-            kryptonTextBox2.Clear();    
-            kryptonTextBox3.Clear();
-            kryptonTextBox4.Clear();
+            txbFullName.Clear();
+            txbEmailAddress.Clear();    
+            txbPassword.Clear();
+            txbConfirmPassword.Clear();
 
 
         }

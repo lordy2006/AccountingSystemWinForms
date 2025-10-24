@@ -48,8 +48,8 @@ namespace AccountingSystemWinForms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string inputEmail = kryptonTextBox2.Text.Trim();      // Replace with your actual email textbox name
-            string inputPassword = kryptonTextBox3.Text;          // Replace with your actual password textbox name
+            string inputEmail = txbUsername.Text.Trim();      // Replace with your actual email textbox name
+            string inputPassword = txbPassword.Text;          // Replace with your actual password textbox name
 
             // Get last sign-up info from WelcomeForm
             var registered = WelcomeForm.welcomeForm.LastSignedUpUser;
@@ -58,8 +58,8 @@ namespace AccountingSystemWinForms
             if (registered == null)
             {
                 MessageBox.Show("No account registered yet. Please sign up first.");
-                kryptonTextBox2.Clear();
-                kryptonTextBox3.Clear();
+                txbUsername.Clear();
+                txbPassword.Clear();
                 return;
             }
 
