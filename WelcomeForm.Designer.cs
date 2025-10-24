@@ -29,71 +29,100 @@
         private void InitializeComponent()
         {
             loginControl = new LoginControl();
-            closeButton = new Krypton.Toolkit.ButtonSpecAny();
             signUpControl = new SignUpControl();
+            btnClose = new PictureBox();
+            checkBox1 = new CheckBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // loginControl
             // 
             loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(743, 4);
+            loginControl.Location = new Point(747, 42);
             loginControl.Name = "loginControl";
-            loginControl.Size = new Size(560, 680);
+            loginControl.Size = new Size(552, 668);
             loginControl.TabIndex = 3;
             loginControl.Load += loginControl1_Load;
-            // 
-            // closeButton
-            // 
-            closeButton.Image = Properties.Resources.exit_google;
-            closeButton.Type = Krypton.Toolkit.PaletteButtonSpecStyle.Close;
-            closeButton.UniqueName = "b2ecc761f8e04e839387be0f7f1dbcdc";
             // 
             // signUpControl
             // 
             signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(32, 4);
+            signUpControl.Location = new Point(47, 42);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(563, 688);
+            signUpControl.Size = new Size(554, 668);
             signUpControl.TabIndex = 5;
+            signUpControl.Load += signUpControl_Load;
+            // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.exit_google;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Location = new Point(1306, 12);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 25);
+            btnClose.TabIndex = 43;
+            btnClose.TabStop = false;
+            btnClose.Click += CloseButton_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.White;
+            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.DimGray;
+            checkBox1.Location = new Point(871, 409);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 21);
+            checkBox1.TabIndex = 45;
+            checkBox1.Text = "Remember me";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(1093, 409);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 17);
+            label1.TabIndex = 46;
+            label1.Text = "Forgot password?";
             // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            ButtonSpecs.Add(closeButton);
-            ClientSize = new Size(1330, 708);
-            CloseBox = false;
+            BackgroundImage = Properties.Resources.log_in_screen;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1352, 746);
+            Controls.Add(label1);
+            Controls.Add(checkBox1);
+            Controls.Add(btnClose);
             Controls.Add(signUpControl);
             Controls.Add(loginControl);
+            DoubleBuffered = true;
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "WelcomeForm";
             StartPosition = FormStartPosition.CenterScreen;
-            StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            StateCommon.Border.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.True;
-            StateCommon.Border.Rounding = 20F;
-            StateCommon.Header.Back.Color1 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Back.Color2 = Color.FromArgb(7, 67, 130);
-            StateCommon.Header.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            StateCommon.Header.Border.Rounding = 10F;
-            StateCommon.Header.ButtonEdgeInset = 20;
-            StateCommon.Header.Content.Padding = new Padding(20, 0, 0, 0);
             TransparencyKey = Color.Silver;
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         public LoginControl loginControl;
-        private Krypton.Toolkit.ButtonSpecAny closeButton;
         public SignUpControl signUpControl;
+        private PictureBox btnClose;
+        private CheckBox checkBox1;
+        private Label label1;
     }
 }

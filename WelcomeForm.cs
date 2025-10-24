@@ -3,7 +3,7 @@ using Krypton.Toolkit;
 
 namespace AccountingSystemWinForms
 {
-    public partial class WelcomeForm : KryptonForm
+    public partial class WelcomeForm : Form
     {
         //para ma access globally
         public static WelcomeForm welcomeForm;
@@ -11,6 +11,10 @@ namespace AccountingSystemWinForms
         {
 
             InitializeComponent();
+            this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
+
+            UiDesign.ApplyShadow(this);
+
             signUpControl.Hide();
             welcomeForm = this;
         }
@@ -26,16 +30,15 @@ namespace AccountingSystemWinForms
         }
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(1344, 753); // set size again ( kay nay bug usahay )
-            closeButton.Click += CloseButton_Click;
-           
+            this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
+
         }
 
-       
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -58,6 +61,16 @@ namespace AccountingSystemWinForms
         }
 
         private void loginControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signUpControl_Load(object sender, EventArgs e)
         {
 
         }

@@ -11,11 +11,13 @@ using Krypton.Toolkit;
 
 namespace AccountingSystemWinForms
 {
-    public partial class Main : KryptonForm
+    public partial class Main : Form
     {
         public Main()
         {
             InitializeComponent();
+            this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
+
             UiDesign.ApplyShadow(this);
         }
         //enable window buffering (para ma smooth ang pag render)
@@ -115,6 +117,41 @@ namespace AccountingSystemWinForms
         }
 
         private void tableTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
