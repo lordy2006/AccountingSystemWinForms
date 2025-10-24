@@ -32,16 +32,16 @@
             signUpControl = new SignUpControl();
             btnClose = new PictureBox();
             label1 = new Label();
+            lblSignUpWelcome = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // loginControl
             // 
-            loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(747, 42);
+            loginControl.BackColor = Color.Transparent;
+            loginControl.Location = new Point(748, 39);
             loginControl.Name = "loginControl";
             loginControl.Size = new Size(552, 668);
             loginControl.TabIndex = 3;
@@ -49,10 +49,10 @@
             // 
             // signUpControl
             // 
-            signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(47, 42);
+            signUpControl.BackColor = Color.Transparent;
+            signUpControl.Location = new Point(51, 39);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(554, 668);
+            signUpControl.Size = new Size(565, 668);
             signUpControl.TabIndex = 5;
             signUpControl.Load += signUpControl_Load;
             // 
@@ -71,53 +71,53 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Cooper Black", 60F);
+            label1.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(107, 124);
+            label1.Location = new Point(79, 80);
             label1.Name = "label1";
-            label1.Size = new Size(511, 182);
+            label1.Size = new Size(200, 94);
             label1.TabIndex = 44;
             label1.Text = "Accounting\r\nSystem";
             label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblSignUpWelcome
+            // 
+            lblSignUpWelcome.AutoSize = true;
+            lblSignUpWelcome.BackColor = Color.Transparent;
+            lblSignUpWelcome.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignUpWelcome.ForeColor = Color.White;
+            lblSignUpWelcome.Location = new Point(89, 637);
+            lblSignUpWelcome.Name = "lblSignUpWelcome";
+            lblSignUpWelcome.Size = new Size(497, 86);
+            lblSignUpWelcome.TabIndex = 46;
+            lblSignUpWelcome.Text = "Welcome Back!";
+            lblSignUpWelcome.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Cooper Black", 60F);
+            label2.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(744, 124);
+            label2.Location = new Point(807, 637);
             label2.Name = "label2";
-            label2.Size = new Size(511, 182);
-            label2.TabIndex = 45;
-            label2.Text = "Accounting\r\nSystem";
+            label2.Size = new Size(497, 86);
+            label2.TabIndex = 48;
+            label2.Text = "Welcome Back!";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(94, 645);
+            label3.Location = new Point(797, 80);
             label3.Name = "label3";
-            label3.Size = new Size(524, 74);
-            label3.TabIndex = 46;
-            label3.Text = "Welcome Back!";
+            label3.Size = new Size(200, 94);
+            label3.TabIndex = 47;
+            label3.Text = "Accounting\r\nSystem";
             label3.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(836, 645);
-            label4.Name = "label4";
-            label4.Size = new Size(345, 74);
-            label4.TabIndex = 47;
-            label4.Text = "Welcome!";
-            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // WelcomeForm
             // 
@@ -127,12 +127,12 @@
             BackgroundImage = Properties.Resources.log_in_screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1352, 746);
-            Controls.Add(btnClose);
-            Controls.Add(signUpControl);
             Controls.Add(loginControl);
-            Controls.Add(label3);
-            Controls.Add(label4);
             Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(signUpControl);
+            Controls.Add(btnClose);
+            Controls.Add(lblSignUpWelcome);
             Controls.Add(label1);
             DoubleBuffered = true;
             ForeColor = Color.White;
@@ -154,8 +154,8 @@
         public SignUpControl signUpControl;
         private PictureBox btnClose;
         private Label label1;
+        private Label lblSignUpWelcome;
         private Label label2;
         private Label label3;
-        private Label label4;
     }
 }

@@ -74,5 +74,10 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void kryptonGroup1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

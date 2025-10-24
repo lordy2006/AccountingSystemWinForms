@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             tabHolder = new TabControl();
             tabNewTransactions = new TabPage();
             comboBox2 = new ComboBox();
@@ -52,20 +52,20 @@
             textBox8 = new TextBox();
             kryptonButton3 = new Krypton.Toolkit.KryptonButton();
             label6 = new Label();
-            dataGridView3 = new DataGridView();
+            dgvTransaction = new DataGridView();
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             tabAccounts = new TabPage();
-            dataGridView1 = new DataGridView();
+            dgvAccounts = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabGeneralJournal = new TabPage();
-            dataGridView2 = new DataGridView();
+            dgvGeneralJournal = new DataGridView();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
@@ -75,7 +75,7 @@
             textBox6 = new TextBox();
             kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             label1 = new Label();
-            dataGridView4 = new DataGridView();
+            dgvGeneralLedger = new DataGridView();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
@@ -83,10 +83,10 @@
             dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
             tabBalanceSheet = new TabPage();
             label2 = new Label();
-            dataGridView6 = new DataGridView();
+            dgvLiability = new DataGridView();
             dataGridViewTextBoxColumn19 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn20 = new DataGridViewTextBoxColumn();
-            dataGridView5 = new DataGridView();
+            dgvAssets = new DataGridView();
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             pnlContent1 = new Krypton.Toolkit.KryptonGroup();
@@ -107,16 +107,16 @@
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTransaction).BeginInit();
             tabAccounts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAccounts).BeginInit();
             tabGeneralJournal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGeneralJournal).BeginInit();
             tabGeneralLedger.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGeneralLedger).BeginInit();
             tabBalanceSheet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLiability).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAssets).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -347,7 +347,7 @@
             tabTransactions.Controls.Add(textBox8);
             tabTransactions.Controls.Add(kryptonButton3);
             tabTransactions.Controls.Add(label6);
-            tabTransactions.Controls.Add(dataGridView3);
+            tabTransactions.Controls.Add(dgvTransaction);
             tabTransactions.Location = new Point(4, 27);
             tabTransactions.Name = "tabTransactions";
             tabTransactions.Padding = new Padding(3);
@@ -405,36 +405,37 @@
             label6.TabIndex = 22;
             label6.Text = "Search Transaction:";
             // 
-            // dataGridView3
+            // dgvTransaction
             // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.AllowUserToOrderColumns = true;
-            dataGridView3.AllowUserToResizeColumns = false;
-            dataGridView3.AllowUserToResizeRows = false;
-            dataGridView3.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView3.ColumnHeadersHeight = 35;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
-            dataGridView3.Location = new Point(35, 101);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.Size = new Size(1046, 504);
-            dataGridView3.TabIndex = 21;
-            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
+            dgvTransaction.AllowUserToAddRows = false;
+            dgvTransaction.AllowUserToDeleteRows = false;
+            dgvTransaction.AllowUserToResizeColumns = false;
+            dgvTransaction.AllowUserToResizeRows = false;
+            dgvTransaction.BackgroundColor = Color.White;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgvTransaction.ColumnHeadersHeight = 35;
+            dgvTransaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvTransaction.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
+            dgvTransaction.Location = new Point(35, 101);
+            dgvTransaction.Name = "dgvTransaction";
+            dgvTransaction.RowHeadersVisible = false;
+            dgvTransaction.Size = new Size(1046, 504);
+            dgvTransaction.TabIndex = 21;
+            dgvTransaction.CellContentClick += dataGridView3_CellContentClick;
             // 
             // dataGridViewTextBoxColumn9
             // 
             dataGridViewTextBoxColumn9.HeaderText = "Date";
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn9.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn9.Width = 150;
             // 
             // dataGridViewTextBoxColumn10
@@ -442,29 +443,37 @@
             dataGridViewTextBoxColumn10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn10.HeaderText = "Description";
             dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn10.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn11
             // 
             dataGridViewTextBoxColumn11.HeaderText = "Debit Account";
             dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn11.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn11.Width = 200;
             // 
             // dataGridViewTextBoxColumn12
             // 
             dataGridViewTextBoxColumn12.HeaderText = "Credit Account";
             dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn12.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn12.Width = 200;
             // 
             // dataGridViewTextBoxColumn13
             // 
             dataGridViewTextBoxColumn13.HeaderText = "Amount";
             dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            dataGridViewTextBoxColumn13.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn13.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn13.Width = 150;
             // 
             // tabAccounts
             // 
             tabAccounts.BackColor = Color.White;
-            tabAccounts.Controls.Add(dataGridView1);
+            tabAccounts.Controls.Add(dgvAccounts);
             tabAccounts.Controls.Add(label3);
             tabAccounts.Location = new Point(4, 27);
             tabAccounts.Name = "tabAccounts";
@@ -473,31 +482,30 @@
             tabAccounts.TabIndex = 2;
             tabAccounts.Text = "tabPage3";
             // 
-            // dataGridView1
+            // dgvAccounts
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeight = 35;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
-            dataGridView1.Location = new Point(32, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1046, 603);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvAccounts.AllowUserToAddRows = false;
+            dgvAccounts.AllowUserToDeleteRows = false;
+            dgvAccounts.AllowUserToResizeColumns = false;
+            dgvAccounts.AllowUserToResizeRows = false;
+            dgvAccounts.BackgroundColor = Color.White;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dgvAccounts.ColumnHeadersHeight = 35;
+            dgvAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvAccounts.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dgvAccounts.Location = new Point(32, 3);
+            dgvAccounts.Name = "dgvAccounts";
+            dgvAccounts.RowHeadersVisible = false;
+            dgvAccounts.Size = new Size(1046, 603);
+            dgvAccounts.TabIndex = 2;
+            dgvAccounts.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -530,7 +538,7 @@
             // tabGeneralJournal
             // 
             tabGeneralJournal.BackColor = Color.White;
-            tabGeneralJournal.Controls.Add(dataGridView2);
+            tabGeneralJournal.Controls.Add(dgvGeneralJournal);
             tabGeneralJournal.Location = new Point(4, 27);
             tabGeneralJournal.Name = "tabGeneralJournal";
             tabGeneralJournal.Padding = new Padding(3);
@@ -538,60 +546,69 @@
             tabGeneralJournal.TabIndex = 3;
             tabGeneralJournal.Text = "white";
             // 
-            // dataGridView2
+            // dgvGeneralJournal
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AllowUserToOrderColumns = true;
-            dataGridView2.AllowUserToResizeColumns = false;
-            dataGridView2.AllowUserToResizeRows = false;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView2.ColumnHeadersHeight = 35;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column1, Column2 });
-            dataGridView2.Location = new Point(32, 3);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.Size = new Size(1046, 603);
-            dataGridView2.TabIndex = 3;
+            dgvGeneralJournal.AllowUserToAddRows = false;
+            dgvGeneralJournal.AllowUserToDeleteRows = false;
+            dgvGeneralJournal.AllowUserToResizeColumns = false;
+            dgvGeneralJournal.AllowUserToResizeRows = false;
+            dgvGeneralJournal.BackgroundColor = Color.White;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvGeneralJournal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dgvGeneralJournal.ColumnHeadersHeight = 35;
+            dgvGeneralJournal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvGeneralJournal.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column1, Column2 });
+            dgvGeneralJournal.Location = new Point(32, 3);
+            dgvGeneralJournal.Name = "dgvGeneralJournal";
+            dgvGeneralJournal.RowHeadersVisible = false;
+            dgvGeneralJournal.Size = new Size(1046, 603);
+            dgvGeneralJournal.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn4
             // 
             dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn4.HeaderText = "Type";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn5
             // 
             dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn5.HeaderText = "Description";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn6
             // 
             dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn6.HeaderText = "Account";
             dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn6.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column1.HeaderText = "Debit";
             Column1.Name = "Column1";
+            Column1.Resizable = DataGridViewTriState.False;
+            Column1.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column2.HeaderText = "Credit";
             Column2.Name = "Column2";
+            Column2.Resizable = DataGridViewTriState.False;
+            Column2.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // tabGeneralLedger
             // 
@@ -599,7 +616,7 @@
             tabGeneralLedger.Controls.Add(textBox6);
             tabGeneralLedger.Controls.Add(kryptonButton2);
             tabGeneralLedger.Controls.Add(label1);
-            tabGeneralLedger.Controls.Add(dataGridView4);
+            tabGeneralLedger.Controls.Add(dgvGeneralLedger);
             tabGeneralLedger.Location = new Point(4, 27);
             tabGeneralLedger.Name = "tabGeneralLedger";
             tabGeneralLedger.Padding = new Padding(3);
@@ -657,35 +674,36 @@
             label1.TabIndex = 28;
             label1.Text = "Filter:";
             // 
-            // dataGridView4
+            // dgvGeneralLedger
             // 
-            dataGridView4.AllowUserToAddRows = false;
-            dataGridView4.AllowUserToDeleteRows = false;
-            dataGridView4.AllowUserToOrderColumns = true;
-            dataGridView4.AllowUserToResizeColumns = false;
-            dataGridView4.AllowUserToResizeRows = false;
-            dataGridView4.BackgroundColor = Color.White;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView4.ColumnHeadersHeight = 35;
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18 });
-            dataGridView4.Location = new Point(35, 123);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersVisible = false;
-            dataGridView4.Size = new Size(1046, 480);
-            dataGridView4.TabIndex = 27;
+            dgvGeneralLedger.AllowUserToAddRows = false;
+            dgvGeneralLedger.AllowUserToDeleteRows = false;
+            dgvGeneralLedger.AllowUserToResizeColumns = false;
+            dgvGeneralLedger.AllowUserToResizeRows = false;
+            dgvGeneralLedger.BackgroundColor = Color.White;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dgvGeneralLedger.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dgvGeneralLedger.ColumnHeadersHeight = 35;
+            dgvGeneralLedger.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvGeneralLedger.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18 });
+            dgvGeneralLedger.Location = new Point(35, 123);
+            dgvGeneralLedger.Name = "dgvGeneralLedger";
+            dgvGeneralLedger.RowHeadersVisible = false;
+            dgvGeneralLedger.Size = new Size(1046, 480);
+            dgvGeneralLedger.TabIndex = 27;
             // 
             // dataGridViewTextBoxColumn14
             // 
             dataGridViewTextBoxColumn14.HeaderText = "Date";
             dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            dataGridViewTextBoxColumn14.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn14.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn14.Width = 150;
             // 
             // dataGridViewTextBoxColumn15
@@ -693,31 +711,39 @@
             dataGridViewTextBoxColumn15.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn15.HeaderText = "Description";
             dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            dataGridViewTextBoxColumn15.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn15.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn16
             // 
             dataGridViewTextBoxColumn16.HeaderText = "Debit Account";
             dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            dataGridViewTextBoxColumn16.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn16.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn16.Width = 200;
             // 
             // dataGridViewTextBoxColumn17
             // 
             dataGridViewTextBoxColumn17.HeaderText = "Credit Account";
             dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            dataGridViewTextBoxColumn17.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn17.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn17.Width = 200;
             // 
             // dataGridViewTextBoxColumn18
             // 
             dataGridViewTextBoxColumn18.HeaderText = "Amount";
             dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            dataGridViewTextBoxColumn18.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn18.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn18.Width = 150;
             // 
             // tabBalanceSheet
             // 
             tabBalanceSheet.BackColor = Color.White;
             tabBalanceSheet.Controls.Add(label2);
-            tabBalanceSheet.Controls.Add(dataGridView6);
-            tabBalanceSheet.Controls.Add(dataGridView5);
+            tabBalanceSheet.Controls.Add(dgvLiability);
+            tabBalanceSheet.Controls.Add(dgvAssets);
             tabBalanceSheet.Location = new Point(4, 27);
             tabBalanceSheet.Name = "tabBalanceSheet";
             tabBalanceSheet.Padding = new Padding(3);
@@ -736,35 +762,36 @@
             label2.TabIndex = 30;
             label2.Text = "Balance Sheet";
             // 
-            // dataGridView6
+            // dgvLiability
             // 
-            dataGridView6.AllowUserToAddRows = false;
-            dataGridView6.AllowUserToDeleteRows = false;
-            dataGridView6.AllowUserToOrderColumns = true;
-            dataGridView6.AllowUserToResizeColumns = false;
-            dataGridView6.AllowUserToResizeRows = false;
-            dataGridView6.BackgroundColor = Color.White;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView6.ColumnHeadersHeight = 35;
-            dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView6.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
-            dataGridView6.Location = new Point(576, 34);
-            dataGridView6.Name = "dataGridView6";
-            dataGridView6.RowHeadersVisible = false;
-            dataGridView6.Size = new Size(503, 574);
-            dataGridView6.TabIndex = 29;
+            dgvLiability.AllowUserToAddRows = false;
+            dgvLiability.AllowUserToDeleteRows = false;
+            dgvLiability.AllowUserToResizeColumns = false;
+            dgvLiability.AllowUserToResizeRows = false;
+            dgvLiability.BackgroundColor = Color.White;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.White;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvLiability.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dgvLiability.ColumnHeadersHeight = 35;
+            dgvLiability.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvLiability.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
+            dgvLiability.Location = new Point(576, 34);
+            dgvLiability.Name = "dgvLiability";
+            dgvLiability.RowHeadersVisible = false;
+            dgvLiability.Size = new Size(503, 574);
+            dgvLiability.TabIndex = 29;
             // 
             // dataGridViewTextBoxColumn19
             // 
             dataGridViewTextBoxColumn19.HeaderText = "Date";
             dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            dataGridViewTextBoxColumn19.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn19.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn19.Width = 150;
             // 
             // dataGridViewTextBoxColumn20
@@ -772,36 +799,39 @@
             dataGridViewTextBoxColumn20.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn20.HeaderText = "Description";
             dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            dataGridViewTextBoxColumn20.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn20.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridView5
+            // dgvAssets
             // 
-            dataGridView5.AllowUserToAddRows = false;
-            dataGridView5.AllowUserToDeleteRows = false;
-            dataGridView5.AllowUserToOrderColumns = true;
-            dataGridView5.AllowUserToResizeColumns = false;
-            dataGridView5.AllowUserToResizeRows = false;
-            dataGridView5.BackgroundColor = Color.White;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView5.ColumnHeadersHeight = 35;
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView5.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
-            dataGridView5.Location = new Point(32, 34);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersVisible = false;
-            dataGridView5.Size = new Size(503, 574);
-            dataGridView5.TabIndex = 28;
+            dgvAssets.AllowUserToAddRows = false;
+            dgvAssets.AllowUserToDeleteRows = false;
+            dgvAssets.AllowUserToResizeColumns = false;
+            dgvAssets.AllowUserToResizeRows = false;
+            dgvAssets.BackgroundColor = Color.White;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dgvAssets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dgvAssets.ColumnHeadersHeight = 35;
+            dgvAssets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvAssets.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
+            dgvAssets.Location = new Point(32, 34);
+            dgvAssets.Name = "dgvAssets";
+            dgvAssets.RowHeadersVisible = false;
+            dgvAssets.Size = new Size(503, 574);
+            dgvAssets.TabIndex = 28;
             // 
             // dataGridViewTextBoxColumn7
             // 
             dataGridViewTextBoxColumn7.HeaderText = "Date";
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn7.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
@@ -809,6 +839,8 @@
             dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn8.HeaderText = "Description";
             dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn8.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // pnlContent1
             // 
@@ -1185,19 +1217,19 @@
             tabNewTransactions.PerformLayout();
             tabTransactions.ResumeLayout(false);
             tabTransactions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTransaction).EndInit();
             tabAccounts.ResumeLayout(false);
             tabAccounts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAccounts).EndInit();
             tabGeneralJournal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGeneralJournal).EndInit();
             tabGeneralLedger.ResumeLayout(false);
             tabGeneralLedger.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGeneralLedger).EndInit();
             tabBalanceSheet.ResumeLayout(false);
             tabBalanceSheet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLiability).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAssets).EndInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1.Panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pnlContent1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
@@ -1239,43 +1271,43 @@
         public Krypton.Toolkit.KryptonButton btnClearForm;
         private Panel panel3;
         private PictureBox btnClose;
-        private DataGridView dataGridView1;
+        private DataGridView dgvAccounts;
         private TabPage tabTransactions;
         private TextBox textBox8;
         public Krypton.Toolkit.KryptonButton kryptonButton3;
         private Label label6;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridView dgvTransaction;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private TextBox textBox6;
         public Krypton.Toolkit.KryptonButton kryptonButton2;
         private Label label1;
-        private DataGridView dataGridView4;
+        private DataGridView dgvGeneralLedger;
+        private DataGridView dgvGeneralJournal;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private DataGridView dgvLiability;
+        private DataGridView dgvAssets;
+        private Label label2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private DataGridView dataGridView6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private DataGridView dataGridView5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private Label label2;
     }
 }
