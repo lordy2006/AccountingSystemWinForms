@@ -45,6 +45,7 @@
             label4 = new Label();
             label3 = new Label();
             kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            textBox1 = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -222,6 +223,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(label6);
@@ -318,6 +320,14 @@
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
             kryptonGroup1.TabIndex = 27;
             // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Location = new Point(261, 85);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 32;
+            // 
             // SignUpControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -355,5 +365,6 @@
         private Label label5;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private TextBox textBox1;
     }
 }

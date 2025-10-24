@@ -39,6 +39,8 @@
             label2 = new Label();
             kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             panel2 = new Panel();
+            checkBox1 = new CheckBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1).BeginInit();
@@ -211,6 +213,8 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(checkBox1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(panel1);
@@ -224,6 +228,31 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(390, 443);
             panel2.TabIndex = 19;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.White;
+            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.DimGray;
+            checkBox1.Location = new Point(32, 246);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 21);
+            checkBox1.TabIndex = 46;
+            checkBox1.Text = "Remember me";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.DimGray;
+            label3.Location = new Point(256, 247);
+            label3.Name = "label3";
+            label3.Size = new Size(106, 17);
+            label3.TabIndex = 47;
+            label3.Text = "Forgot password?";
             // 
             // LoginControl
             // 
@@ -255,5 +284,7 @@
         private Label label2;
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
         private Panel panel2;
+        private CheckBox checkBox1;
+        private Label label3;
     }
 }
