@@ -18,6 +18,14 @@ namespace AccountingSystemWinForms
             InitializeComponent();
 
         }
+
+        public void PreFillFields(SignUpData data)
+        {
+            kryptonTextBox2.Text = data.Username;
+            kryptonTextBox3.Text = data.Password;
+        }
+
+
         //enable window buffering  (para ma smooth ang pag render)
         protected override CreateParams CreateParams
         {
@@ -40,10 +48,35 @@ namespace AccountingSystemWinForms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Main mainForm = new Main();
-            mainForm.Show();
+            string inputEmail = txbUsername.Text.Trim();      // Replace with your actual email textbox name
+            string inputPassword = txbPassword.Text;          // Replace with your actual password textbox name
 
-            WelcomeForm.welcomeForm.Hide();
+            // Get last sign-up info from WelcomeForm
+            var registered = WelcomeForm.welcomeForm.LastSignedUpUser;
+
+            // Check if user has registered
+            if (registered == null)
+            {
+                MessageBox.Show("No account registered yet. Please sign up first.");
+                txbUsername.Clear();
+                txbPassword.Clear();
+                return;
+            }
+
+            // Validate credentials
+            if (inputEmail == registered.Username && inputPassword == registered.Password)
+            {
+                // Credentials correct, proceed
+                Main mainForm = new Main();
+                mainForm.setUsername(registered.FullName);
+                mainForm.Show();
+                WelcomeForm.welcomeForm.Hide();
+            }
+            else
+            {
+                // Credentials do not match
+                MessageBox.Show("Invalid email or password.");
+            }
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
