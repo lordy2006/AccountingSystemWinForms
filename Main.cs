@@ -20,6 +20,10 @@ namespace AccountingSystemWinForms
 
             UiDesign.ApplyShadow(this);
         }
+
+        public void setUsername(string FullName) { 
+            lblDisplayFullName.Text = FullName;
+        }
         //enable window buffering (para ma smooth ang pag render)
         protected override CreateParams CreateParams
         {

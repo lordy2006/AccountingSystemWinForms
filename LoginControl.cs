@@ -21,7 +21,7 @@ namespace AccountingSystemWinForms
 
         public void PreFillFields(SignUpData data)
         {
-            kryptonTextBox2.Text = data.Email;
+            kryptonTextBox2.Text = data.Username;
             kryptonTextBox3.Text = data.Password;
         }
 
@@ -64,10 +64,11 @@ namespace AccountingSystemWinForms
             }
 
             // Validate credentials
-            if (inputEmail == registered.Email && inputPassword == registered.Password)
+            if (inputEmail == registered.Username && inputPassword == registered.Password)
             {
                 // Credentials correct, proceed
                 Main mainForm = new Main();
+                mainForm.setUsername(registered.FullName);
                 mainForm.Show();
                 WelcomeForm.welcomeForm.Hide();
             }

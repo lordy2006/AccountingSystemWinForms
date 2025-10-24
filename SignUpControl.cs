@@ -46,12 +46,13 @@ namespace AccountingSystemWinForms
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             string fullName = txbFullName.Text.Trim();
+            string username = txbUsername.Text.Trim();
             string email = txbEmailAddress.Text.Trim();
             string password = txbPassword.Text;
             string confirmPassword = txbConfirmPassword.Text;
 
             // Simple validation (expand as needed)
-            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(email) ||
+            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) ||
                 string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("Please fill all fields.");
@@ -66,13 +67,14 @@ namespace AccountingSystemWinForms
             }
 
             // Create the data object
-            SignUpData data = new SignUpData(fullName, email, password);
+            SignUpData data = new SignUpData(fullName, username, email, password);
 
             // Raise the event
             AccountCreated?.Invoke(data);
             MessageBox.Show("Account created successfully! Please log in.");
             txbFullName.Clear();
-            txbEmailAddress.Clear();    
+            txbUsername.Clear();
+            txbEmailAddress.Clear();
             txbPassword.Clear();
             txbConfirmPassword.Clear();
 
@@ -80,6 +82,26 @@ namespace AccountingSystemWinForms
         }
 
         private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbFullName_TextChanged(object sender, EventArgs e)
         {
 
         }
