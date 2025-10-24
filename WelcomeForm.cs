@@ -17,8 +17,22 @@ namespace AccountingSystemWinForms
 
             signUpControl.Hide();
             welcomeForm = this;
+
+            signUpControl.AccountCreated += SignUpControl_AccountCreated;
         }
+
+
+        public SignUpData LastSignedUpUser { get; set; }
+
         //enable window buffering  (para ma smooth ang pag render)
+        private void SignUpControl_AccountCreated(SignUpData data)
+        {
+            LastSignedUpUser = data;
+           
+        }
+
+
+
         protected override CreateParams CreateParams
         {
             get
