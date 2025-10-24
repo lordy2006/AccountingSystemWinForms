@@ -31,15 +31,17 @@
             loginControl = new LoginControl();
             signUpControl = new SignUpControl();
             btnClose = new PictureBox();
-            checkBox1 = new CheckBox();
             label1 = new Label();
+            lblSignUpWelcome = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // loginControl
             // 
-            loginControl.BackColor = Color.FromArgb(7, 67, 130);
-            loginControl.Location = new Point(747, 42);
+            loginControl.BackColor = Color.Transparent;
+            loginControl.Location = new Point(748, 39);
             loginControl.Name = "loginControl";
             loginControl.Size = new Size(552, 668);
             loginControl.TabIndex = 3;
@@ -47,10 +49,10 @@
             // 
             // signUpControl
             // 
-            signUpControl.BackColor = Color.FromArgb(7, 67, 130);
-            signUpControl.Location = new Point(47, 42);
+            signUpControl.BackColor = Color.Transparent;
+            signUpControl.Location = new Point(51, 39);
             signUpControl.Name = "signUpControl";
-            signUpControl.Size = new Size(554, 668);
+            signUpControl.Size = new Size(565, 668);
             signUpControl.TabIndex = 5;
             signUpControl.Load += signUpControl_Load;
             // 
@@ -65,30 +67,57 @@
             btnClose.TabStop = false;
             btnClose.Click += CloseButton_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.White;
-            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            checkBox1.ForeColor = Color.DimGray;
-            checkBox1.Location = new Point(871, 409);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(108, 21);
-            checkBox1.TabIndex = 45;
-            checkBox1.Text = "Remember me";
-            checkBox1.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(1093, 409);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(79, 80);
             label1.Name = "label1";
-            label1.Size = new Size(106, 17);
-            label1.TabIndex = 46;
-            label1.Text = "Forgot password?";
+            label1.Size = new Size(200, 94);
+            label1.TabIndex = 44;
+            label1.Text = "Accounting\r\nSystem";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblSignUpWelcome
+            // 
+            lblSignUpWelcome.AutoSize = true;
+            lblSignUpWelcome.BackColor = Color.Transparent;
+            lblSignUpWelcome.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignUpWelcome.ForeColor = Color.White;
+            lblSignUpWelcome.Location = new Point(89, 637);
+            lblSignUpWelcome.Name = "lblSignUpWelcome";
+            lblSignUpWelcome.Size = new Size(497, 86);
+            lblSignUpWelcome.TabIndex = 46;
+            lblSignUpWelcome.Text = "Welcome Back!";
+            lblSignUpWelcome.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(807, 637);
+            label2.Name = "label2";
+            label2.Size = new Size(497, 86);
+            label2.TabIndex = 48;
+            label2.Text = "Welcome Back!";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(797, 80);
+            label3.Name = "label3";
+            label3.Size = new Size(200, 94);
+            label3.TabIndex = 47;
+            label3.Text = "Accounting\r\nSystem";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // WelcomeForm
             // 
@@ -98,11 +127,13 @@
             BackgroundImage = Properties.Resources.log_in_screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1352, 746);
-            Controls.Add(label1);
-            Controls.Add(checkBox1);
-            Controls.Add(btnClose);
-            Controls.Add(signUpControl);
             Controls.Add(loginControl);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(signUpControl);
+            Controls.Add(btnClose);
+            Controls.Add(lblSignUpWelcome);
+            Controls.Add(label1);
             DoubleBuffered = true;
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
@@ -122,7 +153,9 @@
         public LoginControl loginControl;
         public SignUpControl signUpControl;
         private PictureBox btnClose;
-        private CheckBox checkBox1;
         private Label label1;
+        private Label lblSignUpWelcome;
+        private Label label2;
+        private Label label3;
     }
 }
