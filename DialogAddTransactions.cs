@@ -56,5 +56,10 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void lblAmountTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

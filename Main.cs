@@ -21,7 +21,8 @@ namespace AccountingSystemWinForms
             UiDesign.ApplyShadow(this);
         }
 
-        public void setUsername(string FullName) { 
+        public void setUsername(string FullName)
+        {
             lblDisplayFullName.Text = FullName;
         }
         //enable window buffering (para ma smooth ang pag render)
@@ -65,8 +66,9 @@ namespace AccountingSystemWinForms
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
-            WelcomeForm.welcomeForm.Show();
+            
+            LogoutDialog logoutSystem = new LogoutDialog();
+            UiDesign.ShowDialogDimBackground(this, logoutSystem, 15);
 
         }
 
@@ -156,6 +158,11 @@ namespace AccountingSystemWinForms
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvAssets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

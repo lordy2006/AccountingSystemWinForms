@@ -33,9 +33,14 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            btnClearForm = new Krypton.Toolkit.KryptonButton();
-            btnAddTransaction = new Krypton.Toolkit.KryptonButton();
+            btnCancelTransaction = new Krypton.Toolkit.KryptonButton();
+            btnConfirmTransaction = new Krypton.Toolkit.KryptonButton();
             label6 = new Label();
+            lblDateTransaction = new Label();
+            lblDescriptionTransaction = new Label();
+            lblDebitAccTransaction = new Label();
+            lblCreditAccTransaction = new Label();
+            lblAmountTransaction = new Label();
             SuspendLayout();
             // 
             // label1
@@ -91,71 +96,71 @@
             label5.Text = "Amount:";
             label5.Click += label5_Click;
             // 
-            // btnClearForm
+            // btnCancelTransaction
             // 
-            btnClearForm.Cursor = Cursors.Hand;
-            btnClearForm.Location = new Point(133, 341);
-            btnClearForm.Name = "btnClearForm";
-            btnClearForm.OverrideDefault.Back.Color1 = Color.White;
-            btnClearForm.OverrideDefault.Back.Color2 = Color.White;
-            btnClearForm.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnClearForm.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnClearForm.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            btnClearForm.Size = new Size(159, 51);
-            btnClearForm.StateCommon.Back.Color1 = Color.White;
-            btnClearForm.StateCommon.Back.Color2 = Color.White;
-            btnClearForm.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            btnClearForm.StateCommon.Border.Rounding = 50F;
-            btnClearForm.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnClearForm.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnClearForm.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnClearForm.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
-            btnClearForm.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
-            btnClearForm.StateNormal.Back.Color1 = Color.White;
-            btnClearForm.StateNormal.Back.Color2 = Color.White;
-            btnClearForm.StateNormal.Border.Color1 = Color.Black;
-            btnClearForm.StateNormal.Border.Color2 = Color.Black;
-            btnClearForm.StateNormal.Border.Width = 1;
-            btnClearForm.StateNormal.Content.ShortText.Color1 = Color.Black;
-            btnClearForm.StateNormal.Content.ShortText.Color2 = Color.Black;
-            btnClearForm.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnClearForm.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnClearForm.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnClearForm.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnClearForm.TabIndex = 14;
-            btnClearForm.Values.DropDownArrowColor = Color.Empty;
-            btnClearForm.Values.Text = "CANCEL";
-            btnClearForm.Click += btnClearForm_Click_1;
+            btnCancelTransaction.Cursor = Cursors.Hand;
+            btnCancelTransaction.Location = new Point(133, 341);
+            btnCancelTransaction.Name = "btnCancelTransaction";
+            btnCancelTransaction.OverrideDefault.Back.Color1 = Color.White;
+            btnCancelTransaction.OverrideDefault.Back.Color2 = Color.White;
+            btnCancelTransaction.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnCancelTransaction.Size = new Size(159, 51);
+            btnCancelTransaction.StateCommon.Back.Color1 = Color.White;
+            btnCancelTransaction.StateCommon.Back.Color2 = Color.White;
+            btnCancelTransaction.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnCancelTransaction.StateCommon.Border.Rounding = 50F;
+            btnCancelTransaction.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnCancelTransaction.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnCancelTransaction.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnCancelTransaction.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnCancelTransaction.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnCancelTransaction.StateNormal.Back.Color1 = Color.White;
+            btnCancelTransaction.StateNormal.Back.Color2 = Color.White;
+            btnCancelTransaction.StateNormal.Border.Color1 = Color.Black;
+            btnCancelTransaction.StateNormal.Border.Color2 = Color.Black;
+            btnCancelTransaction.StateNormal.Border.Width = 1;
+            btnCancelTransaction.StateNormal.Content.ShortText.Color1 = Color.Black;
+            btnCancelTransaction.StateNormal.Content.ShortText.Color2 = Color.Black;
+            btnCancelTransaction.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnCancelTransaction.TabIndex = 14;
+            btnCancelTransaction.Values.DropDownArrowColor = Color.Empty;
+            btnCancelTransaction.Values.Text = "CANCEL";
+            btnCancelTransaction.Click += btnClearForm_Click_1;
             // 
-            // btnAddTransaction
+            // btnConfirmTransaction
             // 
-            btnAddTransaction.Cursor = Cursors.Hand;
-            btnAddTransaction.Location = new Point(298, 341);
-            btnAddTransaction.Name = "btnAddTransaction";
-            btnAddTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            btnAddTransaction.Size = new Size(159, 51);
-            btnAddTransaction.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            btnAddTransaction.StateCommon.Border.Rounding = 50F;
-            btnAddTransaction.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnAddTransaction.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnAddTransaction.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnAddTransaction.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
-            btnAddTransaction.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnAddTransaction.TabIndex = 15;
-            btnAddTransaction.Values.DropDownArrowColor = Color.Empty;
-            btnAddTransaction.Values.Text = "CONFIRM";
+            btnConfirmTransaction.Cursor = Cursors.Hand;
+            btnConfirmTransaction.Location = new Point(298, 341);
+            btnConfirmTransaction.Name = "btnConfirmTransaction";
+            btnConfirmTransaction.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnConfirmTransaction.Size = new Size(159, 51);
+            btnConfirmTransaction.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnConfirmTransaction.StateCommon.Border.Rounding = 50F;
+            btnConfirmTransaction.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnConfirmTransaction.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnConfirmTransaction.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnConfirmTransaction.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnConfirmTransaction.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnConfirmTransaction.TabIndex = 15;
+            btnConfirmTransaction.Values.DropDownArrowColor = Color.Empty;
+            btnConfirmTransaction.Values.Text = "CONFIRM";
             // 
             // label6
             // 
@@ -171,14 +176,59 @@
             label6.TextAlign = ContentAlignment.MiddleCenter;
             label6.Click += label6_Click;
             // 
+            // lblDateTransaction
+            // 
+            lblDateTransaction.Location = new Point(100, 110);
+            lblDateTransaction.Name = "lblDateTransaction";
+            lblDateTransaction.Size = new Size(445, 18);
+            lblDateTransaction.TabIndex = 17;
+            
+            // 
+            // lblDescriptionTransaction
+            // 
+            lblDescriptionTransaction.Location = new Point(60, 163);
+            lblDescriptionTransaction.Name = "lblDescriptionTransaction";
+            lblDescriptionTransaction.Size = new Size(485, 59);
+            lblDescriptionTransaction.TabIndex = 18;
+            
+            // 
+            // lblDebitAccTransaction
+            // 
+            lblDebitAccTransaction.Location = new Point(171, 232);
+            lblDebitAccTransaction.Name = "lblDebitAccTransaction";
+            lblDebitAccTransaction.Size = new Size(375, 18);
+            lblDebitAccTransaction.TabIndex = 19;
+            
+            // 
+            // lblCreditAccTransaction
+            // 
+            lblCreditAccTransaction.Location = new Point(171, 264);
+            lblCreditAccTransaction.Name = "lblCreditAccTransaction";
+            lblCreditAccTransaction.Size = new Size(374, 18);
+            lblCreditAccTransaction.TabIndex = 20;
+            
+            // 
+            // lblAmountTransaction
+            // 
+            lblAmountTransaction.Location = new Point(125, 295);
+            lblAmountTransaction.Name = "lblAmountTransaction";
+            lblAmountTransaction.Size = new Size(420, 18);
+            lblAmountTransaction.TabIndex = 21;
+            lblAmountTransaction.Click += lblAmountTransaction_Click;
+            // 
             // DialogAddTransactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(607, 415);
+            Controls.Add(lblAmountTransaction);
+            Controls.Add(lblCreditAccTransaction);
+            Controls.Add(lblDebitAccTransaction);
+            Controls.Add(lblDescriptionTransaction);
+            Controls.Add(lblDateTransaction);
             Controls.Add(label6);
-            Controls.Add(btnAddTransaction);
-            Controls.Add(btnClearForm);
+            Controls.Add(btnConfirmTransaction);
+            Controls.Add(btnCancelTransaction);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -188,6 +238,7 @@
             Name = "DialogAddTransactions";
             StartPosition = FormStartPosition.CenterParent;
             Text = "DialogAddTransactions";
+            
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,8 +250,13 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        public Krypton.Toolkit.KryptonButton btnClearForm;
-        public Krypton.Toolkit.KryptonButton btnAddTransaction;
+        public Krypton.Toolkit.KryptonButton btnCancelTransaction;
+        public Krypton.Toolkit.KryptonButton btnConfirmTransaction;
         private Label label6;
+        private Label lblDateTransaction;
+        private Label lblDescriptionTransaction;
+        private Label lblDebitAccTransaction;
+        private Label lblCreditAccTransaction;
+        private Label lblAmountTransaction;
     }
 }

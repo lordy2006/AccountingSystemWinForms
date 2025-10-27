@@ -153,6 +153,16 @@ namespace AccountingSystemWinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Log_Out_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Log Out Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NEW_TRANSACT {
             get {
                 object obj = ResourceManager.GetObject("NEW TRANSACT", resourceCulture);

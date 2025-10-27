@@ -121,6 +121,9 @@
   <data name="password_freepik" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password_freepik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="home page screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home page screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="JOURNAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JOURNAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,7 +166,7 @@
   <data name="user_google180" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_google180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home page screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home page screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Log Out Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Log Out Icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

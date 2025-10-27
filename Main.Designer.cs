@@ -414,7 +414,7 @@
             dgvTransaction.AllowUserToResizeRows = false;
             dgvTransaction.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
@@ -424,6 +424,7 @@
             dgvTransaction.ColumnHeadersHeight = 35;
             dgvTransaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvTransaction.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
+            dgvTransaction.EnableHeadersVisualStyles = false;
             dgvTransaction.Location = new Point(35, 101);
             dgvTransaction.Name = "dgvTransaction";
             dgvTransaction.RowHeadersVisible = false;
@@ -491,7 +492,7 @@
             dgvAccounts.AllowUserToResizeRows = false;
             dgvAccounts.BackgroundColor = Color.White;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -501,6 +502,7 @@
             dgvAccounts.ColumnHeadersHeight = 35;
             dgvAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvAccounts.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dgvAccounts.EnableHeadersVisualStyles = false;
             dgvAccounts.Location = new Point(32, 3);
             dgvAccounts.Name = "dgvAccounts";
             dgvAccounts.RowHeadersVisible = false;
@@ -555,7 +557,7 @@
             dgvGeneralJournal.AllowUserToResizeRows = false;
             dgvGeneralJournal.BackgroundColor = Color.White;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
@@ -565,6 +567,7 @@
             dgvGeneralJournal.ColumnHeadersHeight = 35;
             dgvGeneralJournal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvGeneralJournal.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column1, Column2 });
+            dgvGeneralJournal.EnableHeadersVisualStyles = false;
             dgvGeneralJournal.Location = new Point(32, 3);
             dgvGeneralJournal.Name = "dgvGeneralJournal";
             dgvGeneralJournal.RowHeadersVisible = false;
@@ -683,7 +686,7 @@
             dgvGeneralLedger.AllowUserToResizeRows = false;
             dgvGeneralLedger.BackgroundColor = Color.White;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
@@ -693,6 +696,7 @@
             dgvGeneralLedger.ColumnHeadersHeight = 35;
             dgvGeneralLedger.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvGeneralLedger.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18 });
+            dgvGeneralLedger.EnableHeadersVisualStyles = false;
             dgvGeneralLedger.Location = new Point(35, 123);
             dgvGeneralLedger.Name = "dgvGeneralLedger";
             dgvGeneralLedger.RowHeadersVisible = false;
@@ -771,7 +775,7 @@
             dgvLiability.AllowUserToResizeRows = false;
             dgvLiability.BackgroundColor = Color.White;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
@@ -781,6 +785,7 @@
             dgvLiability.ColumnHeadersHeight = 35;
             dgvLiability.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvLiability.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
+            dgvLiability.EnableHeadersVisualStyles = false;
             dgvLiability.Location = new Point(576, 34);
             dgvLiability.Name = "dgvLiability";
             dgvLiability.RowHeadersVisible = false;
@@ -789,16 +794,16 @@
             // 
             // dataGridViewTextBoxColumn19
             // 
-            dataGridViewTextBoxColumn19.HeaderText = "Date";
+            dataGridViewTextBoxColumn19.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn19.HeaderText = "Liability and Equity";
             dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             dataGridViewTextBoxColumn19.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn19.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn19.Width = 150;
             // 
             // dataGridViewTextBoxColumn20
             // 
             dataGridViewTextBoxColumn20.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn20.HeaderText = "Description";
+            dataGridViewTextBoxColumn20.HeaderText = "Amount";
             dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             dataGridViewTextBoxColumn20.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn20.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -811,9 +816,9 @@
             dgvAssets.AllowUserToResizeRows = false;
             dgvAssets.BackgroundColor = Color.White;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(236, 236, 236);
             dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
@@ -821,24 +826,26 @@
             dgvAssets.ColumnHeadersHeight = 35;
             dgvAssets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvAssets.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
+            dgvAssets.EnableHeadersVisualStyles = false;
             dgvAssets.Location = new Point(32, 34);
             dgvAssets.Name = "dgvAssets";
             dgvAssets.RowHeadersVisible = false;
             dgvAssets.Size = new Size(503, 574);
             dgvAssets.TabIndex = 28;
+            dgvAssets.CellContentClick += dgvAssets_CellContentClick;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewTextBoxColumn7.HeaderText = "Date";
+            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn7.HeaderText = "Asset";
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             dataGridViewTextBoxColumn7.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn7.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
             dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn8.HeaderText = "Description";
+            dataGridViewTextBoxColumn8.HeaderText = "Amount";
             dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             dataGridViewTextBoxColumn8.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn8.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -1186,13 +1193,13 @@
             // 
             // lblDisplayFullName
             // 
-            lblDisplayFullName.AutoSize = true;
             lblDisplayFullName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDisplayFullName.ForeColor = Color.White;
-            lblDisplayFullName.Location = new Point(24, 649);
+            lblDisplayFullName.Location = new Point(21, 658);
             lblDisplayFullName.Name = "lblDisplayFullName";
-            lblDisplayFullName.Size = new Size(0, 21);
+            lblDisplayFullName.Size = new Size(148, 21);
             lblDisplayFullName.TabIndex = 43;
+            lblDisplayFullName.TextAlign = ContentAlignment.TopCenter;
             // 
             // Main
             // 
@@ -1312,15 +1319,15 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private Label lblDisplayFullName;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

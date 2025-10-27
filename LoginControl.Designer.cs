@@ -107,7 +107,7 @@
             btnLogin.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
             btnLogin.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
             btnLogin.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnLogin.TabIndex = 12;
+            btnLogin.TabIndex = 5;
             btnLogin.Values.DropDownArrowColor = Color.Empty;
             btnLogin.Values.Text = "Login";
             btnLogin.Click += btnLogin_Click;
@@ -147,7 +147,7 @@
             btnSignUp.StatePressed.Back.Color2 = Color.FromArgb(190, 190, 190);
             btnSignUp.StateTracking.Back.Color1 = Color.FromArgb(190, 190, 190);
             btnSignUp.StateTracking.Back.Color2 = Color.FromArgb(190, 190, 190);
-            btnSignUp.TabIndex = 14;
+            btnSignUp.TabIndex = 6;
             btnSignUp.Values.DropDownArrowColor = Color.Empty;
             btnSignUp.Values.Text = "Sign-up";
             btnSignUp.Click += btnSignUp_Click;
@@ -235,7 +235,7 @@
             txbUsername.Name = "txbUsername";
             txbUsername.PlaceholderText = "Username";
             txbUsername.Size = new Size(294, 22);
-            txbUsername.TabIndex = 38;
+            txbUsername.TabIndex = 1;
             // 
             // label3
             // 
@@ -246,7 +246,7 @@
             label3.Location = new Point(256, 247);
             label3.Name = "label3";
             label3.Size = new Size(106, 17);
-            label3.TabIndex = 47;
+            label3.TabIndex = 4;
             label3.Text = "Forgot password?";
             // 
             // checkBox1
@@ -258,7 +258,7 @@
             checkBox1.Location = new Point(32, 246);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(108, 21);
-            checkBox1.TabIndex = 46;
+            checkBox1.TabIndex = 3;
             checkBox1.Text = "Remember me";
             checkBox1.UseVisualStyleBackColor = false;
             // 
@@ -270,7 +270,7 @@
             pnlPassword.Size = new Size(355, 45);
             pnlPassword.StateCommon.Back.Color1 = Color.WhiteSmoke;
             pnlPassword.StateCommon.Border.Rounding = 25F;
-            pnlPassword.TabIndex = 35;
+            pnlPassword.TabIndex = 2;
             // 
             // kryptonGroup2
             // 
@@ -280,7 +280,7 @@
             kryptonGroup2.Size = new Size(355, 45);
             kryptonGroup2.StateCommon.Back.Color1 = Color.WhiteSmoke;
             kryptonGroup2.StateCommon.Border.Rounding = 25F;
-            kryptonGroup2.TabIndex = 37;
+            kryptonGroup2.TabIndex = 1;
             // 
             // txbPassword
             // 
@@ -292,7 +292,7 @@
             txbPassword.PasswordChar = '*';
             txbPassword.PlaceholderText = "Password";
             txbPassword.Size = new Size(294, 22);
-            txbPassword.TabIndex = 39;
+            txbPassword.TabIndex = 2;
             txbPassword.UseSystemPasswordChar = true;
             txbPassword.TextChanged += txbPassword_TextChanged;
             // 
