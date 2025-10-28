@@ -18,7 +18,7 @@ namespace AccountingSystemWinForms
             signUpControl.Hide();
             welcomeForm = this;
 
-            signUpControl.AccountCreated += SignUpControl_AccountCreated;
+            
         }
 
 

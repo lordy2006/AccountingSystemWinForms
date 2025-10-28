@@ -236,6 +236,7 @@
             txbUsername.PlaceholderText = "Username";
             txbUsername.Size = new Size(294, 22);
             txbUsername.TabIndex = 1;
+            txbUsername.TextChanged += txbUsername_TextChanged;
             // 
             // label3
             // 

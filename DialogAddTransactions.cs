@@ -12,11 +12,22 @@ namespace AccountingSystemWinForms
 {
     public partial class DialogAddTransactions : Form
     {
-        public DialogAddTransactions()
+
+        public bool IsConfirmed { get; private set; } = false;
+
+        public DialogAddTransactions(string date, string description, string debitAccount, string creditAccount, string amount)
         {
+
             InitializeComponent();
             UiDesign.ApplyShadow(this);
+            // Set the label controls to show passed data
+            lblDateTransaction.Text = date;
+            lblDescriptionTransaction.Text = description;
+            lblDebitAccTransaction.Text = debitAccount;
+            lblCreditAccTransaction.Text = creditAccount;
+            lblAmountTransaction.Text = amount;
         }
+
         //enable window buffering (para ma smooth ang pag render)
         protected override CreateParams CreateParams
         {
@@ -49,7 +60,10 @@ namespace AccountingSystemWinForms
 
         private void btnClearForm_Click_1(object sender, EventArgs e)
         {
+            IsConfirmed = false;
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -60,6 +74,13 @@ namespace AccountingSystemWinForms
         private void lblAmountTransaction_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConfirmTransaction_Click(object sender, EventArgs e)
+        {
+            IsConfirmed = true;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

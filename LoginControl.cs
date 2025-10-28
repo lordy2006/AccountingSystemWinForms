@@ -105,5 +105,10 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void txbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

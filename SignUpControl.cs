@@ -15,7 +15,7 @@ namespace AccountingSystemWinForms
 {
     public partial class SignUpControl : UserControl
     {
-        public event Action<SignUpData> AccountCreated;
+        
         public SignUpControl()
         {
             InitializeComponent();

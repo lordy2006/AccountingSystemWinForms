@@ -161,6 +161,7 @@
             btnConfirmTransaction.TabIndex = 15;
             btnConfirmTransaction.Values.DropDownArrowColor = Color.Empty;
             btnConfirmTransaction.Values.Text = "CONFIRM";
+            btnConfirmTransaction.Click += btnConfirmTransaction_Click;
             // 
             // label6
             // 
@@ -182,7 +183,6 @@
             lblDateTransaction.Name = "lblDateTransaction";
             lblDateTransaction.Size = new Size(445, 18);
             lblDateTransaction.TabIndex = 17;
-            
             // 
             // lblDescriptionTransaction
             // 
@@ -190,7 +190,6 @@
             lblDescriptionTransaction.Name = "lblDescriptionTransaction";
             lblDescriptionTransaction.Size = new Size(485, 59);
             lblDescriptionTransaction.TabIndex = 18;
-            
             // 
             // lblDebitAccTransaction
             // 
@@ -198,7 +197,6 @@
             lblDebitAccTransaction.Name = "lblDebitAccTransaction";
             lblDebitAccTransaction.Size = new Size(375, 18);
             lblDebitAccTransaction.TabIndex = 19;
-            
             // 
             // lblCreditAccTransaction
             // 
@@ -206,7 +204,6 @@
             lblCreditAccTransaction.Name = "lblCreditAccTransaction";
             lblCreditAccTransaction.Size = new Size(374, 18);
             lblCreditAccTransaction.TabIndex = 20;
-            
             // 
             // lblAmountTransaction
             // 
@@ -238,7 +235,6 @@
             Name = "DialogAddTransactions";
             StartPosition = FormStartPosition.CenterParent;
             Text = "DialogAddTransactions";
-            
             ResumeLayout(false);
             PerformLayout();
         }
