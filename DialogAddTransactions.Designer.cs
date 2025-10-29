@@ -46,10 +46,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(46, 105);
+            label1.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label1.Location = new Point(35, 101);
             label1.Name = "label1";
-            label1.Size = new Size(48, 21);
+            label1.Size = new Size(59, 28);
             label1.TabIndex = 0;
             label1.Text = "Date:";
             label1.Click += label1_Click;
@@ -57,30 +57,30 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(46, 137);
+            label2.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label2.Location = new Point(35, 133);
             label2.Name = "label2";
-            label2.Size = new Size(98, 21);
+            label2.Size = new Size(120, 28);
             label2.TabIndex = 2;
             label2.Text = "Description:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(46, 227);
+            label3.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label3.Location = new Point(35, 223);
             label3.Name = "label3";
-            label3.Size = new Size(119, 21);
+            label3.Size = new Size(146, 28);
             label3.TabIndex = 3;
             label3.Text = "Debit Account:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(46, 259);
+            label4.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label4.Location = new Point(35, 255);
             label4.Name = "label4";
-            label4.Size = new Size(124, 21);
+            label4.Size = new Size(151, 28);
             label4.TabIndex = 4;
             label4.Text = "Credit Account:";
             label4.Click += label4_Click;
@@ -88,10 +88,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(46, 290);
+            label5.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label5.Location = new Point(35, 286);
             label5.Name = "label5";
-            label5.Size = new Size(73, 21);
+            label5.Size = new Size(91, 28);
             label5.TabIndex = 5;
             label5.Text = "Amount:";
             label5.Click += label5_Click;
@@ -179,38 +179,48 @@
             // 
             // lblDateTransaction
             // 
-            lblDateTransaction.Location = new Point(100, 110);
+            lblDateTransaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblDateTransaction.Location = new Point(94, 104);
             lblDateTransaction.Name = "lblDateTransaction";
-            lblDateTransaction.Size = new Size(445, 18);
+            lblDateTransaction.Size = new Size(463, 24);
             lblDateTransaction.TabIndex = 17;
+            lblDateTransaction.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblDescriptionTransaction
             // 
-            lblDescriptionTransaction.Location = new Point(60, 163);
+            lblDescriptionTransaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblDescriptionTransaction.Location = new Point(35, 164);
             lblDescriptionTransaction.Name = "lblDescriptionTransaction";
-            lblDescriptionTransaction.Size = new Size(485, 59);
+            lblDescriptionTransaction.Size = new Size(522, 59);
             lblDescriptionTransaction.TabIndex = 18;
             // 
             // lblDebitAccTransaction
             // 
-            lblDebitAccTransaction.Location = new Point(171, 232);
+            lblDebitAccTransaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblDebitAccTransaction.Location = new Point(186, 226);
             lblDebitAccTransaction.Name = "lblDebitAccTransaction";
-            lblDebitAccTransaction.Size = new Size(375, 18);
+            lblDebitAccTransaction.Size = new Size(371, 25);
             lblDebitAccTransaction.TabIndex = 19;
+            lblDebitAccTransaction.TextAlign = ContentAlignment.MiddleLeft;
+            lblDebitAccTransaction.Click += lblDebitAccTransaction_Click;
             // 
             // lblCreditAccTransaction
             // 
-            lblCreditAccTransaction.Location = new Point(171, 264);
+            lblCreditAccTransaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblCreditAccTransaction.Location = new Point(186, 259);
             lblCreditAccTransaction.Name = "lblCreditAccTransaction";
-            lblCreditAccTransaction.Size = new Size(374, 18);
+            lblCreditAccTransaction.Size = new Size(371, 24);
             lblCreditAccTransaction.TabIndex = 20;
+            lblCreditAccTransaction.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblAmountTransaction
             // 
-            lblAmountTransaction.Location = new Point(125, 295);
+            lblAmountTransaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblAmountTransaction.Location = new Point(128, 290);
             lblAmountTransaction.Name = "lblAmountTransaction";
-            lblAmountTransaction.Size = new Size(420, 18);
+            lblAmountTransaction.Size = new Size(429, 24);
             lblAmountTransaction.TabIndex = 21;
+            lblAmountTransaction.TextAlign = ContentAlignment.MiddleLeft;
             lblAmountTransaction.Click += lblAmountTransaction_Click;
             // 
             // DialogAddTransactions
@@ -235,6 +245,7 @@
             Name = "DialogAddTransactions";
             StartPosition = FormStartPosition.CenterParent;
             Text = "DialogAddTransactions";
+            Load += DialogAddTransactions_Load;
             ResumeLayout(false);
             PerformLayout();
         }

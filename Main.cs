@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace AccountingSystemWinForms
 {
@@ -7,6 +8,21 @@ namespace AccountingSystemWinForms
         public Main()
         {
             InitializeComponent();
+
+            // Use RGB for White (R: 255, G: 255, B: 255)
+            dgvTransaction.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvTransaction.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246); // Use a specific RGB for a light gray (e.g., R: 246, G: 246, B: 246)
+            dgvAccounts.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvAccounts.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
+            dgvGeneralJournal.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvGeneralJournal.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
+            dgvGeneralLedger.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvGeneralLedger.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
+            dgvAssets.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvAssets.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
+            dgvLiability.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvLiability.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
+
             this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
 
             dgvGeneralJournal.CellFormatting += dgvGeneralJournal_CellFormatting;

@@ -82,5 +82,15 @@ namespace AccountingSystemWinForms
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void lblDebitAccTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DialogAddTransactions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

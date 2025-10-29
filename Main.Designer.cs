@@ -29,13 +29,25 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
             tabHolder = new TabControl();
             tabNewTransactions = new TabPage();
             comboBox2 = new ComboBox();
@@ -67,9 +79,13 @@
             label3 = new Label();
             tabGeneralJournal = new TabPage();
             dgvGeneralJournal = new DataGridView();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             tabGeneralLedger = new TabPage();
-            textBox6 = new TextBox();
-            kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            comboBox3 = new ComboBox();
             label1 = new Label();
             dgvGeneralLedger = new DataGridView();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
@@ -101,11 +117,6 @@
             panel3 = new Panel();
             btnClose = new PictureBox();
             lblDisplayFullName = new Label();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
@@ -381,6 +392,7 @@
             // 
             // dgvTransaction
             // 
+            dgvTransaction.AllowUserToAddRows = false;
             dgvTransaction.AllowUserToDeleteRows = false;
             dgvTransaction.AllowUserToResizeColumns = false;
             dgvTransaction.AllowUserToResizeRows = false;
@@ -396,10 +408,21 @@
             dgvTransaction.ColumnHeadersHeight = 35;
             dgvTransaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvTransaction.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvTransaction.DefaultCellStyle = dataGridViewCellStyle3;
             dgvTransaction.EnableHeadersVisualStyles = false;
             dgvTransaction.Location = new Point(35, 101);
             dgvTransaction.Name = "dgvTransaction";
+            dgvTransaction.ReadOnly = true;
             dgvTransaction.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dgvTransaction.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvTransaction.Size = new Size(1046, 504);
             dgvTransaction.TabIndex = 21;
             dgvTransaction.CellContentClick += dataGridView3_CellContentClick;
@@ -409,6 +432,7 @@
             dataGridViewTextBoxColumn9.DataPropertyName = "Date";
             dataGridViewTextBoxColumn9.HeaderText = "Date";
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
             dataGridViewTextBoxColumn9.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn9.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn9.Width = 150;
@@ -419,6 +443,7 @@
             dataGridViewTextBoxColumn10.DataPropertyName = "Description";
             dataGridViewTextBoxColumn10.HeaderText = "Description";
             dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.ReadOnly = true;
             dataGridViewTextBoxColumn10.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn10.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -427,6 +452,7 @@
             dataGridViewTextBoxColumn11.DataPropertyName = "DebitAccount";
             dataGridViewTextBoxColumn11.HeaderText = "Debit Account";
             dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.ReadOnly = true;
             dataGridViewTextBoxColumn11.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn11.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn11.Width = 200;
@@ -436,6 +462,7 @@
             dataGridViewTextBoxColumn12.DataPropertyName = "CreditAccount";
             dataGridViewTextBoxColumn12.HeaderText = "Credit Account";
             dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.ReadOnly = true;
             dataGridViewTextBoxColumn12.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn12.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn12.Width = 200;
@@ -448,6 +475,7 @@
             dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTextBoxColumn13.HeaderText = "Amount";
             dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            dataGridViewTextBoxColumn13.ReadOnly = true;
             dataGridViewTextBoxColumn13.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn13.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn13.Width = 150;
@@ -466,25 +494,37 @@
             // 
             // dgvAccounts
             // 
+            dgvAccounts.AllowUserToAddRows = false;
             dgvAccounts.AllowUserToDeleteRows = false;
             dgvAccounts.AllowUserToResizeColumns = false;
             dgvAccounts.AllowUserToResizeRows = false;
             dgvAccounts.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(236, 236, 236);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(236, 236, 236);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvAccounts.ColumnHeadersHeight = 35;
             dgvAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvAccounts.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvAccounts.DefaultCellStyle = dataGridViewCellStyle7;
             dgvAccounts.EnableHeadersVisualStyles = false;
             dgvAccounts.Location = new Point(32, 3);
             dgvAccounts.Name = "dgvAccounts";
+            dgvAccounts.ReadOnly = true;
             dgvAccounts.RowHeadersVisible = false;
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dgvAccounts.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvAccounts.Size = new Size(1046, 603);
             dgvAccounts.TabIndex = 2;
             dgvAccounts.CellContentClick += dataGridView1_CellContentClick;
@@ -495,6 +535,7 @@
             dataGridViewTextBoxColumn1.DataPropertyName = "Account";
             dataGridViewTextBoxColumn1.HeaderText = "Account";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -502,15 +543,17 @@
             dataGridViewTextBoxColumn2.DataPropertyName = "Type";
             dataGridViewTextBoxColumn2.HeaderText = "Type";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn3.DataPropertyName = "Balance";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTextBoxColumn3.HeaderText = "Balance";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // label3
             // 
@@ -535,35 +578,96 @@
             // 
             // dgvGeneralJournal
             // 
+            dgvGeneralJournal.AllowUserToAddRows = false;
             dgvGeneralJournal.AllowUserToDeleteRows = false;
             dgvGeneralJournal.AllowUserToResizeColumns = false;
             dgvGeneralJournal.AllowUserToResizeRows = false;
             dgvGeneralJournal.BackgroundColor = Color.White;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(236, 236, 236);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvGeneralJournal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(236, 236, 236);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvGeneralJournal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvGeneralJournal.ColumnHeadersHeight = 35;
             dgvGeneralJournal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvGeneralJournal.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, Column1, Column2 });
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Window;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgvGeneralJournal.DefaultCellStyle = dataGridViewCellStyle10;
             dgvGeneralJournal.EnableHeadersVisualStyles = false;
             dgvGeneralJournal.Location = new Point(32, 3);
             dgvGeneralJournal.Name = "dgvGeneralJournal";
+            dgvGeneralJournal.ReadOnly = true;
             dgvGeneralJournal.RowHeadersVisible = false;
+            dataGridViewCellStyle11.ForeColor = Color.Black;
+            dgvGeneralJournal.RowsDefaultCellStyle = dataGridViewCellStyle11;
             dgvGeneralJournal.Size = new Size(1046, 603);
             dgvGeneralJournal.TabIndex = 3;
             dgvGeneralJournal.CellContentClick += dgvGeneralJournal_CellContentClick;
             dgvGeneralJournal.CellFormatting += dgvGeneralJournal_CellFormatting;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.DataPropertyName = "Date";
+            dataGridViewTextBoxColumn4.HeaderText = "Date";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.DataPropertyName = "Description";
+            dataGridViewTextBoxColumn5.HeaderText = "Description";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn6.DataPropertyName = "Account";
+            dataGridViewTextBoxColumn6.HeaderText = "Account";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn6.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.DataPropertyName = "Debit";
+            Column1.HeaderText = "Debit";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.False;
+            Column1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.DataPropertyName = "Credit";
+            Column2.HeaderText = "Credit";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Resizable = DataGridViewTriState.False;
+            Column2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // tabGeneralLedger
             // 
             tabGeneralLedger.BackColor = Color.White;
-            tabGeneralLedger.Controls.Add(textBox6);
-            tabGeneralLedger.Controls.Add(kryptonButton2);
+            tabGeneralLedger.Controls.Add(comboBox3);
             tabGeneralLedger.Controls.Add(label1);
             tabGeneralLedger.Controls.Add(dgvGeneralLedger);
             tabGeneralLedger.Location = new Point(4, 27);
@@ -573,44 +677,20 @@
             tabGeneralLedger.TabIndex = 4;
             tabGeneralLedger.Text = "tabPage5";
             // 
-            // textBox6
+            // comboBox3
             // 
-            textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Font = new Font("Segoe UI", 12F);
-            textBox6.Location = new Point(35, 37);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(366, 38);
-            textBox6.TabIndex = 30;
-            // 
-            // kryptonButton2
-            // 
-            kryptonButton2.Cursor = Cursors.Hand;
-            kryptonButton2.Location = new Point(413, 37);
-            kryptonButton2.Name = "kryptonButton2";
-            kryptonButton2.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kryptonButton2.Size = new Size(78, 38);
-            kryptonButton2.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kryptonButton2.StateCommon.Content.ShortText.Color1 = Color.White;
-            kryptonButton2.StateCommon.Content.ShortText.Color2 = Color.White;
-            kryptonButton2.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            kryptonButton2.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
-            kryptonButton2.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            kryptonButton2.TabIndex = 29;
-            kryptonButton2.Values.DropDownArrowColor = Color.Empty;
-            kryptonButton2.Values.Text = "FIND";
+            comboBox3.BackColor = Color.White;
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.Font = new Font("Segoe UI", 12F);
+            comboBox3.ForeColor = Color.Black;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.IntegralHeight = false;
+            comboBox3.Items.AddRange(new object[] { "Cash [ASSET]", "Accounts Receivable [ASSET]", "Inventory [ASSET]", "Prepaid Expenses [ASSET]", "Equipment [ASSET]", "Accounts Payable [LIABILITY]", "Notes Payable [LIABILITY]", "Owner's Capital [EQUITY]", "Sales Revenue [INCOME]", "Service Revenue [INCOME]", "Cost of Goods Sold [EXPENSE]", "Rent Expense [EXPENSE]", "Salaries Expense [EXPENSE]", "Utilities Expense [EXPENSE]" });
+            comboBox3.Location = new Point(35, 37);
+            comboBox3.MaxDropDownItems = 15;
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(436, 29);
+            comboBox3.TabIndex = 31;
             // 
             // label1
             // 
@@ -631,22 +711,33 @@
             dgvGeneralLedger.AllowUserToResizeColumns = false;
             dgvGeneralLedger.AllowUserToResizeRows = false;
             dgvGeneralLedger.BackgroundColor = Color.White;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(236, 236, 236);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvGeneralLedger.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(236, 236, 236);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dgvGeneralLedger.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dgvGeneralLedger.ColumnHeadersHeight = 35;
             dgvGeneralLedger.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvGeneralLedger.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18 });
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = SystemColors.Window;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            dgvGeneralLedger.DefaultCellStyle = dataGridViewCellStyle13;
             dgvGeneralLedger.EnableHeadersVisualStyles = false;
-            dgvGeneralLedger.Location = new Point(35, 123);
+            dgvGeneralLedger.Location = new Point(35, 83);
             dgvGeneralLedger.Name = "dgvGeneralLedger";
+            dgvGeneralLedger.ReadOnly = true;
             dgvGeneralLedger.RowHeadersVisible = false;
-            dgvGeneralLedger.Size = new Size(1046, 480);
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            dgvGeneralLedger.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dgvGeneralLedger.Size = new Size(1046, 515);
             dgvGeneralLedger.TabIndex = 27;
             dgvGeneralLedger.CellContentClick += dgvGeneralLedger_CellContentClick;
             // 
@@ -654,6 +745,7 @@
             // 
             dataGridViewTextBoxColumn14.HeaderText = "Date";
             dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            dataGridViewTextBoxColumn14.ReadOnly = true;
             dataGridViewTextBoxColumn14.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn14.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn14.Width = 150;
@@ -663,6 +755,7 @@
             dataGridViewTextBoxColumn15.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn15.HeaderText = "Description";
             dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            dataGridViewTextBoxColumn15.ReadOnly = true;
             dataGridViewTextBoxColumn15.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn15.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -670,6 +763,7 @@
             // 
             dataGridViewTextBoxColumn16.HeaderText = "Debit Account";
             dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            dataGridViewTextBoxColumn16.ReadOnly = true;
             dataGridViewTextBoxColumn16.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn16.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn16.Width = 200;
@@ -678,6 +772,7 @@
             // 
             dataGridViewTextBoxColumn17.HeaderText = "Credit Account";
             dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            dataGridViewTextBoxColumn17.ReadOnly = true;
             dataGridViewTextBoxColumn17.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn17.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn17.Width = 200;
@@ -686,6 +781,7 @@
             // 
             dataGridViewTextBoxColumn18.HeaderText = "Amount";
             dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            dataGridViewTextBoxColumn18.ReadOnly = true;
             dataGridViewTextBoxColumn18.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn18.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn18.Width = 150;
@@ -721,21 +817,32 @@
             dgvLiability.AllowUserToResizeColumns = false;
             dgvLiability.AllowUserToResizeRows = false;
             dgvLiability.BackgroundColor = Color.White;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(236, 236, 236);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvLiability.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(236, 236, 236);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            dgvLiability.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dgvLiability.ColumnHeadersHeight = 35;
             dgvLiability.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvLiability.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = SystemColors.Window;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            dgvLiability.DefaultCellStyle = dataGridViewCellStyle16;
             dgvLiability.EnableHeadersVisualStyles = false;
             dgvLiability.Location = new Point(576, 34);
             dgvLiability.Name = "dgvLiability";
+            dgvLiability.ReadOnly = true;
             dgvLiability.RowHeadersVisible = false;
+            dataGridViewCellStyle17.ForeColor = Color.Black;
+            dgvLiability.RowsDefaultCellStyle = dataGridViewCellStyle17;
             dgvLiability.Size = new Size(503, 574);
             dgvLiability.TabIndex = 29;
             // 
@@ -744,6 +851,7 @@
             dataGridViewTextBoxColumn19.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn19.HeaderText = "Liability and Equity";
             dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            dataGridViewTextBoxColumn19.ReadOnly = true;
             dataGridViewTextBoxColumn19.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn19.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -752,6 +860,7 @@
             dataGridViewTextBoxColumn20.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn20.HeaderText = "Amount";
             dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            dataGridViewTextBoxColumn20.ReadOnly = true;
             dataGridViewTextBoxColumn20.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn20.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -762,21 +871,32 @@
             dgvAssets.AllowUserToResizeColumns = false;
             dgvAssets.AllowUserToResizeRows = false;
             dgvAssets.BackgroundColor = Color.White;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(236, 236, 236);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvAssets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(236, 236, 236);
+            dataGridViewCellStyle18.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle18.ForeColor = Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            dgvAssets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             dgvAssets.ColumnHeadersHeight = 35;
             dgvAssets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvAssets.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = SystemColors.Window;
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle19.ForeColor = Color.FromArgb(7, 67, 130);
+            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.False;
+            dgvAssets.DefaultCellStyle = dataGridViewCellStyle19;
             dgvAssets.EnableHeadersVisualStyles = false;
             dgvAssets.Location = new Point(32, 34);
             dgvAssets.Name = "dgvAssets";
+            dgvAssets.ReadOnly = true;
             dgvAssets.RowHeadersVisible = false;
+            dataGridViewCellStyle20.ForeColor = Color.Black;
+            dgvAssets.RowsDefaultCellStyle = dataGridViewCellStyle20;
             dgvAssets.Size = new Size(503, 574);
             dgvAssets.TabIndex = 28;
             dgvAssets.CellContentClick += dgvAssets_CellContentClick;
@@ -786,6 +906,7 @@
             dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn7.HeaderText = "Asset";
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
             dataGridViewTextBoxColumn7.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn7.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -794,6 +915,7 @@
             dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn8.HeaderText = "Amount";
             dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
             dataGridViewTextBoxColumn8.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn8.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -1148,51 +1270,6 @@
             lblDisplayFullName.TabIndex = 43;
             lblDisplayFullName.TextAlign = ContentAlignment.TopCenter;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.DataPropertyName = "Date";
-            dataGridViewTextBoxColumn4.HeaderText = "Date";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
-            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.DataPropertyName = "Description";
-            dataGridViewTextBoxColumn5.HeaderText = "Description";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.Resizable = DataGridViewTriState.False;
-            dataGridViewTextBoxColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn6.DataPropertyName = "Account";
-            dataGridViewTextBoxColumn6.HeaderText = "Account";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.Resizable = DataGridViewTriState.False;
-            dataGridViewTextBoxColumn6.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.DataPropertyName = "Debit";
-            Column1.HeaderText = "Debit";
-            Column1.Name = "Column1";
-            Column1.Resizable = DataGridViewTriState.False;
-            Column1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.DataPropertyName = "Credit";
-            Column2.HeaderText = "Credit";
-            Column2.Name = "Column2";
-            Column2.Resizable = DataGridViewTriState.False;
-            Column2.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1287,8 +1364,6 @@
         private TextBox textBox8;
         private Label label6;
         private DataGridView dgvTransaction;
-        private TextBox textBox6;
-        public Krypton.Toolkit.KryptonButton kryptonButton2;
         private Label label1;
         private DataGridView dgvGeneralLedger;
         private DataGridView dgvGeneralJournal;
@@ -1320,5 +1395,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private ComboBox comboBox3;
     }
 }
