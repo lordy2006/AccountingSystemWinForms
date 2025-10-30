@@ -13,6 +13,10 @@ namespace AccountingSystemWinForms
         public required string Account { get; set; } = "";
         public required decimal Debit { get; set; }
         public required decimal Credit { get; set; }
+
+        public string DebitDisplay => Debit == 0 ? "" : Debit.ToString("N2");
+        public string CreditDisplay => Credit == 0 ? "" : Credit.ToString("N2");
+
     }
 
 }

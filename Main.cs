@@ -5,6 +5,8 @@ namespace AccountingSystemWinForms
 {
     public partial class Main : Form
     {
+        private bool journalSortAscending = true;
+
         public Main()
         {
             InitializeComponent();
@@ -23,12 +25,20 @@ namespace AccountingSystemWinForms
             dgvLiability.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvLiability.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
 
+
+
+
             this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
-
+            textBox8.TextChanged += textBox8_TextChanged;
+            
+            textBox4.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             dgvGeneralJournal.CellFormatting += dgvGeneralJournal_CellFormatting;
-
-
             dgvTransaction.AutoGenerateColumns = false;
+            dgvGeneralJournal.AutoGenerateColumns = false;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
+            dgvGeneralLedger.AutoGenerateColumns = false;
 
             dgvTransaction.DataSource = transactionList;
 
@@ -41,6 +51,15 @@ namespace AccountingSystemWinForms
             comboBox2.DataSource = new List<Account>(allAccounts);
             comboBox2.DisplayMember = "DisplayName";
             comboBox2.ValueMember = "Name";
+
+
+            // In your constructor or form load
+            comboBox3.DataSource = new List<Account>(allAccounts);
+            comboBox3.DisplayMember = "DisplayName";
+            comboBox3.ValueMember = "Name";
+            comboBox3.SelectedIndex = 0; // "Cash" should show first (since it's first in your list)
+
+
 
         }
 
@@ -81,6 +100,7 @@ namespace AccountingSystemWinForms
                 return cp;
             }
         }
+        
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -127,21 +147,53 @@ namespace AccountingSystemWinForms
         }
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
-            string date = textBox4.Text.Trim();
+            string dateInput = textBox4.Text.Trim();
             string description = textBox2.Text.Trim();
             var debitAccount = comboBox1.SelectedItem as Account;
             var creditAccount = comboBox2.SelectedItem as Account;
             string amountText = textBox5.Text.Trim();
 
-            // Validate values
-            if (string.IsNullOrWhiteSpace(date) || string.IsNullOrWhiteSpace(description) ||
+            // Validate all fields
+            if (string.IsNullOrWhiteSpace(dateInput) || string.IsNullOrWhiteSpace(description) ||
                 debitAccount == null || creditAccount == null || string.IsNullOrWhiteSpace(amountText))
             {
                 MessageBox.Show("Please fill out all fields.");
                 return;
             }
 
-            // Strongly type: parse the amount as decimal
+            if (debitAccount == null || creditAccount == null)
+            {
+                MessageBox.Show("Please select both a debit and a credit account.");
+                return; // Don't continue if either is null
+            }
+
+
+
+            if (debitAccount != null && creditAccount != null && debitAccount.Name == creditAccount.Name)
+            {
+                MessageBox.Show("Debit and Credit accounts must be different, following the double entry rule.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // --- DATE VALIDATION ---
+            DateTime parsedDate;
+            bool validDate = DateTime.TryParseExact(
+                dateInput,
+                "dd-MM-yyyy", // Adjust this if you want a different format
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out parsedDate
+            );
+
+            if (!validDate)
+            {
+                MessageBox.Show("Please enter a valid date in the format DD-MM-YYYY.");
+                textBox4.Focus();
+                return;
+            }
+
+            // --- AMOUNT VALIDATION ---
             decimal amountValue;
             if (!decimal.TryParse(amountText, out amountValue))
             {
@@ -149,47 +201,64 @@ namespace AccountingSystemWinForms
                 return;
             }
 
-            // Show confirmation dialog (still passes string to show as-is in dialog)
+            // Confirmation dialog, showing the formatted date for consistency
             using (var confirm = new DialogAddTransactions(
-                date,
+                parsedDate.ToString("dd-MM-yyyy"),
                 description,
                 debitAccount.DisplayName,
                 creditAccount.DisplayName,
-                amountValue.ToString("N2"))) // Format for dialog
+                amountValue.ToString("N2")
+            ))
             {
                 if (confirm.ShowDialog() == DialogResult.OK && confirm.IsConfirmed)
                 {
-                    // Add to the list; DataGridView auto-refreshes
+                    // Add to transaction list with validated/consistent date
                     transactionList.Insert(0, new Transaction
                     {
-                        Date = date,
+                        Date = parsedDate.ToString("dd-MM-yyyy"),
                         Description = description,
                         DebitAccount = debitAccount.DisplayName,
                         CreditAccount = creditAccount.DisplayName,
-                        Amount = amountValue // decimal property!
+                        Amount = amountValue
                     });
-
-                    // Optional: Currency formatting for grid column
-
 
                     MessageBox.Show("Transaction Confirmed!");
 
-                    // Optional: clear the form after adding
+                    // Clear the form
                     btnClearForm.PerformClick();
 
+                    // Reset ComboBoxes to show all accounts again after clear
+                    comboBox1.DataSource = null;
+                    comboBox1.DataSource = new List<Account>(allAccounts);
+                    comboBox1.DisplayMember = "DisplayName";
+                    comboBox1.ValueMember = "Name";
+                    comboBox1.SelectedIndex = 0;
+
+                    comboBox2.DataSource = null;
+                    comboBox2.DataSource = new List<Account>(allAccounts);
+                    comboBox2.DisplayMember = "DisplayName";
+                    comboBox2.ValueMember = "Name";
+                    comboBox2.SelectedIndex = 0;
+
+
+                    // Update other grids if needed
                     UpdateAccountsGrid();
-                    UpdateGeneralJournalGrid();
+                    SortGeneralJournalByDate();
                 }
-                else
-                {
-                    // User cancelled - do nothing
-                }
-
-
-
 
             }
         }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Accept only digits, control keys, or one dot
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.' || textBox5.Text.Contains(".")))
+            {
+                e.Handled = true;
+            }
+        }
+
 
         private void UpdateGeneralJournalGrid()
         {
@@ -277,7 +346,7 @@ namespace AccountingSystemWinForms
             btnGeneralJournal.OverrideDefault.Back.Color1 = Color.FromArgb(34, 82, 133);
             btnGeneralJournal.OverrideDefault.Back.Color2 = Color.FromArgb(34, 82, 133);
             tabHolder.SelectedTab = tabGeneralJournal;
-            UpdateGeneralJournalGrid();
+            SortGeneralJournalByDate();
 
 
         }
@@ -389,27 +458,176 @@ namespace AccountingSystemWinForms
 
         }
 
+
+
+
+
+
+
+        private void tabNewTransactions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool updatingCombos = false; // Prevent recursion
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (updatingCombos) return;
+            updatingCombos = true;
+            try
+            {
+                var selectedDebit = comboBox1.SelectedItem as Account;
+                var creditOptions = allAccounts
+                    .Where(acc => selectedDebit == null || acc.DisplayName != selectedDebit.DisplayName)
+                    .ToList();
+
+                var prevCredit = comboBox2.SelectedItem as Account;
+
+                comboBox2.DataSource = null;
+                comboBox2.DataSource = creditOptions;
+                comboBox2.DisplayMember = "DisplayName";
+                comboBox2.ValueMember = "Name";
+
+                // Try to reselect previous credit account if still available
+                if (prevCredit != null && creditOptions.Any(acc => acc.DisplayName == prevCredit.DisplayName))
+                    comboBox2.SelectedItem = creditOptions.First(acc => acc.DisplayName == prevCredit.DisplayName);
+                else
+                    comboBox2.SelectedIndex = 0; // Or -1 for nothing selected
+            }
+            finally { updatingCombos = false; }
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (updatingCombos) return;
+            updatingCombos = true;
+            try
+            {
+                var selectedCredit = comboBox2.SelectedItem as Account;
+                var debitOptions = allAccounts
+                    .Where(acc => selectedCredit == null || acc.DisplayName != selectedCredit.DisplayName)
+                    .ToList();
+
+                var prevDebit = comboBox1.SelectedItem as Account;
+
+                comboBox1.DataSource = null;
+                comboBox1.DataSource = debitOptions;
+                comboBox1.DisplayMember = "DisplayName";
+                comboBox1.ValueMember = "Name";
+
+                // Try to reselect previous debit account if still available
+                if (prevDebit != null && debitOptions.Any(acc => acc.DisplayName == prevDebit.DisplayName))
+                    comboBox1.SelectedItem = debitOptions.First(acc => acc.DisplayName == prevDebit.DisplayName);
+                else
+                    comboBox1.SelectedIndex = 0; // Or -1 for nothing selected
+            }
+            finally { updatingCombos = false; }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedAccount = comboBox3.SelectedItem as Account;
+            if (selectedAccount == null) return;
+
+            string selected = selectedAccount.DisplayName;
+
+
+            var filtered = transactionList
+                .Where(t => t.DebitAccount == selected || t.CreditAccount == selected)
+                .ToList();
+
+            decimal runningBalance = 0;
+            var ledgerRows = new List<LedgerRow>();
+
+            foreach (var t in filtered)
+            {
+                if (t.DebitAccount == selected)
+                    runningBalance += t.Amount;
+                else if (t.CreditAccount == selected)
+                    runningBalance -= t.Amount;
+
+                ledgerRows.Add(new LedgerRow
+                {
+                    Date = t.Date,
+                    Description = t.Description,
+                    DebitAccount = t.DebitAccount,
+                    CreditAccount = t.CreditAccount,
+                    Amount = t.Amount.ToString("N2"),
+                    Balance = runningBalance.ToString("N2")
+                });
+            }
+
+            dgvGeneralLedger.DataSource = new BindingList<LedgerRow>(ledgerRows);
+        }
+
+
+
+
         private void dgvGeneralJournal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Only format Debit and Credit columns
             if (dgvGeneralJournal.Columns[e.ColumnIndex].Name == "Debit" ||
                 dgvGeneralJournal.Columns[e.ColumnIndex].Name == "Credit")
             {
+
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal val))
                 {
                     if (val == 0m)
                     {
-                        e.Value = "";              // Show blank for zero
+                        e.Value = "";
                         e.FormattingApplied = true;
                     }
                     else
                     {
-                        e.Value = val.ToString("N2"); // Keep formatting for non-zero
+                        e.Value = val.ToString("C2");
                         e.FormattingApplied = true;
                     }
                 }
             }
         }
 
+        private void btnSortJournal_Click(object sender, EventArgs e)
+        {
+            journalSortAscending = !journalSortAscending;
+            SortGeneralJournalByDate();
+
+            
+            
+
+        }
+
+        private void SortGeneralJournalByDate()
+        {
+            var journalRows = new List<JournalEntry>();
+
+            // Sort ascending or descending
+            var sortedTransactions = journalSortAscending
+                ? transactionList.OrderBy(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", null)).ToList()
+                : transactionList.OrderByDescending(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", null)).ToList();
+
+            foreach (var t in sortedTransactions)
+            {
+                journalRows.Add(new JournalEntry
+                {
+                    Date = t.Date,
+                    Description = t.Description,
+                    Account = t.DebitAccount,
+                    Debit = t.Amount,
+                    Credit = 0
+                });
+                journalRows.Add(new JournalEntry
+                {
+                    Date = "",
+                    Description = "",
+                    Account = "    " + t.CreditAccount,
+                    Debit = 0,
+                    Credit = t.Amount
+                });
+            }
+
+            dgvGeneralJournal.DataSource = new BindingList<JournalEntry>(journalRows);
+        }
+
+        
     }
 }
