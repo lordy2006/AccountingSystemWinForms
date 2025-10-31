@@ -361,7 +361,7 @@
             // btnProcceed
             // 
             btnProcceed.Cursor = Cursors.Hand;
-            btnProcceed.Location = new Point(593, 674);
+            btnProcceed.Location = new Point(574, 660);
             btnProcceed.Name = "btnProcceed";
             btnProcceed.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -372,16 +372,17 @@
             btnProcceed.OverrideFocus.Border.Color1 = Color.White;
             btnProcceed.OverrideFocus.Border.Color2 = Color.White;
             btnProcceed.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            btnProcceed.Size = new Size(167, 30);
+            btnProcceed.Size = new Size(205, 51);
             btnProcceed.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateCommon.Border.Color1 = Color.White;
             btnProcceed.StateCommon.Border.Color2 = Color.White;
             btnProcceed.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            btnProcceed.StateCommon.Border.Rounding = 10F;
+            btnProcceed.StateCommon.Border.Rounding = 20F;
+            btnProcceed.StateCommon.Border.Width = 1;
             btnProcceed.StateCommon.Content.ShortText.Color1 = Color.White;
             btnProcceed.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnProcceed.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnProcceed.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
             btnProcceed.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
             btnProcceed.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);

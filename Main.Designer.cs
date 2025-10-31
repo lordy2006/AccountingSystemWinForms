@@ -78,6 +78,7 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabGeneralJournal = new TabPage();
+            btnSortJournal = new Krypton.Toolkit.KryptonButton();
             dgvGeneralJournal = new DataGridView();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
@@ -118,7 +119,6 @@
             panel3 = new Panel();
             btnClose = new PictureBox();
             lblDisplayFullName = new Label();
-            btnSortJournal = new Krypton.Toolkit.KryptonButton();
             tabHolder.SuspendLayout();
             tabNewTransactions.SuspendLayout();
             tabTransactions.SuspendLayout();
@@ -579,6 +579,36 @@
             tabGeneralJournal.Size = new Size(1110, 633);
             tabGeneralJournal.TabIndex = 3;
             tabGeneralJournal.Text = "white";
+            // 
+            // btnSortJournal
+            // 
+            btnSortJournal.Cursor = Cursors.Hand;
+            btnSortJournal.Location = new Point(6, 9);
+            btnSortJournal.Name = "btnSortJournal";
+            btnSortJournal.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.OverrideFocus.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.OverrideFocus.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            btnSortJournal.Size = new Size(131, 36);
+            btnSortJournal.StateCommon.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StateCommon.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnSortJournal.StateCommon.Border.Rounding = 1F;
+            btnSortJournal.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnSortJournal.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnSortJournal.StateCommon.Content.ShortText.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnSortJournal.StateDisabled.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StateDisabled.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StateNormal.Back.Color1 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StateNormal.Back.Color2 = Color.FromArgb(7, 67, 130);
+            btnSortJournal.StatePressed.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
+            btnSortJournal.TabIndex = 15;
+            btnSortJournal.Values.DropDownArrowColor = Color.Empty;
+            btnSortJournal.Values.Text = "Sort by Date ↓";
             // 
             // dgvGeneralJournal
             // 
@@ -1285,16 +1315,6 @@
             lblDisplayFullName.Size = new Size(148, 21);
             lblDisplayFullName.TabIndex = 43;
             lblDisplayFullName.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // btnSortJournal
-            // 
-            btnSortJournal.Location = new Point(10, 9);
-            btnSortJournal.Name = "btnSortJournal";
-            btnSortJournal.Size = new Size(97, 36);
-            btnSortJournal.TabIndex = 4;
-            btnSortJournal.Values.DropDownArrowColor = Color.Empty;
-            btnSortJournal.Values.Text = "Sort by Date ↓";
-          
             // 
             // Main
             // 
