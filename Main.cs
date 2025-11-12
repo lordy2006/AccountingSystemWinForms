@@ -25,12 +25,16 @@ namespace AccountingSystemWinForms
             dgvLiability.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvLiability.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(246, 246, 246);
 
+            dgvAssets.CellFormatting += dgvAssets_CellFormatting;
+            dgvLiability.CellFormatting += dgvLiability_CellFormatting;
 
+            dgvAssets.ReadOnly = true;
+            dgvLiability.ReadOnly = true;
 
 
             this.Size = new Size(1352, 746); // set size again ( kay nay bug usahay )
             textBox8.TextChanged += textBox8_TextChanged;
-            
+
             textBox4.Text = DateTime.Now.ToString("dd-MM-yyyy");
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             dgvGeneralJournal.CellFormatting += dgvGeneralJournal_CellFormatting;
@@ -100,7 +104,7 @@ namespace AccountingSystemWinForms
                 return cp;
             }
         }
-        
+
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -244,6 +248,8 @@ namespace AccountingSystemWinForms
                     // Update other grids if needed
                     UpdateAccountsGrid();
                     SortGeneralJournalByDate();
+
+                    UpdateBalanceSheet();
                 }
 
             }
@@ -322,7 +328,68 @@ namespace AccountingSystemWinForms
 
 
 
+        private void UpdateBalanceSheet()
+        {
+            // ASSETS
+            var assetRows = allAccounts
+                .Where(a => a.Type == "ASSET")
+                .Select(a => new { Asset = a.DisplayName, Amount = CalculateBalance(a.DisplayName) })
+                .Where(row => row.Amount != 0)
+                .ToList();
 
+            decimal totalAssets = assetRows.Sum(a => a.Amount);
+
+            // Add total row
+            assetRows.Add(new { Asset = "Total Assets", Amount = totalAssets });
+
+            // BIND TO GRID (convert to strings for display)
+            dgvAssets.DataSource = assetRows
+                .Select(r => new { Asset = r.Asset, Amount = r.Amount.ToString("N2") })
+                .ToList();
+
+            // LIABILITIES + EQUITY
+            var liabRows = allAccounts
+                .Where(a => a.Type == "LIABILITY" || a.Type == "EQUITY")
+                .Select(a => new { LiabilityAndEquity = a.DisplayName, Amount = CalculateBalance(a.DisplayName) })
+                .Where(row => row.Amount != 0)
+                .ToList();
+
+            decimal totalLiabEquity = liabRows.Sum(a => a.Amount);
+
+            liabRows.Add(new { LiabilityAndEquity = "Total Liabilities + Equity", Amount = totalLiabEquity });
+
+            dgvLiability.DataSource = liabRows
+                .Select(r => new { LiabilityAndEquity = r.LiabilityAndEquity, Amount = r.Amount.ToString("N2") })
+                .ToList();
+
+            if (totalAssets == totalLiabEquity)
+            {
+                BalanceCheckMessage.Text = "Balanced ✔";
+                BalanceCheckMessage.ForeColor = Color.Green;
+            }
+            else
+            {
+                BalanceCheckMessage.Text = "Not Balanced ✖";
+                BalanceCheckMessage.ForeColor = Color.Red;
+            }
+
+        }
+
+
+
+
+        private void dgvAssets_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Last row = Total Assets
+            if (e.RowIndex == dgvAssets.Rows.Count - 1)
+                dgvAssets.Rows[e.RowIndex].DefaultCellStyle.Font = new Font(dgvAssets.Font, FontStyle.Bold);
+        }
+
+        private void dgvLiability_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == dgvLiability.Rows.Count - 1)
+                dgvLiability.Rows[e.RowIndex].DefaultCellStyle.Font = new Font(dgvLiability.Font, FontStyle.Bold);
+        }
 
 
 
@@ -363,6 +430,9 @@ namespace AccountingSystemWinForms
             btnBalanceSheet.OverrideDefault.Back.Color1 = Color.FromArgb(34, 82, 133);
             btnBalanceSheet.OverrideDefault.Back.Color2 = Color.FromArgb(34, 82, 133);
             tabHolder.SelectedTab = tabBalanceSheet;
+
+
+            UpdateBalanceSheet();
 
         }
 
@@ -457,11 +527,6 @@ namespace AccountingSystemWinForms
         {
 
         }
-
-
-
-
-
 
 
         private void tabNewTransactions_Click(object sender, EventArgs e)
@@ -591,8 +656,8 @@ namespace AccountingSystemWinForms
             journalSortAscending = !journalSortAscending;
             SortGeneralJournalByDate();
 
-            
-            
+
+
 
         }
 
@@ -628,6 +693,9 @@ namespace AccountingSystemWinForms
             dgvGeneralJournal.DataSource = new BindingList<JournalEntry>(journalRows);
         }
 
-        
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
