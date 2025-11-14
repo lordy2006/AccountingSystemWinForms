@@ -15,7 +15,7 @@ namespace AccountingSystemWinForms
 {
     public partial class SignUpControl : UserControl
     {
-        
+
         public SignUpControl()
         {
             InitializeComponent();
@@ -85,9 +85,9 @@ namespace AccountingSystemWinForms
                 return;
             }
 
-            if (password.Length < 8)
+            if (password.Length < 5)
             {
-                MessageBox.Show("Password must be at least 8 characters.", "Weak password",
+                MessageBox.Show("Password must be at least 5 characters.", "Weak password",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -165,7 +165,22 @@ namespace AccountingSystemWinForms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-        
+
+        }
+
+        private void txbEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonGroup5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

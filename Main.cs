@@ -158,7 +158,7 @@ namespace AccountingSystemWinForms
             string amountText = textBox5.Text.Trim();
 
             // Validate all fields
-            if (string.IsNullOrWhiteSpace(dateInput) || string.IsNullOrWhiteSpace(description) ||
+            if (string.IsNullOrWhiteSpace(description) ||
                 debitAccount == null || creditAccount == null || string.IsNullOrWhiteSpace(amountText))
             {
                 MessageBox.Show("Please fill out all fields.");
@@ -182,19 +182,31 @@ namespace AccountingSystemWinForms
 
             // --- DATE VALIDATION ---
             DateTime parsedDate;
-            bool validDate = DateTime.TryParseExact(
-                dateInput,
-                "dd-MM-yyyy", // Adjust this if you want a different format
-                System.Globalization.CultureInfo.InvariantCulture,
-                System.Globalization.DateTimeStyles.None,
-                out parsedDate
-            );
 
-            if (!validDate)
+            if (string.IsNullOrWhiteSpace(dateInput))
             {
-                MessageBox.Show("Please enter a valid date in the format DD-MM-YYYY.");
-                textBox4.Focus();
-                return;
+                // Use today's date automatically
+                parsedDate = DateTime.Today;
+
+                // (Optional) Show it in the textbox so the user sees what was used
+                textBox4.Text = parsedDate.ToString("dd-MM-yyyy");
+            }
+            else
+            {
+                bool validDate = DateTime.TryParseExact(
+                    dateInput,
+                    "dd-MM-yyyy",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None,
+                    out parsedDate
+                );
+
+                if (!validDate)
+                {
+                    MessageBox.Show("Please enter a valid date in the format DD-MM-YYYY.");
+                    textBox4.Focus();
+                    return;
+                }
             }
 
             // --- AMOUNT VALIDATION ---
