@@ -35,8 +35,7 @@ namespace AccountingSystemWinForms
         }
         private void btnBackToLogin_Click(object sender, EventArgs e)
         {
-            WelcomeForm.welcomeForm.loginControl.Show();
-            WelcomeForm.welcomeForm.signUpControl.Hide();
+            WelcomeForm.welcomeForm.SlideToLogin();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -85,9 +84,9 @@ namespace AccountingSystemWinForms
                 return;
             }
 
-            if (password.Length < 8)
+            if (password.Length < 5)
             {
-                MessageBox.Show("Password must be at least 8 characters.", "Weak password",
+                MessageBox.Show("Password must be at least 5 characters.", "Weak password",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -122,9 +121,10 @@ namespace AccountingSystemWinForms
                 MessageBox.Show("Account created! You can now log in.", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Navigate back to login
-                WelcomeForm.welcomeForm.loginControl.Show();
-                WelcomeForm.welcomeForm.signUpControl.Hide();
+                
+                // Navigate back to login (with animation)
+                WelcomeForm.welcomeForm.SlideToLogin();   
+
             }
             catch (SqliteException ex) when (ex.SqliteErrorCode == 19) // constraint violation
             {
@@ -138,10 +138,7 @@ namespace AccountingSystemWinForms
             }
         }
 
-        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
         {

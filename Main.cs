@@ -1,5 +1,15 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
+
+
+
 
 namespace AccountingSystemWinForms
 {
@@ -7,9 +17,14 @@ namespace AccountingSystemWinForms
     {
         private bool journalSortAscending = true;
 
+
+
         public Main()
         {
             InitializeComponent();
+
+
+
 
             // Use RGB for White (R: 255, G: 255, B: 255)
             dgvTransaction.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
@@ -43,6 +58,8 @@ namespace AccountingSystemWinForms
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
             dgvGeneralLedger.AutoGenerateColumns = false;
+            dgvGeneralLedger.CellFormatting += dgvGeneralLedger_CellFormatting;
+
 
             dgvTransaction.DataSource = transactionList;
 
@@ -87,9 +104,6 @@ namespace AccountingSystemWinForms
 
         private BindingList<Transaction> transactionList = new BindingList<Transaction>();
 
-
-
-
         public void setUsername(string FullName)
         {
             lblDisplayFullName.Text = FullName;
@@ -132,6 +146,50 @@ namespace AccountingSystemWinForms
                 Application.Exit();
             }
         }
+
+        private void dgvGeneralLedger_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Safety: ignore the "new row" area
+            if (e.RowIndex < 0 || e.RowIndex >= dgvGeneralLedger.Rows.Count)
+                return;
+
+            string columnName = dgvGeneralLedger.Columns[e.ColumnIndex].Name;
+
+            // === Format Amount & Balance columns ===
+            if (columnName == "Amount" || columnName == "Balance")
+            {
+                if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal val))
+                {
+                    // Negative values in red
+                    if (val < 0)
+                    {
+                        e.CellStyle.ForeColor = Color.Red;
+                    }
+
+                    // Bold the Balance column to emphasize running total
+                    if (columnName == "Balance")
+                    {
+                        e.CellStyle.Font = new Font(
+                            dgvGeneralLedger.Font,
+                            FontStyle.Bold
+                        );
+                    }
+                }
+            }
+
+            // === Highlight the last row (ending balance) ===
+            bool isLastRow = (e.RowIndex == dgvGeneralLedger.Rows.Count - 1);
+
+            if (isLastRow)
+            {
+                e.CellStyle.BackColor = Color.FromArgb(230, 240, 255); // soft tint
+                e.CellStyle.Font = new Font(
+                    dgvGeneralLedger.Font,
+                    FontStyle.Bold
+                );
+            }
+        }
+
 
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -265,103 +323,95 @@ namespace AccountingSystemWinForms
             }
         }
 
-
-        private void UpdateGeneralJournalGrid()
-        {
-            var journalRows = new List<JournalEntry>();
-
-            foreach (var t in transactionList)
-            {
-                // Debit row
-                journalRows.Add(new JournalEntry
-                {
-                    Date = t.Date,
-                    Description = t.Description,
-                    Account = t.DebitAccount,
-                    Debit = t.Amount,
-                    Credit = 0
-                });
-
-                // Credit row (indented, blank date/desc)
-                journalRows.Add(new JournalEntry
-                {
-                    Date = "", // group visually
-                    Description = "",
-                    Account = "    " + t.CreditAccount, // 4 spaces
-                    Debit = 0,
-                    Credit = t.Amount
-                });
-            }
-
-            dgvGeneralJournal.DataSource = new BindingList<JournalEntry>(journalRows);
-        }
-
-
         private void UpdateAccountsGrid()
         {
             var accountDisplays = allAccounts
                 .Select(acc => new AccountDisplay
                 {
-                    Account = acc.Name,
+                    Account = acc.DisplayName,
                     Type = acc.Type,
-                    Balance = CalculateBalance(acc.DisplayName)
+                    Balance = CalculateBalance(acc)   // <— changed
                 })
                 .ToList();
 
             dgvAccounts.DataSource = new BindingList<AccountDisplay>(accountDisplays);
-
         }
 
-        private decimal CalculateBalance(string accountDisplayName)
+
+        // Type-aware balance
+        private decimal CalculateBalance(Account acc)
         {
             decimal debit = transactionList
-                .Where(t => t.DebitAccount == accountDisplayName)
+                .Where(t => t.DebitAccount == acc.DisplayName)
                 .Sum(t => t.Amount);
 
             decimal credit = transactionList
-                .Where(t => t.CreditAccount == accountDisplayName)
+                .Where(t => t.CreditAccount == acc.DisplayName)
                 .Sum(t => t.Amount);
 
-            // For demo: balance = debits - credits (adjust per account type if needed)
-            return debit - credit;
+            // Assets & Expenses -> debit-normal (Debits increase balance)
+            if (acc.Type == "ASSET" || acc.Type == "EXPENSE")
+                return debit - credit;
+
+            // Liabilities, Equity, Income -> credit-normal (Credits increase balance)
+            return credit - debit;
+        }
+
+        // Optional helper if you still want to call by name
+        private decimal CalculateBalance(string accountDisplayName)
+        {
+            var acc = allAccounts.FirstOrDefault(a => a.DisplayName == accountDisplayName);
+            if (acc == null) return 0m;
+            return CalculateBalance(acc);
         }
 
 
 
         private void UpdateBalanceSheet()
         {
-            // ASSETS
+            // ===== ASSETS =====
             var assetRows = allAccounts
                 .Where(a => a.Type == "ASSET")
-                .Select(a => new { Asset = a.DisplayName, Amount = CalculateBalance(a.DisplayName) })
+                .Select(a => new
+                {
+                    Asset = a.DisplayName,
+                    Amount = CalculateBalance(a)
+                })
                 .Where(row => row.Amount != 0)
                 .ToList();
 
             decimal totalAssets = assetRows.Sum(a => a.Amount);
 
-            // Add total row
             assetRows.Add(new { Asset = "Total Assets", Amount = totalAssets });
 
-            // BIND TO GRID (convert to strings for display)
             dgvAssets.DataSource = assetRows
-                .Select(r => new { Asset = r.Asset, Amount = r.Amount.ToString("N2") })
+                .Select(r => new { r.Asset, Amount = r.Amount.ToString("N2") })
                 .ToList();
 
-            // LIABILITIES + EQUITY
+            // ===== LIABILITIES + EQUITY =====
             var liabRows = allAccounts
                 .Where(a => a.Type == "LIABILITY" || a.Type == "EQUITY")
-                .Select(a => new { LiabilityAndEquity = a.DisplayName, Amount = CalculateBalance(a.DisplayName) })
+                .Select(a => new
+                {
+                    LiabilityAndEquity = a.DisplayName,
+                    Amount = CalculateBalance(a)
+                })
                 .Where(row => row.Amount != 0)
                 .ToList();
 
             decimal totalLiabEquity = liabRows.Sum(a => a.Amount);
 
-            liabRows.Add(new { LiabilityAndEquity = "Total Liabilities + Equity", Amount = totalLiabEquity });
+            liabRows.Add(new
+            {
+                LiabilityAndEquity = "Total Liabilities + Equity",
+                Amount = totalLiabEquity
+            });
 
             dgvLiability.DataSource = liabRows
-                .Select(r => new { LiabilityAndEquity = r.LiabilityAndEquity, Amount = r.Amount.ToString("N2") })
+                .Select(r => new { r.LiabilityAndEquity, Amount = r.Amount.ToString("N2") })
                 .ToList();
 
+            // ===== BALANCED? =====
             if (totalAssets == totalLiabEquity)
             {
                 BalanceCheckMessage.Text = "Balanced ✔";
@@ -372,8 +422,8 @@ namespace AccountingSystemWinForms
                 BalanceCheckMessage.Text = "Not Balanced ✖";
                 BalanceCheckMessage.ForeColor = Color.Red;
             }
-
         }
+
 
 
 
@@ -483,12 +533,19 @@ namespace AccountingSystemWinForms
 
         private void btnClearForm_Click(object sender, EventArgs e)
         {
-            textBox4.Clear();
+            textBox4.Text = DateTime.Now.ToString("dd-MM-yyyy");
             textBox2.Clear();
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             textBox5.Clear();
+
         }
+
+
+
+        // Centralized validation for the New Transaction form
+
+
 
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -498,11 +555,10 @@ namespace AccountingSystemWinForms
             // If search is empty, show the full list
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                dgvTransaction.DataSource = new BindingList<Transaction>(transactionList.ToList());
+                dgvTransaction.DataSource = transactionList;  // <- change this line
                 return;
             }
 
-            // Filter the list
             var filtered = transactionList.Where(t =>
                 t.Date.ToLower().Contains(searchText) ||
                 t.Description.ToLower().Contains(searchText) ||
@@ -512,6 +568,7 @@ namespace AccountingSystemWinForms
 
             dgvTransaction.DataSource = new BindingList<Transaction>(filtered);
         }
+
 
         private void dgvGeneralJournal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -607,10 +664,24 @@ namespace AccountingSystemWinForms
 
             foreach (var t in filtered)
             {
-                if (t.DebitAccount == selected)
-                    runningBalance += t.Amount;
-                else if (t.CreditAccount == selected)
-                    runningBalance -= t.Amount;
+                // Is this account debit-normal?
+                bool isDebitNormal = selectedAccount.Type == "ASSET"
+                                  || selectedAccount.Type == "EXPENSE";
+
+                if (isDebitNormal)
+                {
+                    if (t.DebitAccount == selected)
+                        runningBalance += t.Amount;
+                    else if (t.CreditAccount == selected)
+                        runningBalance -= t.Amount;
+                }
+                else // credit-normal (Liability, Equity, Income)
+                {
+                    if (t.DebitAccount == selected)
+                        runningBalance -= t.Amount;
+                    else if (t.CreditAccount == selected)
+                        runningBalance += t.Amount;
+                }
 
                 ledgerRows.Add(new LedgerRow
                 {
@@ -625,6 +696,7 @@ namespace AccountingSystemWinForms
 
             dgvGeneralLedger.DataSource = new BindingList<LedgerRow>(ledgerRows);
         }
+
 
 
 
@@ -651,15 +723,7 @@ namespace AccountingSystemWinForms
             }
         }
 
-        private void btnSortJournal_Click(object sender, EventArgs e)
-        {
-            journalSortAscending = !journalSortAscending;
-            SortGeneralJournalByDate();
-
-
-
-
-        }
+        
 
         private void SortGeneralJournalByDate()
         {
@@ -667,8 +731,9 @@ namespace AccountingSystemWinForms
 
             // Sort ascending or descending
             var sortedTransactions = journalSortAscending
-                ? transactionList.OrderBy(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", null)).ToList()
-                : transactionList.OrderByDescending(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", null)).ToList();
+            ? transactionList.OrderBy(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", CultureInfo.InvariantCulture)).ToList()
+            : transactionList.OrderByDescending(t => DateTime.ParseExact(t.Date, "dd-MM-yyyy", CultureInfo.InvariantCulture)).ToList();
+
 
             foreach (var t in sortedTransactions)
             {
@@ -697,5 +762,287 @@ namespace AccountingSystemWinForms
         {
 
         }
+
+        private void TransacCSV_Click(object sender, EventArgs e)
+        {
+            ExportDataGridViewToCsv(dgvTransaction, "Transactions.csv");
+
+        }
+        private void ExportDataGridViewToCsv(DataGridView dgv, string defaultFileName)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                sfd.FileName = defaultFileName;
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    var sb = new StringBuilder();
+
+                    // Header row
+                    var headers = dgv.Columns
+                                     .Cast<DataGridViewColumn>()
+                                     .Select(c => c.HeaderText);
+                    sb.AppendLine(string.Join(",", headers.Select(EscapeCsv)));
+
+                    // Data rows
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        var cells = row.Cells
+                                       .Cast<DataGridViewCell>()
+                                       .Select(c => c.Value == null ? "" : c.Value.ToString());
+
+                        sb.AppendLine(string.Join(",", cells.Select(EscapeCsv)));
+                    }
+
+                    File.WriteAllText(sfd.FileName, sb.ToString(), Encoding.UTF8);
+
+                    MessageBox.Show("Transactions exported successfully.",
+                                    "Export",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private string EscapeCsv(string input)
+        {
+            if (input == null)
+                return "";
+
+            // Escape quotes by doubling them, wrap entire field in quotes
+            string escaped = input.Replace("\"", "\"\"");
+            return $"\"{escaped}\"";
+        }
+
+        private void btnExportJournalCSV_Click(object sender, EventArgs e)
+        {
+            SortGeneralJournalByDate();
+            ExportDataGridViewToCsv(dgvGeneralJournal, "GeneralJournal.csv");
+        }
+
+        private void btnExportLedgerCSV_Click(object sender, EventArgs e)
+        {
+            var selectedAccount = comboBox3.SelectedItem as Account;
+
+            if (selectedAccount == null)
+            {
+                MessageBox.Show("Please select an account first before exporting the ledger.",
+                                "No Account Selected",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Build a safe filename, e.g. Ledger_Cash.csv
+            char[] invalid = Path.GetInvalidFileNameChars();
+            string safeAccountName = new string(
+                selectedAccount.Name
+                    .Where(ch => !invalid.Contains(ch))
+                    .ToArray()
+            );
+
+            string defaultFileName = $"Ledger_{safeAccountName}.csv";
+
+            // dgvGeneralLedger already shows the ledger for the selected account,
+            // so we just export what is currently displayed.
+            ExportDataGridViewToCsv(dgvGeneralLedger, defaultFileName);
+        }
+
+        private List<string> ParseCsvLine(string line)
+        {
+            var result = new List<string>();
+            if (string.IsNullOrEmpty(line))
+                return result;
+
+            var sb = new StringBuilder();
+            bool inQuotes = false;
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                char c = line[i];
+
+                if (c == '\"')
+                {
+                    if (inQuotes && i + 1 < line.Length && line[i + 1] == '\"')
+                    {
+                        // Escaped quote ("")
+                        sb.Append('\"');
+                        i++; // skip next quote
+                    }
+                    else
+                    {
+                        // Toggle quote state
+                        inQuotes = !inQuotes;
+                    }
+                }
+                else if (c == ',' && !inQuotes)
+                {
+                    // End of field
+                    result.Add(sb.ToString());
+                    sb.Clear();
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+
+            // Last field
+            result.Add(sb.ToString());
+            return result;
+        }
+
+        private void LoadTransactionsFromCsv()
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                ofd.Title = "Select Transactions CSV";
+
+                if (ofd.ShowDialog() != DialogResult.OK)
+                    return;
+
+                string[] lines;
+                try
+                {
+                    lines = File.ReadAllLines(ofd.FileName, Encoding.UTF8);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error reading file:\n" + ex.Message,
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (lines.Length <= 1)
+                {
+                    MessageBox.Show("The selected CSV file is empty or has no data rows.",
+                                    "No Data",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Ask if we replace or append
+                var choice = MessageBox.Show(
+                    "Do you want to REPLACE existing transactions with this file?\n\n" +
+                    "Yes = Replace\nNo = Append",
+                    "Load Transactions",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question);
+
+                if (choice == DialogResult.Cancel)
+                    return;
+
+                if (choice == DialogResult.Yes)
+                {
+                    // Replace
+                    transactionList.Clear();
+                    
+                }
+                textBox8.Clear();                    // reset search
+                dgvTransaction.DataSource = transactionList;
+
+                // If No -> we append
+
+                int successCount = 0;
+                int failedCount = 0;
+
+                // Assume first line is header
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string line = lines[i];
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    try
+                    {
+                        var fields = ParseCsvLine(line);
+
+                        // Expecting: Date, Description, DebitAccount, CreditAccount, Amount
+                        if (fields.Count < 5)
+                        {
+                            failedCount++;
+                            continue;
+                        }
+
+                        string dateStr = fields[0].Trim().Trim('"');
+                        string description = fields[1].Trim().Trim('"');
+                        string debitAccount = fields[2].Trim().Trim('"');
+                        string creditAccount = fields[3].Trim().Trim('"');
+                        string amountStr = fields[4].Trim().Trim('"');
+
+                        // Validate/parse date & amount
+                        DateTime parsedDate;
+                        if (!DateTime.TryParseExact(
+                                dateStr,
+                                "dd-MM-yyyy",
+                                CultureInfo.InvariantCulture,
+                                DateTimeStyles.None,
+                                out parsedDate))
+                        {
+                            failedCount++;
+                            continue;
+                        }
+
+                        decimal amountValue;
+                        if (!decimal.TryParse(
+                                amountStr,
+                                NumberStyles.Number,
+                                CultureInfo.CurrentCulture,
+                                out amountValue))
+                        {
+                            failedCount++;
+                            continue;
+                        }
+
+                        // Add to list
+                        transactionList.Insert(0, new Transaction
+                        {
+                            Date = parsedDate.ToString("dd-MM-yyyy"),
+                            Description = description,
+                            DebitAccount = debitAccount,
+                            CreditAccount = creditAccount,
+                            Amount = amountValue
+                        });
+
+                        successCount++;
+                    }
+                    catch
+                    {
+                        failedCount++;
+                    }
+                }
+
+                // Refresh bound views
+                UpdateAccountsGrid();
+                SortGeneralJournalByDate();
+                UpdateBalanceSheet();
+
+                if (comboBox3.SelectedItem is Account)
+                {
+                    comboBox3_SelectedIndexChanged(comboBox3, EventArgs.Empty);
+                }
+
+                MessageBox.Show(
+                    $"Loaded {successCount} transaction(s).\n" +
+                    (failedCount > 0 ? $"Skipped {failedCount} invalid row(s)." : ""),
+                    "Import Complete",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+
+        private void btnLoadTransactionsCSV_Click(object sender, EventArgs e)
+        {
+            LoadTransactionsFromCsv();
+        }
     }
 }
+

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dot-net-transitions" Version="1.2.1" />
     <PackageReference Include="Krypton.Toolkit" Version="95.25.8.235" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.10" />
   </ItemGroup>

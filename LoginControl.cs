@@ -93,12 +93,11 @@ namespace AccountingSystemWinForms
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            WelcomeForm.welcomeForm.signUpControl.Show();
-            WelcomeForm.welcomeForm.loginControl.Hide();
+            WelcomeForm.welcomeForm.SlideToSignUp();
         }
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
