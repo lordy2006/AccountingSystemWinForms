@@ -41,7 +41,7 @@
             label6.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(7, 67, 130);
             label6.ImageAlign = ContentAlignment.MiddleRight;
-            label6.Location = new Point(74, 187);
+            label6.Location = new Point(74, 217);
             label6.Name = "label6";
             label6.Size = new Size(459, 108);
             label6.TabIndex = 17;
@@ -53,16 +53,16 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.Log_Out_Icon;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(218, 10);
+            pictureBox1.Location = new Point(202, 8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(170, 180);
+            pictureBox1.Size = new Size(217, 206);
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
             // btnConfirmLogout
             // 
             btnConfirmLogout.Cursor = Cursors.Hand;
-            btnConfirmLogout.Location = new Point(306, 331);
+            btnConfirmLogout.Location = new Point(306, 341);
             btnConfirmLogout.Name = "btnConfirmLogout";
             btnConfirmLogout.OverrideDefault.Back.Color1 = Color.FromArgb(7, 67, 130);
             btnConfirmLogout.OverrideDefault.Back.Color2 = Color.FromArgb(7, 67, 130);
@@ -93,7 +93,7 @@
             // btnCancelLogout
             // 
             btnCancelLogout.Cursor = Cursors.Hand;
-            btnCancelLogout.Location = new Point(141, 331);
+            btnCancelLogout.Location = new Point(141, 341);
             btnCancelLogout.Name = "btnCancelLogout";
             btnCancelLogout.OverrideDefault.Back.Color1 = Color.White;
             btnCancelLogout.OverrideDefault.Back.Color2 = Color.White;
