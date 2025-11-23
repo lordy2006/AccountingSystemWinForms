@@ -37,14 +37,12 @@
             label2 = new Label();
             kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             panel2 = new Panel();
+            txbPassword = new TextBox();
             label5 = new Label();
             label4 = new Label();
             txbUsername = new TextBox();
-            label3 = new Label();
-            checkBox1 = new CheckBox();
             pnlPassword = new Krypton.Toolkit.KryptonGroup();
             kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
-            txbPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1).BeginInit();
@@ -75,11 +73,12 @@
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BackgroundImage = Properties.Resources.user_freepik;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(33, 125);
+            pictureBox1.Location = new Point(32, 125);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(26, 26);
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnLogin
             // 
@@ -107,7 +106,7 @@
             btnLogin.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
             btnLogin.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
             btnLogin.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnLogin.TabIndex = 5;
+            btnLogin.TabIndex = 4;
             btnLogin.Values.DropDownArrowColor = Color.Empty;
             btnLogin.Values.Text = "Login";
             btnLogin.Click += btnLogin_Click;
@@ -147,7 +146,7 @@
             btnSignUp.StatePressed.Back.Color2 = Color.FromArgb(190, 190, 190);
             btnSignUp.StateTracking.Back.Color1 = Color.FromArgb(190, 190, 190);
             btnSignUp.StateTracking.Back.Color2 = Color.FromArgb(190, 190, 190);
-            btnSignUp.TabIndex = 6;
+            btnSignUp.TabIndex = 5;
             btnSignUp.Values.DropDownArrowColor = Color.Empty;
             btnSignUp.Values.Text = "Sign-up";
             btnSignUp.Click += btnSignUp_Click;
@@ -180,16 +179,15 @@
             kryptonGroup1.Size = new Size(551, 665);
             kryptonGroup1.StateCommon.Back.Color1 = Color.White;
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
-            kryptonGroup1.TabIndex = 18;
+            kryptonGroup1.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(txbPassword);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(txbUsername);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(checkBox1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(panel1);
@@ -203,6 +201,20 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(390, 443);
             panel2.TabIndex = 19;
+            // 
+            // txbPassword
+            // 
+            txbPassword.BackColor = Color.WhiteSmoke;
+            txbPassword.BorderStyle = BorderStyle.None;
+            txbPassword.Font = new Font("Segoe UI", 12F);
+            txbPassword.Location = new Point(63, 202);
+            txbPassword.Name = "txbPassword";
+            txbPassword.PasswordChar = '*';
+            txbPassword.PlaceholderText = "Password";
+            txbPassword.Size = new Size(294, 22);
+            txbPassword.TabIndex = 1;
+            txbPassword.UseSystemPasswordChar = true;
+            txbPassword.TextChanged += txbPassword_TextChanged;
             // 
             // label5
             // 
@@ -231,37 +243,12 @@
             txbUsername.BackColor = Color.WhiteSmoke;
             txbUsername.BorderStyle = BorderStyle.None;
             txbUsername.Font = new Font("Segoe UI", 12F);
-            txbUsername.Location = new Point(66, 126);
+            txbUsername.Location = new Point(63, 127);
             txbUsername.Name = "txbUsername";
             txbUsername.PlaceholderText = "Username";
             txbUsername.Size = new Size(294, 22);
-            txbUsername.TabIndex = 1;
+            txbUsername.TabIndex = 0;
             txbUsername.TextChanged += txbUsername_TextChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(256, 247);
-            label3.Name = "label3";
-            label3.Size = new Size(106, 17);
-            label3.TabIndex = 4;
-            label3.Text = "Forgot password?";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.White;
-            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            checkBox1.ForeColor = Color.DimGray;
-            checkBox1.Location = new Point(32, 246);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(108, 21);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Remember me";
-            checkBox1.UseVisualStyleBackColor = false;
             // 
             // pnlPassword
             // 
@@ -271,7 +258,7 @@
             pnlPassword.Size = new Size(355, 45);
             pnlPassword.StateCommon.Back.Color1 = Color.WhiteSmoke;
             pnlPassword.StateCommon.Border.Rounding = 25F;
-            pnlPassword.TabIndex = 2;
+            pnlPassword.TabIndex = 1;
             // 
             // kryptonGroup2
             // 
@@ -283,26 +270,11 @@
             kryptonGroup2.StateCommon.Border.Rounding = 25F;
             kryptonGroup2.TabIndex = 1;
             // 
-            // txbPassword
-            // 
-            txbPassword.BackColor = Color.WhiteSmoke;
-            txbPassword.BorderStyle = BorderStyle.None;
-            txbPassword.Font = new Font("Segoe UI", 12F);
-            txbPassword.Location = new Point(151, 320);
-            txbPassword.Name = "txbPassword";
-            txbPassword.PasswordChar = '*';
-            txbPassword.PlaceholderText = "Password";
-            txbPassword.Size = new Size(294, 22);
-            txbPassword.TabIndex = 2;
-            txbPassword.UseSystemPasswordChar = true;
-            txbPassword.TextChanged += txbPassword_TextChanged;
-            // 
             // LoginControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            Controls.Add(txbPassword);
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "LoginControl";
@@ -318,7 +290,6 @@
             ((System.ComponentModel.ISupportInitialize)kryptonGroup2.Panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -333,8 +304,6 @@
         private Label label2;
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
         private Panel panel2;
-        private CheckBox checkBox1;
-        private Label label3;
         private TextBox txbFullName;
         private Krypton.Toolkit.KryptonGroup pnlPassword;
         private TextBox txbUsername;

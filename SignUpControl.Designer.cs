@@ -34,9 +34,9 @@
             btnBackToLogin = new Krypton.Toolkit.KryptonButton();
             btnCreateAccount = new Krypton.Toolkit.KryptonButton();
             panel2 = new Panel();
-            txbUsername = new TextBox();
             kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             label7 = new Label();
+            txbPassword = new TextBox();
             txbConfirmPassword = new TextBox();
             pictureBox2 = new PictureBox();
             kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
@@ -49,9 +49,9 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            txbUsername = new TextBox();
             kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
             kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            txbPassword = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup5.Panel).BeginInit();
@@ -127,7 +127,7 @@
             btnBackToLogin.StatePressed.Back.Color2 = Color.FromArgb(190, 190, 190);
             btnBackToLogin.StateTracking.Back.Color1 = Color.FromArgb(190, 190, 190);
             btnBackToLogin.StateTracking.Back.Color2 = Color.FromArgb(190, 190, 190);
-            btnBackToLogin.TabIndex = 19;
+            btnBackToLogin.TabIndex = 6;
             btnBackToLogin.Values.DropDownArrowColor = Color.Empty;
             btnBackToLogin.Values.Text = "Login";
             btnBackToLogin.Click += btnBackToLogin_Click;
@@ -158,7 +158,7 @@
             btnCreateAccount.StatePressed.Back.Color2 = Color.FromArgb(0, 124, 255);
             btnCreateAccount.StateTracking.Back.Color1 = Color.FromArgb(0, 124, 255);
             btnCreateAccount.StateTracking.Back.Color2 = Color.FromArgb(0, 124, 255);
-            btnCreateAccount.TabIndex = 18;
+            btnCreateAccount.TabIndex = 5;
             btnCreateAccount.Values.DropDownArrowColor = Color.Empty;
             btnCreateAccount.Values.Text = "Create Account";
             btnCreateAccount.Click += btnCreateAccount_Click;
@@ -169,6 +169,7 @@
             panel2.Controls.Add(txbUsername);
             panel2.Controls.Add(kryptonGroup5);
             panel2.Controls.Add(label7);
+            panel2.Controls.Add(txbPassword);
             panel2.Controls.Add(txbConfirmPassword);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(kryptonGroup3);
@@ -190,19 +191,7 @@
             panel2.Location = new Point(46, 41);
             panel2.Name = "panel2";
             panel2.Size = new Size(469, 599);
-            panel2.TabIndex = 26;
-            // 
-            // txbUsername
-            // 
-            txbUsername.BackColor = Color.WhiteSmoke;
-            txbUsername.BorderStyle = BorderStyle.None;
-            txbUsername.Font = new Font("Segoe UI", 12F);
-            txbUsername.Location = new Point(76, 210);
-            txbUsername.Name = "txbUsername";
-            txbUsername.PlaceholderText = "Username";
-            txbUsername.Size = new Size(328, 22);
-            txbUsername.TabIndex = 40;
-            txbUsername.TextChanged += textBox1_TextChanged;
+            panel2.TabIndex = 1;
             // 
             // kryptonGroup5
             // 
@@ -213,6 +202,7 @@
             kryptonGroup5.StateCommon.Back.Color1 = Color.WhiteSmoke;
             kryptonGroup5.StateCommon.Border.Rounding = 25F;
             kryptonGroup5.TabIndex = 39;
+            kryptonGroup5.Paint += kryptonGroup5_Paint;
             // 
             // label7
             // 
@@ -226,16 +216,29 @@
             label7.Text = "Username";
             label7.Click += label7_Click;
             // 
+            // txbPassword
+            // 
+            txbPassword.BackColor = Color.WhiteSmoke;
+            txbPassword.BorderStyle = BorderStyle.None;
+            txbPassword.Font = new Font("Segoe UI", 12F);
+            txbPassword.Location = new Point(105, 351);
+            txbPassword.Name = "txbPassword";
+            txbPassword.PlaceholderText = "Password";
+            txbPassword.Size = new Size(119, 22);
+            txbPassword.TabIndex = 3;
+            txbPassword.TextChanged += txbPassword_TextChanged;
+            // 
             // txbConfirmPassword
             // 
             txbConfirmPassword.BackColor = Color.WhiteSmoke;
             txbConfirmPassword.BorderStyle = BorderStyle.None;
             txbConfirmPassword.Font = new Font("Segoe UI", 12F);
-            txbConfirmPassword.Location = new Point(286, 350);
+            txbConfirmPassword.Location = new Point(286, 352);
             txbConfirmPassword.Name = "txbConfirmPassword";
             txbConfirmPassword.PlaceholderText = "Password";
             txbConfirmPassword.Size = new Size(116, 22);
-            txbConfirmPassword.TabIndex = 37;
+            txbConfirmPassword.TabIndex = 4;
+            txbConfirmPassword.TextChanged += txbConfirmPassword_TextChanged;
             // 
             // pictureBox2
             // 
@@ -257,7 +260,7 @@
             kryptonGroup3.Size = new Size(172, 45);
             kryptonGroup3.StateCommon.Back.Color1 = Color.WhiteSmoke;
             kryptonGroup3.StateCommon.Border.Rounding = 25F;
-            kryptonGroup3.TabIndex = 35;
+            kryptonGroup3.TabIndex = 3;
             // 
             // txbEmailAddress
             // 
@@ -268,7 +271,8 @@
             txbEmailAddress.Name = "txbEmailAddress";
             txbEmailAddress.PlaceholderText = "Email";
             txbEmailAddress.Size = new Size(328, 22);
-            txbEmailAddress.TabIndex = 35;
+            txbEmailAddress.TabIndex = 2;
+            txbEmailAddress.TextChanged += txbEmailAddress_TextChanged;
             // 
             // kryptonGroup2
             // 
@@ -278,7 +282,7 @@
             kryptonGroup2.Size = new Size(353, 45);
             kryptonGroup2.StateCommon.Back.Color1 = Color.WhiteSmoke;
             kryptonGroup2.StateCommon.Border.Rounding = 25F;
-            kryptonGroup2.TabIndex = 34;
+            kryptonGroup2.TabIndex = 2;
             // 
             // txbFullName
             // 
@@ -289,7 +293,7 @@
             txbFullName.Name = "txbFullName";
             txbFullName.PlaceholderText = "Full Name";
             txbFullName.Size = new Size(328, 22);
-            txbFullName.TabIndex = 34;
+            txbFullName.TabIndex = 0;
             txbFullName.TextChanged += txbFullName_TextChanged;
             // 
             // pnlFullName
@@ -357,6 +361,18 @@
             label3.TabIndex = 26;
             label3.Text = "Full Name";
             // 
+            // txbUsername
+            // 
+            txbUsername.BackColor = Color.WhiteSmoke;
+            txbUsername.BorderStyle = BorderStyle.None;
+            txbUsername.Font = new Font("Segoe UI", 12F);
+            txbUsername.Location = new Point(76, 210);
+            txbUsername.Name = "txbUsername";
+            txbUsername.PlaceholderText = "Username";
+            txbUsername.Size = new Size(328, 22);
+            txbUsername.TabIndex = 1;
+            txbUsername.TextChanged += textBox1_TextChanged;
+            // 
             // kryptonGroup4
             // 
             kryptonGroup4.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
@@ -377,24 +393,11 @@
             kryptonGroup1.StateCommon.Border.Rounding = 25F;
             kryptonGroup1.TabIndex = 27;
             // 
-            // txbPassword
-            // 
-            txbPassword.BackColor = Color.WhiteSmoke;
-            txbPassword.BorderStyle = BorderStyle.None;
-            txbPassword.Font = new Font("Segoe UI", 12F);
-            txbPassword.Location = new Point(148, 393);
-            txbPassword.Name = "txbPassword";
-            txbPassword.PlaceholderText = "Password";
-            txbPassword.Size = new Size(116, 22);
-            txbPassword.TabIndex = 36;
-            txbPassword.TextChanged += txbPassword_TextChanged;
-            // 
             // SignUpControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(7, 67, 130);
-            Controls.Add(txbPassword);
             Controls.Add(panel2);
             Controls.Add(kryptonGroup1);
             Name = "SignUpControl";
@@ -416,7 +419,6 @@
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1.Panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonGroup1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
