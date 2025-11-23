@@ -400,7 +400,18 @@ namespace AccountingSystemWinForms
                 .Select(r => new { r.Asset, Amount = r.Amount.ToString("N2") })
                 .ToList();
 
-            // ===== LIABILITIES + EQUITY =====
+            // ===== INCOME & EXPENSES → NET INCOME (or LOSS) =====
+            decimal totalIncome = allAccounts
+                .Where(a => a.Type == "INCOME")
+                .Sum(a => CalculateBalance(a));
+
+            decimal totalExpenses = allAccounts
+                .Where(a => a.Type == "EXPENSE")
+                .Sum(a => CalculateBalance(a));
+
+            decimal netIncome = totalIncome - totalExpenses;  // can be negative (net loss)
+
+            // ===== LIABILITIES + EQUITY (+ current earnings) =====
             var liabRows = allAccounts
                 .Where(a => a.Type == "LIABILITY" || a.Type == "EQUITY")
                 .Select(a => new
@@ -412,6 +423,18 @@ namespace AccountingSystemWinForms
                 .ToList();
 
             decimal totalLiabEquity = liabRows.Sum(a => a.Amount);
+
+            // Add Net Income / Net Loss as part of equity
+            if (netIncome != 0)
+            {
+                liabRows.Add(new
+                {
+                    LiabilityAndEquity = netIncome >= 0 ? "Net Income" : "Net Loss",
+                    Amount = netIncome
+                });
+
+                totalLiabEquity += netIncome;
+            }
 
             liabRows.Add(new
             {
@@ -435,6 +458,7 @@ namespace AccountingSystemWinForms
                 BalanceCheckMessage.ForeColor = Color.Red;
             }
         }
+
 
 
 

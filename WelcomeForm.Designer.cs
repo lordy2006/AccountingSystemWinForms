@@ -71,14 +71,15 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(79, 80);
+            label1.Location = new Point(160, 80);
             label1.Name = "label1";
-            label1.Size = new Size(200, 94);
+            label1.Size = new Size(259, 115);
             label1.TabIndex = 44;
-            label1.Text = "Accounting\r\nSystem";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Text = "Accounting \r\nSystem";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.UseCompatibleTextRendering = true;
             // 
             // lblSignUpWelcome
             // 
@@ -112,12 +113,11 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(797, 80);
+            label3.Location = new Point(870, 80);
             label3.Name = "label3";
             label3.Size = new Size(200, 94);
             label3.TabIndex = 47;
             label3.Text = "Accounting\r\nSystem";
-            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // WelcomeForm
             // 
